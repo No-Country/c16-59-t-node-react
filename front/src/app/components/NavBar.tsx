@@ -22,17 +22,17 @@ export function NavBar() {
       <div className="flex gap-2">
         <MenubarMenu>
           <MenubarTrigger>
-            <Link href="/">Home</Link>
+            <Link href="/">1eraforma</Link>
           </MenubarTrigger>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger>
-            <Link href="/dashboard">Dashboard</Link>
+            <Link href="/dashboard">2daforma</Link>
           </MenubarTrigger>
         </MenubarMenu>
         <MenubarMenu>
           <MenubarTrigger>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">3raforma</Link>
           </MenubarTrigger>
         </MenubarMenu>
       </div>
