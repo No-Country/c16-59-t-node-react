@@ -75,3 +75,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer components {
+  .title-huerta {
+    --minFontSize: 2rem;
+    --maxFontSize: calc(var(--minFontSize) * 8);
+    --scaler: 20vw;
+    font-family: "Moderat", sans-serif;
+    font-weight: 900;
+    font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+    color: red;
+    background: url("https://res.cloudinary.com/dvozbuwkx/image/upload/v1707875765/imagen_titulo_nz7zcl.webp");
+    background-size: auto 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: carmen 5s linear infinite;
+
+    @keyframes carmen {
+      0% {
+        background-position: center 0;
+      }
+
+      100% {
+        background-position: center 200%;
+      }
+    }
+  }
+}
