@@ -74,10 +74,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        // editar el tiempo segun la cantidad de productos
+        "infinite-scroll": "infinite-scroll 50s linear infinite",
+      },
+      animationPlayState: {
+        // Definir una nueva animación llamada "paused"
+        paused: "paused",
       },
     },
   },

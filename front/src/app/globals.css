@@ -74,6 +74,10 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .btn-menu {
+    @apply h-[40px] w-[300px] shadow-lg shadow-primary/50;
+  }
 }
 
 @layer components {
@@ -84,22 +88,24 @@
     font-family: "Moderat", sans-serif;
     font-weight: 900;
     font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
-    color: red;
-    background: url("https://res.cloudinary.com/dvozbuwkx/image/upload/v1707875765/imagen_titulo_nz7zcl.webp");
+    color: var(--primary);
+    background: rgba(9, 0, 0, 0.5) url("https://res.cloudinary.com/dvozbuwkx/image/upload/v1707929310/imagen_titulo_2_vw5zm5.webp");
     background-size: auto 200%;
-    background-clip: text;
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: carmen 5s linear infinite;
+    animation: codely 40s linear infinite;
+  }
 
-    @keyframes carmen {
-      0% {
-        background-position: center 0;
-      }
+  @keyframes codely {
 
-      100% {
-        background-position: center 200%;
-      }
+    0%,
+    100% {
+      background-position: center 0;
+    }
+
+    50% {
+      background-position: 200% center;
     }
   }
 }

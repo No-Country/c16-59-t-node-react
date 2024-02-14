@@ -1,5 +1,2 @@
 ### GET
-GET https://api.escuelajs.co/api/v1/products
-
-### POST
-POST https://api.escuelajs.co/api/v1/products
+GET https://fakestoreapi.com/products

@@ -9,8 +9,8 @@ export const Hero = () => {
         <div className="w-40 h-40">
           <IconHuerta />
         </div>
-        <div className="flex flex-col gap-0 p-0 mt-10">
-          <span className="font-bold text-[120px] title-huerta">La Huerta</span>
+        <div className="flex flex-col gap-0 p-0">
+          <span className="font-bold text-[160px] title-huerta">La Huerta</span>
           <span className="text-[30px] italic font-medium">
             ...del campo a tu puerta.
           </span>
