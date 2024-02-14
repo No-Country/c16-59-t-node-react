@@ -74,4 +74,45 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  .btn-menu {
+    @apply h-[40px] w-[300px] shadow-lg shadow-primary/50;
+  }
+
+  .products-totals {
+    @apply w-full mt-4 inline-flex flex-nowrap overflow-hidden
+  }
+
+  .products-item {
+    @apply flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none [&_img]:size-44 [&_img]:sm:size-48 [&_img]:lg:size-52 animate-infinite-scroll *:cursor-pointer
+  }
+}
+
+@layer components {
+  .title-huerta {
+    --minFontSize: 2rem;
+    --maxFontSize: calc(var(--minFontSize) * 8);
+    --scaler: 20vw;
+    font-weight: 900;
+    font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+    color: var(--primary);
+    background: rgba(9, 0, 0, 0.5) url("https://res.cloudinary.com/dvozbuwkx/image/upload/v1707929310/imagen_titulo_2_vw5zm5.webp");
+    background-size: auto 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: codely 40s linear infinite;
+  }
+
+  @keyframes codely {
+
+    0%,
+    100% {
+      background-position: center 0;
+    }
+
+    50% {
+      background-position: 200% center;
+    }
+  }
 }
