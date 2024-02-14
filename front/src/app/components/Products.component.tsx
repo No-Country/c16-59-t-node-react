@@ -8,16 +8,17 @@ export const Products = async () => {
     // Infinite Horizontal Scroll Animation stop mouseover
     // documentacion - informacion:
     // https://tailwindcss.com/blog/tailwindcss-v3-4#style-children-with-the-variant
+    // https://www.builder.io/blog/scrolling-logo-animation-tailwindcss
     // https://codepen.io/wschern/pen/gMXwMa
     // https://stackoverflow.com/questions/59404946/css-animation-endless-horizontal-scroller-pause-on-mouseover
     // https://cruip.com/create-an-infinite-horizontal-scroll-animation-with-tailwind-css/
     // https://cruip-tutorials.vercel.app/logo-carousel/
 
     // editar el tiempo segun la cantidad de productos animate-infinite-scroll en tailwind.config.js
-    <div className="w-full inline-flex flex-nowrap overflow-hidden">
-      <ul className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll">
+    <div className="products-totals group">
+      <ul className="products-item group-hover:paused ">
         {products.map((product: any) => (
-          <li key={product.id} className="hover:[animation-play-state:paused]">
+          <li key={product.id}>
             <Image
               src={product.image}
               alt={product.title}
@@ -27,12 +28,9 @@ export const Products = async () => {
           </li>
         ))}
       </ul>
-      <ul
-        className="flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none animate-infinite-scroll"
-        aria-hidden="true"
-      >
+      <ul className="products-item group-hover:paused" aria-hidden="true">
         {products.map((product: any) => (
-          <li key={product.id} className="hover:[animation-play-state:paused]">
+          <li key={product.title}>
             <Image
               src={product.image}
               alt={product.title}

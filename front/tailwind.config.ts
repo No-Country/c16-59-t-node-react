@@ -85,10 +85,6 @@ const config = {
         // editar el tiempo segun la cantidad de productos
         "infinite-scroll": "infinite-scroll 50s linear infinite",
       },
-      animationPlayState: {
-        // Definir una nueva animación llamada "paused"
-        paused: "paused",
-      },
     },
   },
   plugins: [require("tailwindcss-animate"), nextui()],

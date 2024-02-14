@@ -5,7 +5,7 @@ export const NavBar = () => {
   return (
     <Navbar className="w-full max-w-7xl mx-auto bg-principal">
       <NavbarBrand className="flex justify-start items-start gap-2">
-        <div className="w-4 md:w-6">
+        <div className="w-6">
           <IconHuerta />
         </div>
         <div className="flex flex-col">
@@ -15,11 +15,20 @@ export const NavBar = () => {
           </span>
         </div>
       </NavbarBrand>
-      <NavbarContent justify="end">
-        <User />
-        <QuestionMark />
-        <Phone />
-        <ThemeSwitcher />
+      <NavbarContent
+        justify="end"
+        className="active:[&_svg]:stroke-black/25 active:[&_svg]:fill-black/10"
+      >
+        <button>
+          <User />
+        </button>
+        <button>
+          <QuestionMark />
+        </button>
+        <button>
+          <Phone />
+        </button>
+        {/* <ThemeSwitcher /> */}
       </NavbarContent>
     </Navbar>
   );
