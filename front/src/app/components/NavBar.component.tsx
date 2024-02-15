@@ -3,8 +3,8 @@ import { IconHuerta, Phone, QuestionMark, User } from "./";
 
 export const NavBar = () => {
   return (
-    <Navbar className="w-full max-w-10xl mx-auto bg-principal">
-      <NavbarBrand className="flex justify-start items-start gap-2">
+    <Navbar className="bg-principal">
+      <NavbarBrand className="w-[50vw] justify-start items-start gap-2">
         <div className="w-6">
           <IconHuerta />
         </div>
@@ -17,7 +17,7 @@ export const NavBar = () => {
       </NavbarBrand>
       <NavbarContent
         justify="end"
-        className="active:[&_svg]:stroke-black/25 active:[&_svg]:fill-black/10"
+        className="w-[50vw] active:[&_svg]:stroke-black/25 active:[&_svg]:fill-black/10"
       >
         <button>
           <User />
