@@ -5,9 +5,9 @@ export const Footer = () => {
   return (
     
         <div className="footer">
-        <span>SERVICIO AL CLIENTE</span>
-        <span>© 2024 Next.js Footer</span>
-        <span>CONTÁCTANOS</span>
+        <strong>SERVICIO AL CLIENTE</strong>
+        <span>© La Huerta 2024. All Rights Reserved.</span>
+        <strong>CONTÁCTANOS</strong>
 
         </div>
       );
