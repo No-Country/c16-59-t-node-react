@@ -13,7 +13,11 @@ export default async function CatalogPage() {
   return (
     <div>
       <NavBar />
-      <AccordionCatalog products={products} />
+      <AccordionCatalog
+      // products={products}
+      // frutas={frutas}
+      // productsEnvasados={productsEnvasados}
+      />
     </div>
   );
 }
