@@ -1,3 +1,1 @@
-export * from './Vegetables.component';
-
-
+export * from "./AccordionCatalog.component";
