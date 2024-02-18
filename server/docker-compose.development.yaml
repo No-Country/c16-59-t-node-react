@@ -11,7 +11,7 @@ services:
     container_name: la-huerta_develop
     restart: always
     ports:
-      - ${PORT}:${PORT}
+      - 8008:8008
 
   db:
     image: postgres:15.4
@@ -34,7 +34,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: "admin@admin.com"
       PGADMIN_DEFAULT_PASSWORD: "admin"
     ports:
-      - "80:80"
+      - 80:80
     volumes:
       - ./pgadmin:/var/lib/pgadmin
       - ./pgadmin:/certs/server.cert
