@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "phantom-marca.unidadeditorial.es",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

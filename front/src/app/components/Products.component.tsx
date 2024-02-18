@@ -15,31 +15,33 @@ export const Products = async () => {
     // https://cruip-tutorials.vercel.app/logo-carousel/
 
     // editar el tiempo segun la cantidad de productos animate-infinite-scroll en tailwind.config.js
-    <div className="products-totals group">
-      <ul className="products-item group-hover:paused ">
-        {products.map((product: any) => (
-          <li key={product.id}>
-            <Image
-              src={product.image}
-              alt={product.title}
-              width={200}
-              height={200}
-            />
-          </li>
-        ))}
-      </ul>
-      <ul className="products-item group-hover:paused" aria-hidden="true">
-        {products.map((product: any) => (
-          <li key={product.title}>
-            <Image
-              src={product.image}
-              alt={product.title}
-              width={200}
-              height={200}
-            />
-          </li>
-        ))}
-      </ul>
+    <div className="w-[90vw] lg:w-[70vw] m-auto">
+      <div className="products-totals group">
+        <ul className="products-item group-hover:paused ">
+          {products.map((product: any) => (
+            <li key={product.id}>
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={200}
+                height={200}
+              />
+            </li>
+          ))}
+        </ul>
+        <ul className="products-item group-hover:paused" aria-hidden="true">
+          {products.map((product: any) => (
+            <li key={product.title}>
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={200}
+                height={200}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };

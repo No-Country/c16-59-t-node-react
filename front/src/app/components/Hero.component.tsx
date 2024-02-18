@@ -2,9 +2,9 @@ import { IconHuerta } from ".";
 
 export const Hero = () => {
   return (
-    <div className="relative">
-      <div className="w-[90vw] h-[80px] sm:h-[130px] lg:w-[70vw] lg:h-[150px] bg-principal z-0"></div>
-      <div className="w-[90vw] h-[50px] sm:h-[80px] lg:w-[70vw] lg:h-[100px] bg-secundario z-0"></div>
+    <div className="relative m-auto">
+      <div className="w-[90vw] h-[80px] sm:h-[130px] lg:w-[70vw] lg:h-[150px] bg-primary-yellow z-0 m-auto"></div>
+      <div className="w-[90vw] h-[50px] sm:h-[80px] lg:w-[70vw] lg:h-[100px] bg-secondary-orange z-0 m-auto"></div>
       <div className="absolute top-0 left-0 w-full h-full flex gap-6 justify-center items-center z-10 ">
         <div className="mt-[-20px] size-14 sm:mt-[-40px] sm:size-20 lg:mt-[-60px] lg:size-28">
           <IconHuerta />
