@@ -1,9 +1,9 @@
 import { getProdCatalog } from "@/app/actions";
-import { NavBar } from "@/app/components";
 import { AccordionCatalog } from "./components";
+import { Title } from "../components";
 
 export default async function CatalogPage() {
-  // const products = await getProdCatalog();
+  const products = await getProdCatalog();
 
   // aqui haz las peticiones para frutas, vegetales y productos envasados
   // const frutas = await getFruitCatalog();
@@ -11,9 +11,13 @@ export default async function CatalogPage() {
   // const productsEnvasados = await getProdComesCatalog();
 
   return (
-    <div>
-      <NavBar />
-      <AccordionCatalog products={products} />
-    </div>
+    <>
+      <Title>Productos del Mes</Title>
+      <AccordionCatalog
+        products={products}
+        // frutas={frutas}
+        // productsEnvasados={productsEnvasados}
+      />
+    </>
   );
 }

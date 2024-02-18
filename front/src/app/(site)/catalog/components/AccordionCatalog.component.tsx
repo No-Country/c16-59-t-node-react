@@ -31,13 +31,25 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   return (
     <div>
       <Accordion variant="splitted">
-        <AccordionItem key="1" aria-label="Accordion 1" title="Accordion 1">
+        <AccordionItem
+          key="1"
+          aria-label="Verduras de temporada"
+          title="Verduras de temporada"
+        >
           {renderProducts(products)}
         </AccordionItem>
-        <AccordionItem key="2" aria-label="Accordion 2" title="Accordion 2">
+        <AccordionItem
+          key="2"
+          aria-label="Frutas de temporada"
+          title="Frutas de temporada"
+        >
           {renderProducts(products)}
         </AccordionItem>
-        <AccordionItem key="3" aria-label="Accordion 3" title="Accordion 3">
+        <AccordionItem
+          key="3"
+          aria-label="Procesos naturales"
+          title="Procesos naturales"
+        >
           {renderProducts(products)}
         </AccordionItem>
       </Accordion>
