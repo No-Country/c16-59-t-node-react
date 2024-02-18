@@ -75,8 +75,8 @@
     @apply bg-background text-foreground;
   }
 
-  .btn-menu {
-    @apply h-[40px] w-[300px] shadow-lg shadow-primary/50;
+  .btn {
+    @apply shadow-lg shadow-primary/50;
   }
 
   .products-totals {
@@ -85,6 +85,10 @@
 
   .products-item {
     @apply flex items-center justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none [&_img]:size-44 [&_img]:sm:size-48 [&_img]:lg:size-52 animate-infinite-scroll *:cursor-pointer
+  }
+
+  .accordion-item {
+    @apply [&_button]:px-4 [&_button]:bg-tertiary-green [&_svg]:text-black font-semibold [&_section]:px-4 [&_span]:text-xs sm:[&_span]:text-sm lg:[&_span]:text-base [&_section]:font-medium [&_section]:text-xs sm:[&_section]:text-sm lg:[&_section]:text-base
   }
 }
 
