@@ -19,7 +19,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
         {productList.map((product: any) => (
           <li key={product.id}>
             <p className="text-xs">{product.title.substring(0, 10)}</p>
-            <img
+            <Image
               src={product.pictureUrl}
               alt={product.title}
               width={200}

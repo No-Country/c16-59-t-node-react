@@ -4,6 +4,7 @@ export * from "./NavBar.component";
 export * from "./Products.component";
 export * from "./Menu.component";
 export * from "./Footer.component";
+export * from "./ButtonStandard.component";
 
 // svg components
 export * from "./svg/IconHuerta.component";
