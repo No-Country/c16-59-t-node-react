@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { getFruitCatalog } from "@/utils/fetchApi"
 
 export const Products = async () => {
-  const res = await fetch("https://fakestoreapi.com/products");
-  const products = await res.json();
+  const products = await getFruitCatalog()
 
   return (
     // Infinite Horizontal Scroll Animation stop mouseover
