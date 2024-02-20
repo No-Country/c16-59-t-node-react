@@ -33,7 +33,12 @@ export default function Quantity() {
         2. Escoge las cantidades a comprar
       </p>
 
-      <Accordion variant="splitted" className="gap-6 sm:px-8">
+      <Accordion
+        variant="splitted"
+        className="gap-6 sm:px-8"
+        selectionMode="multiple"
+        defaultExpandedKeys={["1", "2", "3"]}
+      >
         <AccordionItem
           key="1"
           aria-label="Verduras de temporada"
