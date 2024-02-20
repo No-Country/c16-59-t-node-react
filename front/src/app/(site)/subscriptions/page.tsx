@@ -4,7 +4,7 @@ import { getFruitCatalog, getVegetablesCatalog, getProcessedFoodsCatalog } from 
 import { ButtonStandard, Footer } from "@/app/components";
 
 
-export default async function CatalogPage() {
+export default async function Subscriptions() {
 
   // aqui haz las peticiones para frutas, vegetales y productos envasados
   const fruits: any = await getFruitCatalog();
@@ -16,15 +16,23 @@ export default async function CatalogPage() {
 
   return (
     <>
-      <Title>Productos del Mes</Title>
+      <Title>La Huerta Box - EXPRESS</Title>
+      <div className="flex flex-col  ">
+      <strong>1. Escoge los productos que deseas clickeando sobre cada ítem:  </strong>
       <AccordionCatalog
         vegetables={vegetables}
         fruits={fruits}
         processedFoods={processedFoods}
       />
-      <ButtonStandard primary route="/" >
-        Volver al inicio
+      <div className="flex justify-around w-80">
+      <ButtonStandard secondary route="/" >
+        Anterior
       </ButtonStandard>
+      <ButtonStandard primary route="/" >
+        Siguiente
+      </ButtonStandard>
+      </div>
+      </div>
       <Footer/>
     </>
 

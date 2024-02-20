@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { getFruitCatalog } from "@/utils/fetchApi"
 
 export const Products = async () => {
-  const res = await fetch("https://fakestoreapi.com/products");
-  const products = await res.json();
+  const products = await getFruitCatalog()
 
   return (
     // Infinite Horizontal Scroll Animation stop mouseover
@@ -15,31 +15,33 @@ export const Products = async () => {
     // https://cruip-tutorials.vercel.app/logo-carousel/
 
     // editar el tiempo segun la cantidad de productos animate-infinite-scroll en tailwind.config.js
-    <div className="products-totals group">
-      <ul className="products-item group-hover:paused ">
-        {products.map((product: any) => (
-          <li key={product.id}>
-            <Image
-              src={product.image}
-              alt={product.title}
-              width={200}
-              height={200}
-            />
-          </li>
-        ))}
-      </ul>
-      <ul className="products-item group-hover:paused" aria-hidden="true">
-        {products.map((product: any) => (
-          <li key={product.title}>
-            <Image
-              src={product.image}
-              alt={product.title}
-              width={200}
-              height={200}
-            />
-          </li>
-        ))}
-      </ul>
+    <div className="w-[90vw] lg:w-[70vw] m-auto">
+      <div className="products-totals group">
+        <ul className="products-item group-hover:paused ">
+          {products.map((product: any) => (
+            <li key={product.id}>
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={200}
+                height={200}
+              />
+            </li>
+          ))}
+        </ul>
+        <ul className="products-item group-hover:paused" aria-hidden="true">
+          {products.map((product: any) => (
+            <li key={product.title}>
+              <Image
+                src={product.image}
+                alt={product.title}
+                width={200}
+                height={200}
+              />
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
