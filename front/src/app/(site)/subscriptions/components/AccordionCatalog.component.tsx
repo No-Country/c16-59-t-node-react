@@ -18,13 +18,14 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
       <ul className="flex gap-4">
         {productList.map((product: any) => (
           <li key={product.id}>
-            <p className="text-xs">{product.title.substring(0, 10)}</p>
+           
             <Image
               src={product.pictureUrl}
               alt={product.title}
-              width={200}
-              height={200}
+              width={100}
+              height={100}
             />
+             <strong className="text-xs">{product.title.substring(0, 10)}</strong>
           </li>
         ))}
       </ul>
@@ -32,9 +33,9 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   };
 
   return (
-    <div>
+    <div  >
       <Accordion
-        className="accordion"
+        className="accordion "
         variant="splitted"
         selectionMode="multiple"
         defaultExpandedKeys={["1", "2", "3"]}
