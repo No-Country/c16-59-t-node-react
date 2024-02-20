@@ -69,6 +69,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "ew.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

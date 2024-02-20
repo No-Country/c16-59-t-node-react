@@ -87,7 +87,7 @@ export default function Quantity() {
           hola
         </AccordionItem>
       </Accordion>
-      <div className="bottom-0 w-full m-auto flex justify-center items-center gap-4">
+      <div className="w-full m-auto flex justify-center items-center gap-4">
         <ButtonStandard secondary route="/products">
           Anterior
         </ButtonStandard>

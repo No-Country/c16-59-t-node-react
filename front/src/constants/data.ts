@@ -19,7 +19,7 @@ export const DELIVERY_OPTIONS = [
       },
     ],
     image:
-      "https://phantom-marca.unidadeditorial.es/7937fb07c87d989a985bad544c17f7ca/resize/828/f/webp/assets/multimedia/imagenes/2023/09/05/16939288675740.jpg",
+      "https://ew.com/thmb/nOnmG03qZZZEEnzCfFZjAuIAvAA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/got-finale-dragon-2000-c99bbe45e09f405296ec0f95db133d20.jpg",
     titleButton: "Puerta a puerta",
   },
   {
@@ -41,7 +41,7 @@ export const DELIVERY_OPTIONS = [
       },
     ],
     image:
-      "https://phantom-marca.unidadeditorial.es/7937fb07c87d989a985bad544c17f7ca/resize/828/f/webp/assets/multimedia/imagenes/2023/09/05/16939288675740.jpg",
+      "https://ew.com/thmb/nOnmG03qZZZEEnzCfFZjAuIAvAA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/got-finale-dragon-2000-c99bbe45e09f405296ec0f95db133d20.jpg",
     titleButton: "En nuestra sede",
   },
 ];
