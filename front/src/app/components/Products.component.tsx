@@ -1,9 +1,8 @@
 import Image from "next/image";
-import { getFruitCatalog } from "@/utils/fetchApi"
+import { getFruitCatalog } from "@/utils/fetchApi";
 
 export const Products = async () => {
-  const products = await getFruitCatalog()
-
+  const products = await getFruitCatalog();
   return (
     // Infinite Horizontal Scroll Animation stop mouseover
     // documentacion - informacion:
@@ -15,13 +14,13 @@ export const Products = async () => {
     // https://cruip-tutorials.vercel.app/logo-carousel/
 
     // editar el tiempo segun la cantidad de productos animate-infinite-scroll en tailwind.config.js
-    <div className="w-[90vw] lg:w-[70vw] m-auto">
+    <div className="m-auto">
       <div className="products-totals group">
         <ul className="products-item group-hover:paused ">
           {products.map((product: any) => (
             <li key={product.id}>
               <Image
-                src={product.image}
+                src={product.pictureUrl}
                 alt={product.title}
                 width={200}
                 height={200}
@@ -31,9 +30,9 @@ export const Products = async () => {
         </ul>
         <ul className="products-item group-hover:paused" aria-hidden="true">
           {products.map((product: any) => (
-            <li key={product.title}>
+            <li key={product.id}>
               <Image
-                src={product.image}
+                src={product.pictureUrl}
                 alt={product.title}
                 width={200}
                 height={200}
