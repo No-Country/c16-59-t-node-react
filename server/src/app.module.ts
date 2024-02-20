@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
+import { CloudinaryModule } from './cloudinary/cloudinary.module';
+import { CommonModule } from './common/common.module';
 
 @Module({
   imports: [
@@ -21,6 +23,10 @@ import { ProductsModule } from './products/products.module';
     }),
 
     ProductsModule,
+
+    CloudinaryModule,
+
+    CommonModule,
   ],
 })
 export class AppModule {}

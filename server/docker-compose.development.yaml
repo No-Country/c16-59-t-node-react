@@ -1,17 +1,17 @@
 version: '3.8'
 
 services:
-  la-huerta-app_develop:
-    depends_on:
-      - db
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: la-huerta-server
-    container_name: la-huerta_develop
-    restart: always
-    ports:
-      - 8008:8008
+  # la-huerta-app_develop:
+  #   depends_on:
+  #     - db
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   image: la-huerta-server
+  #   container_name: la-huerta_develop
+  #   restart: always
+  #   ports:
+  #     - 8008:8008
 
   db:
     image: postgres:15.4

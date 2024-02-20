@@ -6,28 +6,48 @@ import {
   Patch,
   Param,
   Delete,
+  UseInterceptors,
+  UploadedFiles,
+  Query,
+  ParseUUIDPipe,
 } from '@nestjs/common';
 import { ProductsService } from './products.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { CloudinaryService } from 'src/cloudinary/cloudinary.service';
+import { FilesInterceptor } from '@nestjs/platform-express';
+import { PaginationDto } from 'src/common/dto/pagination.dto';
 
 @Controller('products')
 export class ProductsController {
-  constructor(private readonly productsService: ProductsService) {}
+  constructor(
+    private readonly productsService: ProductsService,
+    private readonly cloudinaryService: CloudinaryService,
+  ) {}
 
   @Post()
   create(@Body() createProductDto: CreateProductDto) {
     return this.productsService.create(createProductDto);
   }
 
-  @Get()
-  findAll() {
-    return this.productsService.findAll();
+  //To stablish tthe route products/image-upload
+  @Post('image-upload')
+  @UseInterceptors(FilesInterceptor('file', 5))
+  uploadImage(@UploadedFiles() files: Express.Multer.File[]) {
+    const uploadPromises = files.map((file) =>
+      this.cloudinaryService.uploadFile(file),
+    );
+    return Promise.all(uploadPromises);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.productsService.findOne(+id);
+  @Get()
+  findAll(@Query() paginationDto: PaginationDto) {
+    return this.productsService.findAll(paginationDto);
+  }
+
+  @Get(':term')
+  findOne(@Param('term') term: string) {
+    return this.productsService.findOne(term);
   }
 
   @Patch(':id')
@@ -36,7 +56,7 @@ export class ProductsController {
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.productsService.remove(+id);
+  remove(@Param('id', ParseUUIDPipe) id: string) {
+    return this.productsService.remove(id);
   }
 }
