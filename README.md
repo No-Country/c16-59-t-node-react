@@ -3,8 +3,21 @@
 <hr/>
 
 ## STACK Front-End:
+![TypeScript](https://img.shields.io/badge/TYPESCRIPT-%236DA55F?style=social&logo=typescript) 
+![Static Badge](https://img.shields.io/badge/NEXT.JS-%236DA55F?style=social&logo=next.js)
+![Static Badge](https://img.shields.io/badge/TAILWIND-%236DA55F?style=social&logo=tailwindcss)
+
 
 ## STACK Back-End:
+![TypeScript](https://img.shields.io/badge/TYPESCRIPT-%236DA55F?style=social&logo=typescript) 
+![NestJS](https://img.shields.io/badge/NEST.JS-%23AE0E0E?style=social&logo=NestJS) 
+![NodeJS](https://img.shields.io/badge/NODE.JS-%236DA55F?style=social&logo=node.js) 
+![Express](https://img.shields.io/badge/EXPRESS.JS-%236DA55F?style=social&logo=express) 
+![Eslint](https://img.shields.io/badge/ESLINT-%236DA55F?style=social&logo=eslint) 
+
+
+
+
 
 <hr/>
 
