@@ -38,7 +38,7 @@
 ## UX-UI:
 | <img src="https://media.licdn.com/dms/image/D4E35AQH7xwaZGDWjMg/profile-framedphoto-shrink_200_200/0/1705944050452?e=1709143200&v=beta&t=3CcevxWqEeyuZ7VSkkubYDLwCZpmUiwSWAmtRvSDq3M" width=80 /> |
 |:-:|
-| **Laura M. Gauque C.** |
+| **Laura M. Guauque C.** |
 | <a href="https://www.linkedin.com/in/laura-m-guauque-c/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> |
 
 ## TL:
