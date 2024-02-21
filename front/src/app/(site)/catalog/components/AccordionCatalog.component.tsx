@@ -34,17 +34,23 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   return (
     <div>
       <Accordion
-        className="accordion"
+        className="accordion gap-6 sm:px-8"
         variant="splitted"
         selectionMode="multiple"
         defaultExpandedKeys={["1", "2", "3"]}
       >
-        <AccordionItem key="1" aria-label="Accordion 1" title="Vegetales de temporada">
+        <AccordionItem
+          key="1"
+          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
+          aria-label="Accordion 1"
+          title="Vegetales de temporada"
+        >
           {renderProducts(vegetables)}
         </AccordionItem>
 
         <AccordionItem
           key="2"
+          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
           aria-label="Accordion 2"
           title="Frutas de temporada"
         >
@@ -52,6 +58,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
         </AccordionItem>
 
         <AccordionItem
+        className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
           key="3"
           aria-label="Accordion 3"
           title="Procesados naturales"
