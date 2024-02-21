@@ -13,7 +13,10 @@
 ![NestJS](https://img.shields.io/badge/NEST.JS-%23AE0E0E?style=social&logo=NestJS) 
 ![NodeJS](https://img.shields.io/badge/NODE.JS-%236DA55F?style=social&logo=node.js) 
 ![Express](https://img.shields.io/badge/EXPRESS.JS-%236DA55F?style=social&logo=express) 
-![Eslint](https://img.shields.io/badge/ESLINT-%236DA55F?style=social&logo=eslint) 
+![Static Badge](https://img.shields.io/badge/POSTGRESQL-%236DA55F?style=social&logo=postgreSQL)
+![Static Badge](https://img.shields.io/badge/DOCKER-%236DA55F?style=social&logo=docker)
+
+![Eslint](https://img.shields.io/badge/ESLINT-%236DA55F?style=social&logo=eslint)
 
 
 
