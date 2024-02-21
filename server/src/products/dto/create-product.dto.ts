@@ -27,7 +27,7 @@ export class CreateProductDto {
   @IsOptional()
   stock?: number;
 
-  @IsIn(['fruit', 'vegetable', 'processed food'])
+  @IsIn(['fruit', 'vegetable', 'processed-food'])
   category: string[];
 
   @IsString({ each: true })
