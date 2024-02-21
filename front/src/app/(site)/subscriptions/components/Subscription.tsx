@@ -1,6 +1,7 @@
-"use-client"
+"use-client";
 import { Button2 } from "@/app/components/Button2";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
+import clsx from "clsx";
 import Image from "next/image";
 import { Price, SubscriptionName } from ".";
 import { UnorderedList } from "../containers";
@@ -22,15 +23,25 @@ export const Subscription: React.FC<SubscriptionProps> = ({
   img,
   color,
 }) => {
-  const borderColor = `border-${color}`
+  const borderColor = `border-${color}`;
   return (
-    <Card className={`grid grid-cols-3 ${borderColor} border-dotted m-[10px]`}>
-      <div className="col-span-2">
-        <Price price={price} bgColor={color} />
-        <CardHeader>
+    <Card className="relative grid grid-cols-3 m-[20px] pt-0 rounded-none overflow-visible">
+      <div className={clsx(
+        "col-span-2",
+        "pt-0",
+        "pl-5",
+        "border-dotted",
+        "border-2",
+        "border-tertiary-green" && borderColor,
+        "border-secondary-orange" && borderColor,
+        "border-primary-yellow" && borderColor
+        )}>
+        <CardHeader className="pb-0">
+          <Price price={price} color={color} />
           <SubscriptionName>{title}</SubscriptionName>
         </CardHeader>
-        <CardBody>
+        <CardBody className="pt-0">
+          <span className="pb-3">Contiene*:</span>
           <UnorderedList data={content} />
         </CardBody>
         <CardFooter className="col-span-2 flex justify-center items-center">
@@ -38,13 +49,13 @@ export const Subscription: React.FC<SubscriptionProps> = ({
         </CardFooter>
       </div>
       {/* <div className="col-span-1"> */}
-        <Image
-          className="object-cover col-span-1 h-full"
-          src={img}
-          alt={title}
-          width={379.69}
-          height={238.48}
-        />
+      <Image
+        className="object-cover col-span-1 h-full"
+        src={img}
+        alt={title}
+        width={379.69}
+        height={238.48}
+      />
       {/* </div> */}
     </Card>
   );
