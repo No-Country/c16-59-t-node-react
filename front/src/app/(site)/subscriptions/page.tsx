@@ -1,7 +1,13 @@
-export default function Products() {
+import { Title } from "../components";
+import { Statement } from "./components";
+import SubscriptionsContainer from "./containers/SubcriptionsContainer";
+import { data } from "./utils/subscriptionOpts";
+export default function SubscriptionsPage() {
   return (
     <div>
-      <h1>Products</h1>
+      <Title>La Huerta Box</Title>
+      <Statement>Escoge la suscripción que se adapte a tus necesidades:</Statement>
+      <SubscriptionsContainer options={data}/>
     </div>
   );
 }
