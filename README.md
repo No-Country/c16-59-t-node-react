@@ -1,1 +1,38 @@
-# c16-59-t-node-react
+# La Huerta
+
+<hr/>
+
+## STACK Front-End:
+
+## STACK Back-End:
+
+<hr/>
+
+## Front-End:
+| <img src="https://media.licdn.com/dms/image/D4D35AQERFbtxnWVfuQ/profile-framedphoto-shrink_200_200/0/1701892661882?e=1709143200&v=beta&t=ljGU7q_ELPdPs7t8vp37SzQuFxaazF1VqwjWM4t8gcA" width=80 /> | <img src="https://media.licdn.com/dms/image/D4E35AQH5Ycy6V67tuA/profile-framedphoto-shrink_200_200/0/1692030780622?e=1709143200&v=beta&t=1ke3UlwMVpSH5-tVE8wNqOosg5MmE4QDDOZFMWnS4jo" width=80 /> | <img src="https://media.licdn.com/dms/image/D5603AQEeE5xBumFmmA/profile-displayphoto-shrink_200_200/0/1703193203546?e=1714003200&v=beta&t=7YIerGXtZBnmnVyqu5FiHsGW8ED_Oo-wDgNDMBAZZCU" width=80 /> |
+|:-:|:-:|:-:|
+| **Carla Vallejos Ari** | **Luis Angel Guzman** | **Wagner Dueñas Remache** |
+| <a href="https://github.com/nemobruni"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> | <a href="https://github.com/lags2022"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> | <a href="https://github.com/WSmithDR"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> |
+| <a href="https://www.linkedin.com/in/carla-vallejos-ari-61699021b/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> | <a href="https://www.linkedin.com/in/devluisgs/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> | <a href="https://www.linkedin.com/in/wsmith123/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> |
+
+## Back-End:
+| <img src="https://media.licdn.com/dms/image/C4E03AQHIQfZVSY87fg/profile-displayphoto-shrink_200_200/0/1649571012080?e=1714003200&v=beta&t=IuU81E6HThDcnoVP01VznRPA-eXedaJuExvPoO5sM8U" width=80 /> |
+|:-:|
+| **Marco Antonio Reyes Del Angel** |
+| <a href="https://github.com/MarkMarda"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> |
+| <a href="https://www.linkedin.com/in/marda/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> |
+
+## UX-UI:
+| <img src="https://media.licdn.com/dms/image/D4E35AQH7xwaZGDWjMg/profile-framedphoto-shrink_200_200/0/1705944050452?e=1709143200&v=beta&t=3CcevxWqEeyuZ7VSkkubYDLwCZpmUiwSWAmtRvSDq3M" width=80 /> |
+|:-:|
+| **Laura M. Gauque C.** |
+| <a href="https://www.linkedin.com/in/laura-m-guauque-c/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> |
+
+## TL:
+| <img src="https://media.licdn.com/dms/image/D4D03AQG_SPxvT82YWg/profile-displayphoto-shrink_200_200/0/1705012128059?e=1714003200&v=beta&t=vf8OemAyiMGdlBMZf3m6fQw3N-D_E0LlDMPXCDQj7T0" width=80 /> |
+|:-:|
+| **Jerlib Jose González Vega** |
+| <a href="https://github.com/JerlibGnzlz"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> |
+| <a href="https://www.linkedin.com/in/jerlibgnzlz/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> |
+
+<hr/>
