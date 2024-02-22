@@ -1,33 +1,20 @@
-// 1era forma de renderizar
-"use client";
-
-import { useEffect, useState } from "react";
-import { NavBar } from "./components/NavBar";
-import { Producto } from "./interfaces/productos";
-import { Product } from "./components";
+import { Footer, Hero, Menu, Products } from "./components";
 
 export default function Home() {
-  const [productos, setProductos] = useState<Producto[]>([]);
-
-  useEffect(() => {
-    fetch("https://api.escuelajs.co/api/v1/products")
-      .then((res) => res.json())
-      .then((data) => setProductos(data));
-  }, []);
-
   return (
-    <main>
-      <NavBar />
-      {productos.map(({ id, title, price, category }) => (
-        <Product
-          key={id}
-          id={id}
-          title={title}
-          price={price}
-          category={category}
-          images={category.image}
-        />
-      ))}
-    </main>
+    <>
+      <Hero />
+      <div className="h-[50px] sm:h-[80px] lg:h-[100px] flex flex-col items-center justify-center gap-2 text-secondary-orange m-auto">
+        <h3 className="font-bold text-sm sm:text-xl lg:text-2xl">
+          Productos frescos de manos campesinas
+        </h3>
+        <h5 className="font-medium text-xs sm:text-base lg:text-lg">
+          Consume producto fresco y local
+        </h5>
+      </div>
+      <Menu />
+      <Products />
+      <Footer/>
+    </>
   );
 }

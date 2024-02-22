@@ -4,16 +4,85 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "placeimg.com",
+        hostname: "s3-alpha-sig.figma.com",
+        port: "",
+        pathname: "/img/**",
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.example.com',
+        port: '',
+        pathname: '/account123/**',
+      },
+      {
+        protocol: "https",
+        hostname: "phantom-marca.unidadeditorial.es",
+        port: "",
+        pathname: "/**",
+      },
+      
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
         port: "",
         pathname: "/**",
       },
       {
         protocol: "https",
-        hostname: "i.imgur.com",
+        hostname: "www.cucinare.tv",
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "elpoderdelconsumidor.org",
+        port: "",
+        pathname: "/**",
+      },
+
+      
+
+      {
+        protocol: "https",
+        hostname: "s1.eestatic.com",
+        port: "",
+        pathname: "/**",
+      },
+
+      
+
+      {
+        protocol: "https",
+        hostname: "semillasypi.org.ar",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "encrypted-tbn0.gstatic.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "media.scoolinary.app",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "cdn0.recetasgratis.net",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "www.goya.com",
+        port: "",
+        pathname: "/**",
+      },
+
+
     ],
   },
 };
