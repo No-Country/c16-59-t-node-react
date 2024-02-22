@@ -20,7 +20,7 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-      
+
       {
         protocol: "https",
         hostname: "encrypted-tbn0.gstatic.com",
@@ -39,18 +39,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-
-      
-
       {
         protocol: "https",
         hostname: "s1.eestatic.com",
         port: "",
         pathname: "/**",
       },
-
-      
-
       {
         protocol: "https",
         hostname: "semillasypi.org.ar",
@@ -81,8 +75,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-
-
+      {
+        protocol: "https",
+        hostname: "ew.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

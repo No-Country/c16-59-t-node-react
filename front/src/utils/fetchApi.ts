@@ -1,5 +1,5 @@
 
-import { URL_API_FRUITS, URL_API_PROCESSEDFOODS, URL_API_VEGETABLES } from "@/constants/api";
+import { URL_API_FRUITS, URL_API_PROCESSEDFOODS, URL_API_VEGETABLES } from "@/constants/data";
 import axios from "axios";
 import { cache } from "react";
 
