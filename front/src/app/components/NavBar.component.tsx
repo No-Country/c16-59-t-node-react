@@ -1,8 +1,8 @@
 "use client";
 
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
-import { IconHuerta, Phone, QuestionMark, User } from "./";
 import { useRouter } from "next/navigation";
+import { IconHuerta, Phone, QuestionMark, User } from "./";
 
 export const NavBar = () => {
   const router = useRouter();
