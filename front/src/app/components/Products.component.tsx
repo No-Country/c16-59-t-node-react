@@ -1,5 +1,5 @@
-import Image from "next/image";
 import { getProducts } from "@/utils/fetchApi";
+import Image from "next/image";
 import { ProductsApi } from "../interfaces/products";
 
 export const Products = async () => {

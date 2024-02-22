@@ -22,7 +22,7 @@ export const data: Subscription[] = [
   },
   {
     id: 2,
-    title: "La Huerta Box - SEMANAL",
+    title: "La Huerta Box - MENSUAL",
     price: "$20.000",
     content: [
       "2 opciones de verdura de temporada",
@@ -34,7 +34,7 @@ export const data: Subscription[] = [
   },
   {
     id: 3,
-    title: "La Huerta Box - SEMANAL",
+    title: "La Huerta Box - EXPRESS",
     price: "$20.000",
     content: [
       "︎Opciones de verdura de temporada a preferencia",
