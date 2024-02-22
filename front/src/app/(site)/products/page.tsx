@@ -35,12 +35,8 @@ export default async function Subscriptions() {
       
       <div className="flex justify-around w-80">
         
-      <ButtonStandard secondary route="/" >
-        Anterior
-      </ButtonStandard>
-      <ButtonStandard primary route="/" >
-        Siguiente
-      </ButtonStandard>
+     <Button2 children="Anterior" bgColor="secondary-orange" route="/"></Button2>
+     <Button2 children="Siguiente" bgColor="primary-yellow" route="/"></Button2>
       
       </div>
       </div>
