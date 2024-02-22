@@ -114,7 +114,7 @@ export class ProductsService {
       const queryBuilder = this.productRepository.createQueryBuilder('prod');
 
       product = await queryBuilder
-        .where('UPPER(title) = :title or slug = :slug', {
+        .where('UPPER(name) = :name or slug = :slug', {
           name: term.toUpperCase(),
           slug: term.toLowerCase(),
         })
@@ -125,6 +125,26 @@ export class ProductsService {
     if (!product) {
       throw new NotFoundException(`Product with ${term} was not found`);
     }
+
+    return product;
+  }
+
+  async findCategory(category: string) {
+    //Validate category
+    const product = await this.dataSource
+      .getRepository(Product)
+      .createQueryBuilder('product')
+      .select([
+        'product.category',
+        'product.price',
+        'product.salesPresentation',
+        'product.id',
+        'product.description',
+        'product.name',
+      ])
+      .leftJoinAndSelect('product.image', 'prodImage')
+      .where({ category: category })
+      .getMany();
 
     return product;
   }
@@ -153,7 +173,6 @@ export class ProductsService {
   }
 
   private handleDBExceptions(error: any) {
-    // console.log(error);
     if (error.code === '23505') {
       throw new BadRequestException(error.detail);
     }
