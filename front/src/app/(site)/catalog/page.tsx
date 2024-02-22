@@ -5,6 +5,7 @@ import { ButtonStandard, Footer } from "@/app/components";
 import { Button2 } from "@/app/components/Button2";
 
 
+
 export default async function CatalogPage() {
 
   // aqui haz las peticiones para frutas, vegetales y productos envasados
@@ -28,7 +29,7 @@ export default async function CatalogPage() {
         Volver al inicio
       </ButtonStandard>
 
-    
+     
 
       <Footer/>
     </>
