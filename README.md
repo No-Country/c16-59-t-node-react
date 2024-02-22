@@ -3,8 +3,21 @@
 <hr/>
 
 ## STACK Front-End:
+![TypeScript](https://img.shields.io/badge/TYPESCRIPT-%236DA55F?style=social&logo=typescript) 
+![Static Badge](https://img.shields.io/badge/NEXT.JS-%236DA55F?style=social&logo=next.js)
+![Static Badge](https://img.shields.io/badge/TAILWIND-%236DA55F?style=social&logo=tailwindcss)
+
 
 ## STACK Back-End:
+![TypeScript](https://img.shields.io/badge/TYPESCRIPT-%236DA55F?style=social&logo=typescript) 
+![NestJS](https://img.shields.io/badge/NEST.JS-%23AE0E0E?style=social&logo=NestJS) 
+![NodeJS](https://img.shields.io/badge/NODE.JS-%236DA55F?style=social&logo=node.js) 
+![Express](https://img.shields.io/badge/EXPRESS.JS-%236DA55F?style=social&logo=express) 
+![Eslint](https://img.shields.io/badge/ESLINT-%236DA55F?style=social&logo=eslint) 
+
+
+
+
 
 <hr/>
 
@@ -25,7 +38,7 @@
 ## UX-UI:
 | <img src="https://media.licdn.com/dms/image/D4E35AQH7xwaZGDWjMg/profile-framedphoto-shrink_200_200/0/1705944050452?e=1709143200&v=beta&t=3CcevxWqEeyuZ7VSkkubYDLwCZpmUiwSWAmtRvSDq3M" width=80 /> |
 |:-:|
-| **Laura M. Gauque C.** |
+| **Laura M. Guauque C.** |
 | <a href="https://www.linkedin.com/in/laura-m-guauque-c/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> |
 
 ## TL:
