@@ -1,6 +1,8 @@
-export const URL_API_FRUITS = "https://la-huerta.onrender.com/api/v1/products/category/fruit";
+export const URL_API_FRUITS =
+  "https://la-huerta.onrender.com/api/v1/products/category/fruit";
 
-export const URL_API_VEGETABLES = "https://la-huerta.onrender.com/api/v1/products/category/vegetable";
+export const URL_API_VEGETABLES =
+  "https://la-huerta.onrender.com/api/v1/products/category/vegetable";
 
 export const URL_API_PROCESSEDFOODS =
   "https://la-huerta.onrender.com/api/v1/products/category/processed-food";
@@ -19,7 +21,7 @@ export const DELIVERY_OPTIONS = [
       },
     ],
     image:
-      "https://ew.com/thmb/nOnmG03qZZZEEnzCfFZjAuIAvAA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/got-finale-dragon-2000-c99bbe45e09f405296ec0f95db133d20.jpg",
+      "https://s3-alpha-sig.figma.com/img/7d13/9cf0/03175bd624aaef6d5de715d3535fa536?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=VYAfCwvypym1j4uq-qAgqXFI70IxpBlg6Lky52XhyzSSHnmKfnJkdRQpO-GUVLUcZJNn~bVKyBDMR6moWgti12hqIYo9Jl1sCfI1gjoLGKhyBa3jUbCB4nbZgbFqqR3jizL3crKwyrC4-4b~8GK8CAviAkK1seqceEsQQWydq6qRc~4OmenEorVqkcS6OSmzPhmFGVaMARgP8MhScEk4~e0itGFI~RSLgsrlBsSuLohz1F-C9Ja988vBT~A3rpfRvrFqxxDZaQUYp9kdLknW0ZGptWLhuzcoVu9ZzFRTMKYsmWPZ1K8IKnGrtiaGOWLV-anQO~KVFT7JZ9ThyO-X8Q__",
     titleButton: "Puerta a puerta",
   },
   {
@@ -41,7 +43,7 @@ export const DELIVERY_OPTIONS = [
       },
     ],
     image:
-      "https://ew.com/thmb/nOnmG03qZZZEEnzCfFZjAuIAvAA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/got-finale-dragon-2000-c99bbe45e09f405296ec0f95db133d20.jpg",
+      "https://s3-alpha-sig.figma.com/img/45f2/d289/50a274ab6c553b2b9676e007fd81a899?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=H0cVmbaS8EsLJBw48rUvQJJpyNWpg4rshKPQvjYkdEnzsMelhd-Dnp89-aibdxC6EJngwG1dkkbw4hZkuQuM9utCMCd96jbfseGkNmUPmaFcLdJPgJIr0sPSWE-y1~LsmxKnqLojZeLAJ6Z1~fGHkTJK5-Dqegae~raEya39FVvQ861kjh9KY~euo5W5RJO1uhqLCmDmjpbkZzLRW4EmgOw-J6thLc~BOjlTkJzEWNqq6jaGhtLNdoVYDMuCN37Ebpc0-4GkQD11cRK6eZ2klJYUNzA2giH~LYcB8n8~MeZitjhFyoLRiSvfIJWg8DT9dCOKaB-OjVb-x1VpXqD7uQ__",
     titleButton: "En nuestra sede",
   },
 ];

@@ -26,16 +26,18 @@ export const Subscription: React.FC<SubscriptionProps> = ({
   const borderColor = `border-${color}`;
   return (
     <Card className="relative grid grid-cols-3 m-[20px] pt-0 rounded-none overflow-visible">
-      <div className={clsx(
-        "col-span-2",
-        "pt-0",
-        "pl-5",
-        "border-dotted",
-        "border-2",
-        "border-tertiary-green" && borderColor,
-        "border-secondary-orange" && borderColor,
-        "border-primary-yellow" && borderColor
-        )}>
+      <div
+        className={clsx(
+          "col-span-2",
+          "pt-0",
+          "pl-5",
+          "border-dotted",
+          "border-2",
+          "border-tertiary-green" && borderColor,
+          "border-secondary-orange" && borderColor,
+          "border-primary-yellow" && borderColor
+        )}
+      >
         <CardHeader className="pb-0">
           <Price price={price} color={color} />
           <SubscriptionName>{title}</SubscriptionName>
@@ -45,7 +47,9 @@ export const Subscription: React.FC<SubscriptionProps> = ({
           <UnorderedList data={content} />
         </CardBody>
         <CardFooter className="col-span-2 flex justify-center items-center">
-          <Button2 bgColor={color}>Quiero {title}</Button2>
+          <Button2 bgColor={color} route="/products">
+            Quiero {title}
+          </Button2>
         </CardFooter>
       </div>
       {/* <div className="col-span-1"> */}
