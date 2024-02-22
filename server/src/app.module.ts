@@ -4,6 +4,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ProductsModule } from './products/products.module';
 import { CloudinaryModule } from './cloudinary/cloudinary.module';
 import { CommonModule } from './common/common.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 
 @Module({
   imports: [
@@ -33,6 +34,8 @@ import { CommonModule } from './common/common.module';
     CloudinaryModule,
 
     CommonModule,
+
+    SubscriptionsModule,
   ],
 })
 export class AppModule {}
