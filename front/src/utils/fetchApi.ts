@@ -5,6 +5,7 @@ import {
   URL_API_VEGETABLES,
   URL_API_PROCESSEDFOODS,
 } from "@/constants/data";
+import { PRODUCTS_URL } from "@/constants/api";
 
 export const getFruitCatalog = cache(async () => {
   const fruitResponse = await axios.get(URL_API_FRUITS);
@@ -23,3 +24,6 @@ export const getProcessedFoodsCatalog = cache(async () => {
 
   return processedFoodsResponse.data;
 });
+
+export const getProducts = () =>
+  axios.get(PRODUCTS_URL).then((res) => res.data);
