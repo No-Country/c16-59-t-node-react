@@ -4,9 +4,9 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "s3-alpha-sig.figma.com",
+        hostname: "res.cloudinary.com",
         port: "",
-        pathname: "/img/**",
+        pathname: "/dnautzk6f/image/**",
       },
       {
         protocol: 'https',
