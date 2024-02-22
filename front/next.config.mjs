@@ -9,10 +9,16 @@ const nextConfig = {
         pathname: "/dnautzk6f/image/**",
       },
       {
+        protocol: "https",
+        hostname: "res.cloudinary.com",
+        port: "",
+        pathname: "/dnautzk6f/image/**",
+      },
+      {
         protocol: 'https',
-        hostname: 'assets.example.com',
+        hostname: 's3-alpha-sig.figma.com/',
         port: '',
-        pathname: '/account123/**',
+        pathname: '/img/**',
       },
       {
         protocol: "https",
