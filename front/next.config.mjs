@@ -4,9 +4,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "fakestoreapi.com",
+        hostname: "res.cloudinary.com",
         port: "",
-        pathname: "/**",
+        pathname: "/dnautzk6f/image/**",
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.example.com',
+        port: '',
+        pathname: '/account123/**',
       },
       {
         protocol: "https",

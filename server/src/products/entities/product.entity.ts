@@ -1,6 +1,14 @@
-import { BeforeInsert, BeforeUpdate, Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { ProductImage } from './product-image.entity';
 
+@Entity({ name: 'products' })
 export class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -13,7 +21,6 @@ export class Product {
 
   @Column({
     type: 'float',
-    nullable: false,
   })
   price: number;
 
@@ -45,24 +52,29 @@ export class Product {
     unique: true,
   })
   slug: string;
-}
 
-@BeforeInsert()
-checkSlugInsert() {
-  if (!this.slug) {
-    this.slug = this.title;
+  @Column({
+    type: 'text',
+  })
+  salesPresentation: string[];
+
+  @BeforeInsert()
+  checkSlugInsert() {
+    if (!this.slug) {
+      this.slug = this.name;
+    }
+
+    this.slug = this.slug
+      .toLowerCase()
+      .replaceAll(' ', '_')
+      .replaceAll("'", '');
   }
 
-  this.slug = this.slug
-    .toLowerCase()
-    .replaceAll(' ', '_')
-    .replaceAll("'", '');
-}
-
-@BeforeUpdate()
-checkSlugUpdate() {
-  this.slug = this.slug
-    .toLocaleLowerCase()
-    .replace(' ', '_')
-    .replaceAll("'", '');
+  @BeforeUpdate()
+  checkSlugUpdate() {
+    this.slug = this.slug
+      .toLocaleLowerCase()
+      .replace(' ', '_')
+      .replaceAll("'", '');
+  }
 }

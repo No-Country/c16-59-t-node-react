@@ -25,9 +25,9 @@ export class CreateProductDto {
   @IsInt()
   @IsPositive()
   @IsOptional()
-  stock: number;
+  stock?: number;
 
-  @IsIn(['fruit', 'vegetable', 'processed_food'])
+  @IsIn(['fruit', 'vegetable', 'processed-food'])
   category: string[];
 
   @IsString({ each: true })
@@ -38,4 +38,7 @@ export class CreateProductDto {
   @IsString()
   @IsOptional()
   slug?: string;
+
+  @IsIn(['1000gr', '500gr', 'bandeja', 'manojo', 'unidad'])
+  salesPresentation: string[];
 }

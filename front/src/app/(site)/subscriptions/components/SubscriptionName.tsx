@@ -1,6 +1,5 @@
-import { IconHuerta } from "@/app/components";
 
-export const Title = ({ children }: { children: string }) => {
+export const SubscriptionName = ({ children }: { children: string }) => {
   // Función para aplicar estilos a la palabra "Box"
   const applyStyles = (text: string) => {
     // Separar el texto en partes, identificando la palabra "Box"
@@ -19,9 +18,8 @@ export const Title = ({ children }: { children: string }) => {
   };
 
   return (
-    <div className="flex gap-2 border-gray-200 border p-3 h-[4vw]"> {/* Eliminamos el padding del contenedor div */}
-      <IconHuerta/>
-      <span className="text-secondary-orange text-base sm:text-xl lg:text-2xl font-semibold pt-1">
+    <div className="flex gap-2 h-[2vw]"> {/* Eliminamos el padding del contenedor div */}
+      <span className="text-secondary-orange text-[18px] sm:text-xl whitespace-nowrap">
         {applyStyles(children)}
       </span>
     </div>
