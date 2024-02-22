@@ -23,7 +23,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={montserrat.className}>
         <NavBar />
-        <main className="max-w-5xl m-auto space-y-4 p-4">{children}</main>
+        <main className="max-w-6xl m-auto space-y-4 p-4 sm:px-8">
+          {children}
+        </main>
         {/* <Providers>{children}</Providers> */}
       </body>
     </html>
