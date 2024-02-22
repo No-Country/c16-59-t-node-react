@@ -1,7 +1,8 @@
 import { ButtonStandard, Footer } from "@/app/components";
 import { getFruitCatalog, getProcessedFoodsCatalog, getVegetablesCatalog } from "@/utils/fetchApi";
 import { Title } from "../components";
-import { AccordionCatalog } from "./components";
+import { AccordionCatalog } from "./components/AccordionCatalog.component";
+import { Button2 } from "@/app/components/Button2";
 
 
 export default async function Subscriptions() {
@@ -33,15 +34,17 @@ export default async function Subscriptions() {
       />
       
       <div className="flex justify-around w-80">
+        
       <ButtonStandard secondary route="/" >
         Anterior
       </ButtonStandard>
       <ButtonStandard primary route="/" >
         Siguiente
       </ButtonStandard>
+      
       </div>
       </div>
-      <Footer/>
+      
     </>
 
   );

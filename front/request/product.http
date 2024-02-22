@@ -1,5 +1,5 @@
 ### GET FRUITS
-GET https://api.npoint.io/893e0d72008e34a64215
+GET https://la-huerta.onrender.com/api/v1/products/category/fruit
 
 ### GET VEGETABLES
-GET https://api.npoint.io/4098637fc34461f87419
+GET https://la-huerta.onrender.com/api/v1/products/category/vegetable

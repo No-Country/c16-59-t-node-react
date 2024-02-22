@@ -18,6 +18,7 @@ export default async function CatalogPage() {
     <>
       <Title>Productos del Mes</Title>
       <AccordionCatalog
+        
         vegetables={vegetables}
         fruits={fruits}
         processedFoods={processedFoods}
