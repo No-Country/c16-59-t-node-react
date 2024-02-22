@@ -22,8 +22,8 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
             <Image
               src={product.image[0].url}
               alt={product.name}
-              width={200}
-              height={200}
+              width={100}
+              height={100}
             />
           </li>
         ))}
