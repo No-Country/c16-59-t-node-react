@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Title } from "../../components";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { ButtonStandard } from "@/app/components";
+import { ButtonStandard, IconHuerta } from "@/app/components";
 
 // data para eliminar
 const verduras = [
@@ -26,14 +26,24 @@ const verduras = [
 export default function Quantity() {
   return (
     <div className="space-y-4">
-      <Title>
-        La Huerta <span className="italic font-normal">Box</span> - EXPRESS
-      </Title>
+      {/* // falta cambiar lo q wagner hizo */}
+      <div className="flex gap-2 border-gray-200 border p-3 h-[4vw]">
+        <IconHuerta />
+        <span className="text-secondary-orange text-base sm:text-xl lg:text-2xl font-semibold pt-1">
+          La Huerta <span className="italic font-normal">Box</span> - EXPRESS
+        </span>
+      </div>
+
       <p className="font-semibold sm:px-6 text-xs lg:text-base">
         2. Escoge las cantidades a comprar
       </p>
 
-      <Accordion variant="splitted" className="gap-6 sm:px-8">
+      <Accordion
+        variant="splitted"
+        className="gap-6 sm:px-8"
+        selectionMode="multiple"
+        defaultExpandedKeys={["1", "2", "3"]}
+      >
         <AccordionItem
           key="1"
           aria-label="Verduras de temporada"
@@ -82,7 +92,7 @@ export default function Quantity() {
           hola
         </AccordionItem>
       </Accordion>
-      <div className="bottom-0 w-full m-auto flex justify-center items-center gap-4">
+      <div className="w-full m-auto flex justify-center items-center gap-4">
         <ButtonStandard secondary route="/products">
           Anterior
         </ButtonStandard>

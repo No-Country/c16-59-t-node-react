@@ -14,7 +14,7 @@ export default function Home() {
       </div>
       <Menu />
       <Products />
-      <Footer/>
+      <Footer />
     </>
   );
 }
