@@ -173,7 +173,6 @@ export class ProductsService {
   }
 
   private handleDBExceptions(error: any) {
-    // console.log(error);
     if (error.code === '23505') {
       throw new BadRequestException(error.detail);
     }

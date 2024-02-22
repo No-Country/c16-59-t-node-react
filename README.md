@@ -15,12 +15,7 @@
 ![Express](https://img.shields.io/badge/EXPRESS.JS-%236DA55F?style=social&logo=express) 
 ![Static Badge](https://img.shields.io/badge/POSTGRESQL-%236DA55F?style=social&logo=postgreSQL)
 ![Static Badge](https://img.shields.io/badge/DOCKER-%236DA55F?style=social&logo=docker)
-
 ![Eslint](https://img.shields.io/badge/ESLINT-%236DA55F?style=social&logo=eslint)
-
-
-
-
 
 <hr/>
 
@@ -42,6 +37,8 @@
 | <img src="https://media.licdn.com/dms/image/D4E35AQH7xwaZGDWjMg/profile-framedphoto-shrink_200_200/0/1705944050452?e=1709143200&v=beta&t=3CcevxWqEeyuZ7VSkkubYDLwCZpmUiwSWAmtRvSDq3M" width=80 /> |
 |:-:|
 | **Laura M. Gauque C.** |
+| <a href="https://github.com/lauraguauq"><img src="https://img.shields.io/badge/github-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/></a> |
+| <a href="https://laura-m-guauque-c-portfolio.framer.ai/"><img src="https://img.shields.io/badge/portafolio-white?logo=portafolio"/></a> |
 | <a href="https://www.linkedin.com/in/laura-m-guauque-c/"><img src="https://img.shields.io/badge/linkedin%20-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white"/><p><img src=""/></p> |
 
 ## TL:
