@@ -25,16 +25,10 @@ const verduras = [
 
 export default function Quantity() {
   return (
-    <div className="space-y-4">
-      {/* // falta cambiar lo q wagner hizo */}
-      <div className="flex gap-2 border-gray-200 border p-3 h-[4vw]">
-        <IconHuerta />
-        <span className="text-secondary-orange text-base sm:text-xl lg:text-2xl font-semibold pt-1">
-          La Huerta <span className="italic font-normal">Box</span> - EXPRESS
-        </span>
-      </div>
+    <div className="space-y-5">
+      <Title>La Huerta Box - EXPRESS</Title>
 
-      <p className="font-semibold sm:px-6 text-xs lg:text-base">
+      <p className="text-base sm:text-xl  font-bold sm:px-6">
         2. Escoge las cantidades a comprar
       </p>
 
@@ -49,7 +43,7 @@ export default function Quantity() {
           aria-label="Verduras de temporada"
           title="Verduras de temporada"
           // revisar con inspeccion los componentes
-          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
+          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
         >
           <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
             <p className="col-start-3">Cantidades</p>
@@ -79,7 +73,7 @@ export default function Quantity() {
           key="2"
           aria-label="Frutas de temporada"
           title="Frutas de temporada"
-          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
+          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
         >
           <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
             <p className="col-start-3">Cantidades</p>
@@ -109,7 +103,7 @@ export default function Quantity() {
           key="3"
           aria-label="Procesados naturales"
           title="Procesados naturales"
-          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
+          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
         >
           <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
             <p className="col-start-3">Cantidades</p>
