@@ -1,5 +1,5 @@
-"Client Component"
 import React from 'react';
+import { buttonClass } from './classNames'; // Importa las clases CSS
 
 interface ButtonProps {
   onClick?: () => void;
@@ -10,7 +10,7 @@ export const RegisterButton: React.FC<ButtonProps> = ({ onClick, text }) => {
   return (
     <div className="mb-6 text-center">
       <button
-        className="w-full px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+        className={buttonClass} // Utiliza la clase CSS importada
         type="button"
         onClick={onClick}
       >
