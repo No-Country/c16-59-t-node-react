@@ -21,15 +21,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(
-        montserrat.className,
-        "flex flex-col items-center justify-center gap-2 text-secondary-orange m-auto",)}>
+      <body className={montserrat.className}>
         <NavBar />
         <main className="max-w-6xl m-auto space-y-4 p-4 sm:px-8">
           {children}
         </main>
         {/* <Providers>{children}</Providers> */}
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
