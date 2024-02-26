@@ -22,9 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        {/* <body className={clsx(
-        montserrat.className,
-        "flex flex-col items-center justify-center gap-2 text-secondary-orange m-auto",)}> */}
         <NavBar />
         <main className="max-w-6xl m-auto space-y-4 p-4 sm:px-8">
           {children}
