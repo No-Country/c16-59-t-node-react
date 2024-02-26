@@ -12,14 +12,24 @@ const config = {
   ],
   prefix: "",
   theme: {
+    screens:{
+      "sm":"390px",
+      "md":"768px",
+      "lg":"1349px"
+    },
     container: {
       center: true,
-      padding: "2rem",
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
+      maxWidth:{
+        "dskMain":"80vw"
+      },
+      minHeight:{
+        "dskMain":"80vh"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
