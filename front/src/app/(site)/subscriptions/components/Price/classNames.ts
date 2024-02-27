@@ -6,8 +6,11 @@ export const classPriceContainer = `
   justify-end 
   absolute
 
-  sm:mb-[3.5vw] 
-  sm:ml-[20vw]
+  sm:mb-[3.5vh] 
+  sm:ml-[8rem]
+  sm:text-[0.8rem]
+  sm:text-[0.9rem]
+  
   
   md:mb-[3vw] 
   md:ml-[37.8vw]

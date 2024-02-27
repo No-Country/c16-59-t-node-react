@@ -3,8 +3,8 @@ import { Button2 } from "@/app/components/Button2";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
-import { Price, SubscriptionName } from ".";
-import { UnorderedList } from "../containers";
+import { Price, SubscriptionName } from "..";
+import { UnorderedList } from "../../containers";
 
 interface SubscriptionProps {
   children?: React.ReactNode;
@@ -25,7 +25,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
 }) => {
   const borderColor = `border-${color}`;
   return (
-    <Card className="relative grid grid-cols-3 m-[20px] pt-0 rounded-none overflow-visible">
+    <Card className="relative grid grid-cols-3 m-[1.25rem] pt-0 rounded-none overflow-visible">
       <div
         className={clsx(
           "col-span-2",
@@ -33,6 +33,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
           "pl-5",
           "border-dotted",
           "border-2",
+          "sm:p-0.5",
           "border-tertiary-green" && borderColor,
           "border-secondary-orange" && borderColor,
           "border-primary-yellow" && borderColor
@@ -43,7 +44,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
           <SubscriptionName>{title}</SubscriptionName>
         </CardHeader>
         <CardBody className="pt-0">
-          <span className="lg:pb-3 md:mt-[3vh] sm:mt-[3vh]">Contiene*:</span>
+          <span className="lg:pb-3 md:mt-[3vh] sm:mt-[3vh] text-[1vh]">Contiene*:</span>
           <UnorderedList data={content} />
         </CardBody>
         <CardFooter className="col-span-2 flex justify-center items-center">

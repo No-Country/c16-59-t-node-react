@@ -35,6 +35,7 @@ const config = {
         "dskSeparator":"70vw"
       },
       colors: {
+        bullet:"#D9D9D9",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
