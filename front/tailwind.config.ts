@@ -18,17 +18,21 @@ const config = {
       "lg":"1349px"
     },
     container: {
-      center: true,
-      screens: {
-        "2xl": "1400px",
-      },
+      center: true
     },
     extend: {
       maxWidth:{
-        "dskMain":"80vw"
+        "dskMain":"70vw",
+        "tbMain":"90vw",
+        "mbMain":"95vw"
       },
       minHeight:{
-        "dskMain":"80vh"
+        "dskMain":"80vh",
+        "tbMain":"80vh",
+        "mbMain":"80vh"
+      },
+      minWidth:{
+        "dskSeparator":"70vw"
       },
       colors: {
         border: "hsl(var(--border))",

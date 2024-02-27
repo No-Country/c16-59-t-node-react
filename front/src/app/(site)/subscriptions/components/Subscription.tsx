@@ -43,7 +43,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
           <SubscriptionName>{title}</SubscriptionName>
         </CardHeader>
         <CardBody className="pt-0">
-          <span className="pb-3">Contiene*:</span>
+          <span className="lg:pb-3 md:mt-[3vh] sm:mt-[3vh]">Contiene*:</span>
           <UnorderedList data={content} />
         </CardBody>
         <CardFooter className="col-span-2 flex justify-center items-center">

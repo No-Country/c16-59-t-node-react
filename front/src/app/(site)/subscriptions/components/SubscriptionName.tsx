@@ -19,7 +19,7 @@ export const SubscriptionName = ({ children }: { children: string }) => {
 
   return (
     <div className="flex gap-2 h-[2vw]"> {/* Eliminamos el padding del contenedor div */}
-      <span className="text-secondary-orange text-[18px] sm:text-xl whitespace-nowrap">
+      <span className="text-secondary-orange sm:text-[1.5vh] sm:mt-[2vh]  whitespace-nowrap text-wrap md:text-[1.7vh] lg:text-[2vh] lg:mt-[0.01vh]">
         {applyStyles(children)}
       </span>
     </div>
