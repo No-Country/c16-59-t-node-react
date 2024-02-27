@@ -14,8 +14,8 @@ export default async function Subscriptions() {
   const vegetables: any = await getVegetablesCatalog();
   const processedFoods: any = await getProcessedFoodsCatalog();
   // const productsEnvasados = await getProdComesCatalog();
-  console.log("frutas donde estas?", fruits);
-  console.log("vegetales donde estas?", vegetables);
+  console.log("frutas ?", fruits);
+  console.log("vegetales ?", vegetables);
 
   return (
     <div className="space-y-4">
@@ -29,7 +29,7 @@ export default async function Subscriptions() {
           fruits={fruits}
           processedFoods={processedFoods}
         />
-        <div className="flex justify-around w-80">
+        <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
           <Button2 bgColor="secondary-orange" route="/">
             Anterior
           </Button2>

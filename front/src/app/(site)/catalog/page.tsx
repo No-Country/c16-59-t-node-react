@@ -1,17 +1,18 @@
 import { AccordionCatalog } from "./components";
 import { Title } from "../components";
-import { getFruitCatalog, getVegetablesCatalog, getProcessedFoodsCatalog } from "@/utils/fetchApi";
+import {
+  getFruitCatalog,
+  getVegetablesCatalog,
+  getProcessedFoodsCatalog,
+} from "@/utils/fetchApi";
 import { ButtonStandard, Footer } from "@/app/components";
 import { Button2 } from "@/app/components/Button2";
 
-
-
 export default async function CatalogPage() {
-
   // aqui haz las peticiones para frutas, vegetales y productos envasados
   const fruits: any = await getFruitCatalog();
-   const vegetables: any = await getVegetablesCatalog();
-   const processedFoods: any = await getProcessedFoodsCatalog();
+  const vegetables: any = await getVegetablesCatalog();
+  const processedFoods: any = await getProcessedFoodsCatalog();
   // const productsEnvasados = await getProdComesCatalog();
   console.log("frutas donde estas?", fruits);
   console.log("vegetales donde estas?", vegetables);
@@ -19,20 +20,20 @@ export default async function CatalogPage() {
   return (
     <>
       <Title>Productos del Mes</Title>
-      <AccordionCatalog
-        
+      <AccordionCatalog 
+      
         vegetables={vegetables}
         fruits={fruits}
         processedFoods={processedFoods}
+        
       />
-      <ButtonStandard primary route="/" >
-        Volver al inicio
-      </ButtonStandard>
+      <div className="w-full m-auto flex justify-center items-center gap-4">
+        <ButtonStandard primary route="/">
+          Volver al inicio
+        </ButtonStandard>
+      </div>
 
-     
-
-      <Footer/>
+      <Footer />
     </>
-
   );
 }

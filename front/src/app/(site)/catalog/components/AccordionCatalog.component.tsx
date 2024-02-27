@@ -13,20 +13,28 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   vegetables,
   processedFoods,
 }) => {
+  
   const renderProducts = (productList: Array<any>) => {
     return (
       <ul className="flex gap-4">
-        {productList.map((product: any) => (
-          <li key={product.id}>
-            <p className="text-xs">{product.name}</p>
-            <Image
-              src={product.image[0].url}
-              alt={product.name}
-              width={100}
-              height={100}
-            />
-          </li>
-        ))}
+        {productList.map((product: any) => {
+          const upperCaseProduct = {
+            ...product,
+            name: product.name.charAt(0).toUpperCase() + product.name.slice(1)
+          };
+          return (
+            <li key={upperCaseProduct.id}>
+              
+              <Image
+                src={upperCaseProduct.image[0].url}
+                alt={upperCaseProduct.name}
+                width={250}
+                height={100}
+              />
+              <strong className="text-xs">{upperCaseProduct.name}</strong>
+            </li>
+          );
+        })}
       </ul>
     );
   };
@@ -58,7 +66,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
         </AccordionItem>
 
         <AccordionItem
-        className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
+          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
           key="3"
           aria-label="Accordion 3"
           title="Procesados naturales"
