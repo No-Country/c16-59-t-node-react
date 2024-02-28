@@ -15,8 +15,10 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
 }) => {
   const renderProducts = (productList: Array<any>) => {
     return (
-      <ul className="flex flex-wrap gap-4">
+      <ul className="flex gap-4">
         {productList.map((product: any) => {
+          console.log(product);
+
           const upperCaseProduct = {
             ...product,
             name: product.name.charAt(0).toUpperCase() + product.name.slice(1),
@@ -24,10 +26,13 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
           return (
             <li
               key={upperCaseProduct.id}
-              className="flex flex-col gap-2 justify-center items-center"
+              className="flex flex-col gap-2 justify-center items-center relative"
             >
+              <div className="absolute bottom-6 backdrop-blur w-full text-center">
+                <strong className="text-xs">$ {upperCaseProduct.price}</strong>
+              </div>
               <Image
-                className="object-cover size-16 md:size-20 lg:size-24 aspect-auto"
+                className="max-w-none object-cover size-16 md:size-20 lg:size-24 aspect-auto"
                 src={upperCaseProduct.image[0].url}
                 alt={upperCaseProduct.name}
                 width={250}
