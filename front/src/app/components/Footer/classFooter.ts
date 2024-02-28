@@ -14,7 +14,7 @@ export const footerContainer: string = `
   sm:text-[0.7rem] 
   
   md:grid-cols-6
-  md:mx-[4.94vw]
+  md:mx-[2vw]
   
   
   lg:mx-[15.28vw]
