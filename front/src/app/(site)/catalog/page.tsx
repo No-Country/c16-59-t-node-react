@@ -20,12 +20,10 @@ export default async function CatalogPage() {
   return (
     <>
       <Title>Productos del Mes</Title>
-      <AccordionCatalog 
-      
+      <AccordionCatalog
         vegetables={vegetables}
         fruits={fruits}
         processedFoods={processedFoods}
-        
       />
       <div className="w-full m-auto flex justify-center items-center gap-4">
         <ButtonStandard primary route="/">
