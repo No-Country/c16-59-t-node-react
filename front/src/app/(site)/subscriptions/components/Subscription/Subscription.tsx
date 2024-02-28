@@ -25,13 +25,13 @@ export const Subscription: React.FC<SubscriptionProps> = ({
 }) => {
   const borderColor = `border-${color}`;
   return (
-    <Card className="relative grid grid-cols-3 m-[1.25rem] pt-0 rounded-none overflow-visible">
-      <div className="col-start-2 col-end-3  p-0 m-0">
+    <Card className="relative grid grid-cols-4 m-[1.25rem] pt-0 rounded-none overflow-visible">
+      <div className="col-start-3 col-end-4  p-0 m-0">
             <Price price={price} color={color} />
             </div>
       <div
         className={clsx(
-          "col-span-2",
+          "col-span-3",
           "pt-0",
           "pl-5",
           "border-dotted",
@@ -57,7 +57,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
       </div>
       {/* <div className="col-span-1"> */}
       <Image
-        className="object-cover col-span-1 h-full"
+        className="object-cover col-start-4 col-span-1 h-full"
         src={img}
         alt={title}
         width={379.69}

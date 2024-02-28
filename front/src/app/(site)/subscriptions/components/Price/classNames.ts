@@ -6,13 +6,13 @@ export const classPriceContainer = `
   justify-end 
   absolute
   
-  sm:ml-[3rem]
+  sm:ml-[0.5rem]
   sm:text-[0.8rem]
   sm:text-[0.9rem]
    
-  md:ml-[7rem]
+  md:ml-[3rem]
   
-  lg:ml-[15rem]
+  lg:ml-[9.3rem]
 
 
 `
