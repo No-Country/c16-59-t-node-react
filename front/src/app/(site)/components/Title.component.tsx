@@ -21,7 +21,7 @@ export const Title = ({ children }: { children: string }) => {
   return (
     <div className="flex flex-col sm:flex-row items-center sm:items-start gap-2 border-gray-200 border p-3"> {/* Ajustamos la estructura y los estilos */}
       <IconHuerta/>
-      <span className="text-secondary-orange text-base sm:text-xl lg:text-2xl font-semibold pt-1">
+      <span className="text-secondary-orange text-base sm:text-[1rem] lg:text-2xl font-semibold pt-1">
         {applyStyles(children)}
       </span>
     </div>

@@ -1,6 +1,13 @@
-// styles.ts
+
+export const btnContainer = `
+    grid
+    place-items-center
+`
+
 export const linkClass = `
-    text-blue-700
     hover:underline
-    dark:text-blue-500
+    p-0
+    m-0
+    grid
+    place-content-end
 `;

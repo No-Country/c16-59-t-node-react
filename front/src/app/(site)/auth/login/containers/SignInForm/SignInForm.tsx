@@ -1,27 +1,30 @@
+import { Button2 } from '@/app/components/Button2';
 import React from 'react';
-import SignInButton from '../../components/SignInButton/SignInButton';
 import SignInCheckbox from '../../components/SignInCheckbox/SignInCheckbox';
 import SignInInput from '../../components/SignInInput/SignInInput';
 import SignInLink from '../../components/SignInLink/SignInLink';
-import { containerClass, formClass, formContainerClass, textClass, titleClass } from './classNames';
+import { btnContainer } from '../../components/SignInLink/classNames';
+import { roles } from '../../data/roles';
+import RoleSelection from '../RoleSelection/RoleSelection';
+import { formClass, textClass } from './classNames';
 
 const SignInForm: React.FC = () => {
     return (
-        <div className={containerClass}>
-            <div className={formContainerClass}>
+            
                 <form className={formClass} action="#">
-                    <h3 className={titleClass}>Sign in to our platform</h3>
-                    <SignInInput label="Your email" type="email" id="email" placeholder="name@company.com" />
-                    <SignInInput label="Your password" type="password" id="password" placeholder="••••••••" />
-                    <SignInCheckbox label="Remember me" id="remember" />
-                    <SignInLink href="#" text="Lost Password?" />
-                    <SignInButton text="Login to your account" />
-                    <div className={textClass}>
-                        Not registered? <SignInLink href="#" text="Create account" />
+                    <RoleSelection roles={roles}/>
+                    <SignInInput label="Correo Electrónico" type="email" id="email" placeholder="comprador123@gmail.com" />
+                    <SignInInput label="Contraseña" type="password" id="password" placeholder="••••••••" />
+                    <SignInLink href="#" text="¿Olvidaste tu contraseña?" />
+                    <SignInCheckbox label="Recordar mis datos" id="remember" />
+                    <div className={btnContainer}>
+                        <Button2 bgColor="primary-yellow">Iniciar Sesión</Button2>
+                        <div className={textClass}>
+                            ¿No tienes cuenta? 
+                        </div>
+                        <Button2 bgColor="tertiary-green">Crear cuenta</Button2>
                     </div>
                 </form>
-            </div>
-        </div>
     );
 };
 

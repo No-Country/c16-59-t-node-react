@@ -9,7 +9,7 @@ interface Props {
 
 const SignInLink: React.FC<Props> = ({ href, text }) => {
     return (
-        <a href={href} className={linkClass}>{text}</a>
+            <a href={href} className={linkClass}>{text}</a>
     );
 };
 

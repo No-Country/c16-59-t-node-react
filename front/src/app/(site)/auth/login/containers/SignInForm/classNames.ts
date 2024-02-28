@@ -1,8 +1,5 @@
 // Definición de las clases CSS como variables
-export const containerClass = `
-    max-w-2xl
-    mx-auto
-`;
+
 
 export const formContainerClass = `
     bg-white
@@ -31,6 +28,7 @@ export const titleClass = `
 
 export const textClass = `
     text-sm
+    py-2
     font-medium
     text-gray-500
     dark:text-gray-300

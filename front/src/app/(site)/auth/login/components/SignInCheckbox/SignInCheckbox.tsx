@@ -1,5 +1,5 @@
 import React from 'react';
-import { checkboxContainerClass, checkboxInputClass, containerClass, labelClass, lostPasswordClass } from './classNames';
+import { checkboxContainerClass, checkboxInputClass, containerClass, labelClass } from './classNames';
 
 interface Props {
     label: string;
@@ -17,7 +17,6 @@ const SignInCheckbox: React.FC<Props> = ({ label, id }) => {
                     <label htmlFor={id} className="font-medium text-gray-900 dark:text-gray-300">{label}</label>
                 </div>
             </div>
-            <a href="#" className={lostPasswordClass}>Lost Password?</a>
         </div>
     );
 };
