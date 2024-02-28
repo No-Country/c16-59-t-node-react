@@ -26,6 +26,9 @@ export const Subscription: React.FC<SubscriptionProps> = ({
   const borderColor = `border-${color}`;
   return (
     <Card className="relative grid grid-cols-3 m-[1.25rem] pt-0 rounded-none overflow-visible">
+      <div className="col-start-2 col-end-3  p-0 m-0">
+            <Price price={price} color={color} />
+            </div>
       <div
         className={clsx(
           "col-span-2",
@@ -40,7 +43,6 @@ export const Subscription: React.FC<SubscriptionProps> = ({
         )}
       >
         <CardHeader className="pb-0">
-          <Price price={price} color={color} />
           <SubscriptionName>{title}</SubscriptionName>
         </CardHeader>
         <CardBody className="pt-0">

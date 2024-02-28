@@ -22,7 +22,7 @@ export const Button2: React.FC<ButtonStandardProps> = ({
       className={clsx(
         "btn rounded-none font-bold",
         `bg-${bgColor}`,
-        "sm:text-[0.6rem] text-wrap h-[2.2781rem] w-[12.88rem]"
+        "sm:text-[0.6rem] text-wrap h-[2.2781rem] w-[12.88rem] lg:w-[20rem] lg:text-[1rem]"
       )}
       onClick={() => route && router.push(route)}
     >
