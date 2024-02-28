@@ -27,9 +27,9 @@ const config = {
         "mbMain":"95vw"
       },
       minHeight:{
-        "dskMain":"80vh",
+        "dskMain":"86vh",
         "tbMain":"88vh",
-        "mbMain":"80vh"
+        "mbMain":"85vh"
       },
       minWidth:{
         "dskSeparator":"70vw"
