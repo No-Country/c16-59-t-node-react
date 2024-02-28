@@ -1,6 +1,6 @@
-export * from "./BulletText";
-export * from "./Price";
-export * from "./Statement";
-export * from "./Subscription";
-export * from "./SubscriptionName";
+export * from "./BulletText/BulletText";
+export * from "./Price/Price";
+export * from "./Statement/Statement";
+export * from "./Subscription/Subscription";
+export * from "./SubscriptionName/SubscriptionName";
 

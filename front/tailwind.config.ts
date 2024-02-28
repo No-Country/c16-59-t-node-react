@@ -12,15 +12,30 @@ const config = {
   ],
   prefix: "",
   theme: {
+    screens:{
+      "sm":"240px",
+      "md":"768px",
+      "lg":"1349px"
+    },
     container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      center: true
     },
     extend: {
+      maxWidth:{
+        "dskMain":"70vw",
+        "tbMain":"90vw",
+        "mbMain":"95vw"
+      },
+      minHeight:{
+        "dskMain":"86vh",
+        "tbMain":"88vh",
+        "mbMain":"85vh"
+      },
+      minWidth:{
+        "dskSeparator":"70vw"
+      },
       colors: {
+        bullet:"#D9D9D9",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

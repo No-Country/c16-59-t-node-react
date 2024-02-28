@@ -33,7 +33,7 @@ export default async function Subscriptions() {
           <Button2 bgColor="secondary-orange" route="/">
             Anterior
           </Button2>
-          <Button2 bgColor="primary-yellow" route="/">
+          <Button2 bgColor="primary-yellow" route="/products/quantity">
             Siguiente
           </Button2>
         </div>

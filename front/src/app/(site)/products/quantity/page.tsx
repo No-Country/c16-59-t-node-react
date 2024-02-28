@@ -81,7 +81,29 @@ export default function Quantity() {
           title="Frutas de temporada"
           className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
         >
-          hola
+          <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
+            <p className="col-start-3">Cantidades</p>
+            <p className="col-start-4">Precio</p>
+            {verduras.map((verdura) => (
+              <>
+                <Image
+                  className="aspect-[4/3]"
+                  src={verdura.image}
+                  alt={verdura.item}
+                  width={50}
+                  height={33}
+                />
+                <p>{verdura.item}</p>
+                <input
+                  type="number"
+                  className="m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green"
+                  placeholder="0"
+                  defaultValue={verdura.cantidad}
+                />
+                <p className="text-center">{verdura.precio}</p>
+              </>
+            ))}
+          </div>
         </AccordionItem>
         <AccordionItem
           key="3"
@@ -89,7 +111,29 @@ export default function Quantity() {
           title="Procesados naturales"
           className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
         >
-          hola
+          <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
+            <p className="col-start-3">Cantidades</p>
+            <p className="col-start-4">Precio</p>
+            {verduras.map((verdura) => (
+              <>
+                <Image
+                  className="aspect-[4/3]"
+                  src={verdura.image}
+                  alt={verdura.item}
+                  width={50}
+                  height={33}
+                />
+                <p>{verdura.item}</p>
+                <input
+                  type="number"
+                  className="m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green"
+                  placeholder="0"
+                  defaultValue={verdura.cantidad}
+                />
+                <p className="text-center">{verdura.precio}</p>
+              </>
+            ))}
+          </div>
         </AccordionItem>
       </Accordion>
       <div className="w-full m-auto flex justify-center items-center gap-4">

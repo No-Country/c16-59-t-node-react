@@ -1,6 +1,13 @@
-export const IconHuerta = () => {
+import { FC } from 'react';
+
+interface IconHuertaProps {
+  width?: number;
+  height?: number;
+}
+
+export const IconHuerta: FC<IconHuertaProps> = ({ width=19, height=28 }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 19 28">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
       <path fill="url(#a)" d="M0 0h18.484v27.803H0z" />
       <defs>
         <pattern
