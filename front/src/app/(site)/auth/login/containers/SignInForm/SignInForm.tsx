@@ -37,7 +37,7 @@ const LoginForm = () => {
                 </div>
               )}
             </label>
-            <p className="font-bold">Comprador</p>
+            <p className="font-bold mt-[12rem]">Comprador</p>
             <label className="cursor-pointer relative rounded-full overflow-hidden shadow flex items-center justify-center">
               <input
                 type="radio"
@@ -55,7 +55,7 @@ const LoginForm = () => {
                 </div>
               )}
             </label>
-            <p className="font-bold">Vendedor</p>
+            <p className="font-bold mt-[12rem]">Vendedor</p>
           </div>
         </div>
         <div className="mb-4">
