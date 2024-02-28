@@ -1,3 +1,4 @@
+"use client"
 import { Title } from "../../components";
 import SignInForm from "./containers/SignInForm/SignInForm";
 
