@@ -1,7 +1,12 @@
-export default function Register() {
+"use client"
+import { Title } from "../../components";
+import SignInForm from "./containers/SignInForm/SignInForm";
+
+export default function Login() {
   return (
     <div>
-      <h1>Register</h1>
+      <Title>Inicia sesión para finalizar la compra</Title>
+      <SignInForm/>
     </div>
   );
 }

@@ -2,9 +2,14 @@
 
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+<<<<<<< HEAD:front/src/app/components/NavBar.component.tsx
 import { IconHuerta, Phone, QuestionMark, User } from "./";
 import { useUserOrder } from "../context/app.context";
 import { useState } from "react";
+=======
+import { IconHuerta, Phone, QuestionMark, User } from "..";
+import { NavContent, classNavBar, classNavBrand, separator } from "./className";
+>>>>>>> develop:front/src/app/components/NavBar/NavBar.component.tsx
 
 export const NavBar = () => {
   const router = useRouter();
@@ -20,8 +25,8 @@ export const NavBar = () => {
 
   return (
     // revisar con inspeccion los componentes
-    <Navbar className="bg-primary-yellow *:max-w-screen-2xl">
-      <NavbarBrand className="w-[50vw] justify-start items-start gap-2">
+    <Navbar className={classNavBar}>
+      <NavbarBrand className={classNavBrand}>
         <button
           onClick={() => router.push("/")}
           className="w-6 hover:scale-105 transition duration-1000 ease-in-out"
@@ -35,9 +40,10 @@ export const NavBar = () => {
           </span>
         </div>
       </NavbarBrand>
+      <div className={separator}/>
       <NavbarContent
         justify="end"
-        className="w-[50vw] active:[&_svg]:stroke-black/25 active:[&_svg]:fill-black/10"
+        className={NavContent}
       >
         <button onClick={handleClick}>
           <User />
