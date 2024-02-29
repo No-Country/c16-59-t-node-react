@@ -1,0 +1,8 @@
+### PRODUCTS
+GET https://la-huerta.onrender.com/api/v1/products?limit=20
+
+### GET FRUITS
+GET https://la-huerta.onrender.com/api/v1/products/category/fruit
+
+### GET VEGETABLES
+GET https://la-huerta.onrender.com/api/v1/products/category/vegetable

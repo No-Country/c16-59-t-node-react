@@ -28,9 +28,19 @@ yarn-error.log*
 # local env files
 .env*.local
 
+# Ignorar el archivo .env
+.env
+
+# Excepto el archivo .env.example
+!.env.example
+
+
 # vercel
 .vercel
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# package-lock-json
+package-lock.json
