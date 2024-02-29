@@ -8,6 +8,15 @@ import { NavContent, classNavBar, classNavBrand, separator } from "./className";
 export const NavBar = () => {
   const router = useRouter();
 
+  // const [show, setShow] = useState(() => !!localStorage.getItem("token"));
+
+  // const { setToken, removeToken } = useUserOrder();
+
+  // const handleClick = () => {
+  //   show ? removeToken() : setToken();
+  //   setShow(!show);
+  // };
+
   return (
     // revisar con inspeccion los componentes
     <Navbar className={classNavBar}>
@@ -25,11 +34,8 @@ export const NavBar = () => {
           </span>
         </div>
       </NavbarBrand>
-      <div className={separator}/>
-      <NavbarContent
-        justify="end"
-        className={NavContent}
-      >
+      <div className={separator} />
+      <NavbarContent justify="end" className={NavContent}>
         <button>
           <User />
         </button>

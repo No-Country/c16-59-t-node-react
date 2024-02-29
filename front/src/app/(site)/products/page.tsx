@@ -14,22 +14,24 @@ export default async function Subscriptions() {
   const vegetables: any = await getVegetablesCatalog();
   const processedFoods: any = await getProcessedFoodsCatalog();
   // const productsEnvasados = await getProdComesCatalog();
-  console.log("frutas donde estas?", fruits);
-  console.log("vegetales donde estas?", vegetables);
+  console.log("frutas ?", fruits);
+  console.log("vegetales ?", vegetables);
 
   return (
     <div className="space-y-4">
       <Title>La Huerta Box - EXPRESS</Title>
       <div className="flex flex-col  ">
-        <Statement>
-          1. Escoge los productos que deseas clickeando sobre cada ítem:
-        </Statement>
+        
+        <p className="font-semibold sm:px-6 text-xs lg:text-base mb-4">
+        1. Escoge los productos que deseas clickeando sobre cada ítem:
+      </p>
+      
         <AccordionCatalog
           vegetables={vegetables}
           fruits={fruits}
           processedFoods={processedFoods}
         />
-        <div className="flex justify-around w-80">
+        <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
           <Button2 bgColor="secondary-orange" route="/">
             Anterior
           </Button2>

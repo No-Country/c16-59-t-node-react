@@ -86,7 +86,7 @@ const nextConfig = {
         hostname: "ew.com",
         port: "",
         pathname: "/**",
-      },
+      }
     ],
   },
 };
