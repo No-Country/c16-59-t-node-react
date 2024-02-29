@@ -16,17 +16,34 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   const renderProducts = (productList: Array<any>) => {
     return (
       <ul className="flex gap-4">
-        {productList.map((product: any) => (
-          <li key={product.id}>
-            <p className="text-xs">{product.name}</p>
-            <Image
-              src={product.image[0].url}
-              alt={product.name}
-              width={100}
-              height={100}
-            />
-          </li>
-        ))}
+        {productList.map((product: any) => {
+          console.log(product);
+
+          const upperCaseProduct = {
+            ...product,
+            name: product.name.charAt(0).toUpperCase() + product.name.slice(1),
+          };
+          return (
+            <li
+              key={upperCaseProduct.id}
+              className="flex flex-col gap-2 justify-center items-center relative"
+            >
+              <div className="absolute bottom-6 backdrop-blur w-full text-center">
+                <strong className="text-xs">$ {upperCaseProduct.price}</strong>
+              </div>
+              <Image
+                className="max-w-none object-cover size-16 md:size-20 lg:size-24 aspect-auto"
+                src={upperCaseProduct.image[0].url}
+                alt={upperCaseProduct.name}
+                width={250}
+                height={100}
+              />
+              <strong className="text-xs">
+                {upperCaseProduct.name.split(" ")[0]}
+              </strong>
+            </li>
+          );
+        })}
       </ul>
     );
   };
@@ -58,7 +75,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
         </AccordionItem>
 
         <AccordionItem
-        className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
+          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item"
           key="3"
           aria-label="Accordion 3"
           title="Procesados naturales"
