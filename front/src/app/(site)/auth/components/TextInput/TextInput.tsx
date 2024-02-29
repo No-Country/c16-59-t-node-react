@@ -9,7 +9,7 @@ interface TextInputProps {
   placeholder: string;
 }
 
-const TextInput: React.FC<TextInputProps> = ({ label, type, value, onChange, placeholder }) => {
+export const TextInput: React.FC<TextInputProps> = ({ label, type, value, onChange, placeholder }) => {
   return (
     <div className="mb-4">
       <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor={label}>
@@ -26,5 +26,3 @@ const TextInput: React.FC<TextInputProps> = ({ label, type, value, onChange, pla
     </div>
   );
 };
-
-export default TextInput;

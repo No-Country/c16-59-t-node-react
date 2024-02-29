@@ -1,11 +1,9 @@
 // LoginForm.tsx
 import { Button2 } from '@/app/components/Button2';
 import React, { useState } from 'react';
+import { ForgotPasswordLink, RememberMeCheckbox, TextInput } from '../../components';
 import { RoleI, roles } from '../../data/roles';
-import ForgotPasswordLink from './ForgotPasswordLink';
-import RememberMeCheckbox from './RememeberCheckbox';
-import RoleSelector from './RoleSelector';
-import TextInput from './TextInput';
+import RoleSelector from '../RoleSelector/RoleSelector';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');

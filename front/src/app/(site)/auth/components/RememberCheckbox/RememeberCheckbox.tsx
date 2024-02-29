@@ -6,7 +6,7 @@ interface RememberMeCheckboxProps {
   onChange: (value: boolean) => void;
 }
 
-const RememberMeCheckbox: React.FC<RememberMeCheckboxProps> = ({ rememberMe, onChange }) => {
+export const RememberMeCheckbox: React.FC<RememberMeCheckboxProps> = ({ rememberMe, onChange }) => {
   return (
     <div className="mb-6">
       <input
@@ -22,5 +22,3 @@ const RememberMeCheckbox: React.FC<RememberMeCheckboxProps> = ({ rememberMe, onC
     </div>
   );
 };
-
-export default RememberMeCheckbox;
