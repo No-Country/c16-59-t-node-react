@@ -1,6 +1,6 @@
 "use client"
 import { Title } from "../../components";
-import SignInForm from "./containers/SignInForm/SignInForm";
+import SignInForm from "./containers/LogInForm/LogInForm";
 
 export default function Login() {
   return (

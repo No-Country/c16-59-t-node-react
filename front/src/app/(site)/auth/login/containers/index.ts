@@ -1,3 +1,3 @@
 
-export * from "./SignInForm/SignInForm";
+export * from "./LogInForm/LogInForm";
 
