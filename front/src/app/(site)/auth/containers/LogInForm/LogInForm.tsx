@@ -1,4 +1,5 @@
-// LoginForm.tsx
+"use client"
+
 import { Button2 } from '@/app/components/Button2';
 import React, { useState } from 'react';
 import { ForgotPasswordLink, RememberMeCheckbox, TextInput } from '../../components';
@@ -6,13 +7,23 @@ import { RoleI, roles } from '../../data/roles';
 import RoleSelector from '../RoleSelector/RoleSelector';
 
 const LoginForm = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [role, setRole] = useState<RoleI | null>(null);
-  const [rememberMe, setRememberMe] = useState(false);
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+    role: null as RoleI | null,
+    rememberMe: false,
+  });
+
+  const handleChange = (key: keyof typeof formData, value: string | RoleI | boolean) => {
+    setFormData(prevState => ({
+      ...prevState,
+      [key]: value,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const { email, password, role, rememberMe } = formData;
     if (role) {
       console.log('Correo electrónico:', email);
       console.log('Contraseña:', password);
@@ -22,7 +33,7 @@ const LoginForm = () => {
   };
 
   const handleSelectRole = (selectedRole: RoleI) => {
-    setRole(selectedRole);
+    handleChange('role', selectedRole);
   };
 
   return (
@@ -30,27 +41,27 @@ const LoginForm = () => {
       <form onSubmit={handleSubmit} className="bg-white rounded px-2 pt-6 pb-4 mb-4">
         <RoleSelector
           roles={roles}
-          selectedRole={role}
+          selectedRole={formData.role}
           onSelectRole={handleSelectRole}
         />
         <TextInput
           label="Correo electrónico"
           type="email"
-          value={email}
-          onChange={setEmail}
+          value={formData.email}
+          onChange={(value) => handleChange('email', value)}
           placeholder="comprador123@gmail.com"
         />
         <TextInput
           label="Contraseña"
           type="password"
-          value={password}
-          onChange={setPassword}
+          value={formData.password}
+          onChange={(value) => handleChange('password', value)}
           placeholder="********"
         />
         <ForgotPasswordLink />
         <RememberMeCheckbox
-          rememberMe={rememberMe}
-          onChange={setRememberMe}
+          rememberMe={formData.rememberMe}
+          onChange={(value) => handleChange('rememberMe', value)}
         />
         <div className="flex items-center justify-center mb-4">
           <Button2 bgColor="primary-yellow">Inciar sesión</Button2>

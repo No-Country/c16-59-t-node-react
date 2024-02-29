@@ -1,13 +1,11 @@
-"use-client"
+"use client"
 
-import RegisterForm from "./containers/RegisterForm/RegisterForm";
-
-
+import { RegisterForm } from "../containers";
 
 export default function Register() {
   return (
     <div>
-      <RegisterForm />
+      <RegisterForm/>
     </div>
   );
 }
