@@ -2,26 +2,20 @@
 
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-<<<<<<< HEAD:front/src/app/components/NavBar.component.tsx
-import { IconHuerta, Phone, QuestionMark, User } from "./";
-import { useUserOrder } from "../context/app.context";
-import { useState } from "react";
-=======
 import { IconHuerta, Phone, QuestionMark, User } from "..";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
->>>>>>> develop:front/src/app/components/NavBar/NavBar.component.tsx
 
 export const NavBar = () => {
   const router = useRouter();
 
-  const [show, setShow] = useState(() => !!localStorage.getItem("token"));
+  // const [show, setShow] = useState(() => !!localStorage.getItem("token"));
 
-  const { setToken, removeToken } = useUserOrder();
+  // const { setToken, removeToken } = useUserOrder();
 
-  const handleClick = () => {
-    show ? removeToken() : setToken();
-    setShow(!show);
-  };
+  // const handleClick = () => {
+  //   show ? removeToken() : setToken();
+  //   setShow(!show);
+  // };
 
   return (
     // revisar con inspeccion los componentes
@@ -40,12 +34,9 @@ export const NavBar = () => {
           </span>
         </div>
       </NavbarBrand>
-      <div className={separator}/>
-      <NavbarContent
-        justify="end"
-        className={NavContent}
-      >
-        <button onClick={handleClick}>
+      <div className={separator} />
+      <NavbarContent justify="end" className={NavContent}>
+        <button>
           <User />
         </button>
         <button>
