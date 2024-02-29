@@ -21,9 +21,11 @@ export default async function Subscriptions() {
     <div className="space-y-4">
       <Title>La Huerta Box - EXPRESS</Title>
       <div className="flex flex-col  ">
-        <Statement>
-          1. Escoge los productos que deseas clickeando sobre cada ítem:
-        </Statement>
+        
+        <p className="font-semibold sm:px-6 text-xs lg:text-base mb-4">
+        1. Escoge los productos que deseas clickeando sobre cada ítem:
+      </p>
+      
         <AccordionCatalog
           vegetables={vegetables}
           fruits={fruits}
