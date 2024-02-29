@@ -1,10 +1,9 @@
-export interface UserOrderStateData {
+export interface UserStateData {
   token: string;
-  productsId: string[];
 }
 
-export interface UserOrderContextData {
-  userOrder: UserOrderStateData;
+export interface UserContextData {
+  user: UserStateData;
   getToken: () => void;
   setToken: () => void;
   removeToken: () => void;

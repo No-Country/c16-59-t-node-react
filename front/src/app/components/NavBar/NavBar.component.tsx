@@ -4,18 +4,25 @@ import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { IconHuerta, Phone, QuestionMark, User } from "..";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
+import { useState } from "react";
+import { useUser } from "@/app/hooks";
 
 export const NavBar = () => {
   const router = useRouter();
 
-  // const [show, setShow] = useState(() => !!localStorage.getItem("token"));
+  const [show, setShow] = useState(() => {
+    if (globalThis.localStorage) {
+      return !globalThis.localStorage.getItem("token");
+    }
+    return true;
+  });
 
-  // const { setToken, removeToken } = useUserOrder();
+  const { setToken, removeToken } = useUser();
 
-  // const handleClick = () => {
-  //   show ? removeToken() : setToken();
-  //   setShow(!show);
-  // };
+  const handleClick = () => {
+    !show ? removeToken() : setToken();
+    setShow(!show);
+  };
 
   return (
     // revisar con inspeccion los componentes
@@ -36,7 +43,7 @@ export const NavBar = () => {
       </NavbarBrand>
       <div className={separator} />
       <NavbarContent justify="end" className={NavContent}>
-        <button>
+        <button onClick={handleClick}>
           <User />
         </button>
         <button>
