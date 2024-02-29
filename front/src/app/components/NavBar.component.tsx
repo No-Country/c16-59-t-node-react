@@ -3,9 +3,20 @@
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { IconHuerta, Phone, QuestionMark, User } from "./";
+import { useUserOrder } from "../context/app.context";
+import { useState } from "react";
 
 export const NavBar = () => {
   const router = useRouter();
+
+  const [show, setShow] = useState(() => !!localStorage.getItem("token"));
+
+  const { setToken, removeToken } = useUserOrder();
+
+  const handleClick = () => {
+    show ? removeToken() : setToken();
+    setShow(!show);
+  };
 
   return (
     // revisar con inspeccion los componentes
@@ -28,7 +39,7 @@ export const NavBar = () => {
         justify="end"
         className="w-[50vw] active:[&_svg]:stroke-black/25 active:[&_svg]:fill-black/10"
       >
-        <button>
+        <button onClick={handleClick}>
           <User />
         </button>
         <button>
