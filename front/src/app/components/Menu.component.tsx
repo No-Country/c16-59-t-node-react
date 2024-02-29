@@ -12,6 +12,6 @@ export const Menu = () => {
       <ButtonStandard primary route="/auth/login">
         Iniciar Sesión
       </ButtonStandard>
-    </div>
+    </div>//boludo
   );
 };
