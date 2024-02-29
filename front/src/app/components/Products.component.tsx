@@ -1,6 +1,6 @@
 import { getProducts } from "@/utils/fetchApi";
-import Image from "next/image";
 import { ProductsApi } from "../interfaces/products";
+import { Product } from ".";
 
 export const Products = async () => {
   const products: ProductsApi[] = await getProducts();
@@ -13,16 +13,12 @@ export const Products = async () => {
     ariaHidden?: boolean;
   }) => {
     return (
-      <ul className="products-item group-hover:paused" aria-hidden={ariaHidden}>
-        {products.map((product: ProductsApi) => (
-          <li key={product.id}>
-            <Image
-              src={product.image[0]}
-              alt={product.name}
-              width={200}
-              height={200}
-            />
-          </li>
+      <ul
+        className="products-item group-hover:paused py-4"
+        aria-hidden={ariaHidden}
+      >
+        {products.map(({ id, image, name }: ProductsApi) => (
+          <Product key={id} image={image} name={name} />
         ))}
       </ul>
     );
