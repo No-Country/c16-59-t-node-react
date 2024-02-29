@@ -7,7 +7,7 @@ export const Hero = () => {
       <div className="h-[60px] sm:h-[80px] lg:h-[100px] bg-secondary-orange z-0 m-auto"></div>
       <div className="absolute top-0 left-0 w-full h-full flex gap-4 lg:gap-6 justify-center items-center z-10 ">
         <div className="mt-[-20px] size-12 sm:mt-[-40px] sm:size-16 lg:mt-[-60px] lg:size-20">
-          <IconHuerta />
+          <IconHuerta width="7rem" height="8rem"/>
         </div>
         <div className="flex flex-col gap-0 p-0">
           <span className="font-bold text-[50px] sm:text-[80px] xl:text-[120px] title-huerta">

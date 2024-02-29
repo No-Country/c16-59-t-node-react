@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import { Main } from "./Main/Main";
 import { Footer, NavBar } from "./components";
 import { UserOrderProvider } from "./context/app.context";
 import "./globals.css";
@@ -24,9 +25,7 @@ export default function RootLayout({
       <body className={montserrat.className}>
         <UserOrderProvider>
           <NavBar />
-          <main className="max-w-6xl m-auto space-y-4 p-4 sm:px-8">
-            {children}
-          </main>
+          <Main>{children}</Main>
           {/* <Providers>{children}</Providers> */}
           <Footer />
         </UserOrderProvider>

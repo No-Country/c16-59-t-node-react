@@ -9,7 +9,7 @@ export const Menu = () => {
       <ButtonStandard tertiary route="catalog">
         Productos del Mes
       </ButtonStandard>
-      <ButtonStandard primary route="login">
+      <ButtonStandard primary route="/auth/login">
         Iniciar Sesión
       </ButtonStandard>
     </div>
