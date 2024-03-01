@@ -8,3 +8,13 @@ export interface UserContextData {
   setToken: () => void;
   removeToken: () => void;
 }
+
+export interface OrderStateData {
+  products: string[];
+}
+
+export interface OrderContextData {
+  order: OrderStateData;
+  addProduct: (productId: string) => void;
+  removeProduct: (productId: string) => void;
+}
