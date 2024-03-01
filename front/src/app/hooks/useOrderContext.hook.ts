@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo, useContext } from "react";
-import { OrderStateData } from "../interfaces/context";
+import { OrderStateData, ProductData } from "../interfaces/context";
 import { OrderContext } from "../context";
 
 const INITIAL_VALUES: OrderStateData = {
@@ -18,15 +18,17 @@ export const useOrderContext = () => {
   const [order, setOrder] = useState<OrderStateData>(INITIAL_VALUES);
 
   // Función para añadir producto
-  const addProduct = useCallback((productId: string) => {
+  const addProduct = useCallback((product: ProductData) => {
     setOrder((currentProducts: OrderStateData) => ({
-      products: [...currentProducts.products, productId],
+      products: [...currentProducts.products, product],
     }));
   }, []);
 
-  const removeProduct = useCallback((productId: string) => {
+  const removeProduct = useCallback((id: string) => {
     setOrder((currentProducts: OrderStateData) => ({
-      products: currentProducts.products.filter((id) => id !== productId),
+      products: currentProducts.products.filter(
+        ({ productId }) => productId !== id
+      ),
     }));
   }, []);
 

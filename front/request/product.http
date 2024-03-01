@@ -6,3 +6,6 @@ GET https://la-huerta.onrender.com/api/v1/products/category/fruit
 
 ### GET VEGETABLES
 GET https://la-huerta.onrender.com/api/v1/products/category/vegetable
+
+### GET PROCESSED FOOD
+GET https://la-huerta.onrender.com/api/v1/products/category/processed-food

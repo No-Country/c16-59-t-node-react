@@ -1,3 +1,5 @@
+import { Category } from "./products";
+
 export interface UserStateData {
   token: string;
 }
@@ -10,11 +12,21 @@ export interface UserContextData {
 }
 
 export interface OrderStateData {
-  products: string[];
+  products: ProductData[];
+}
+
+interface ProductData {
+  productId: string;
+  image: string;
+  name: string;
+  salesPresentation: string;
+  price: number;
+  quantity?: number;
+  category: Category;
 }
 
 export interface OrderContextData {
   order: OrderStateData;
-  addProduct: (productId: string) => void;
+  addProduct: (product: ProductData) => void;
   removeProduct: (productId: string) => void;
 }

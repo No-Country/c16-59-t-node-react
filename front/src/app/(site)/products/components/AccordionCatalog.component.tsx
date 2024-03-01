@@ -1,12 +1,15 @@
 "use client";
+
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
 import "./AccordionCatalog.css";
 import { SelectionProduct } from "./SelectionProduct.component";
+import { ProductApi } from "@/app/interfaces/products";
+
 interface AccordionCatalogProps {
-  fruits: Array<any>;
-  vegetables: Array<any>;
-  processedFoods: Array<any>;
+  fruits: Array<ProductApi>;
+  vegetables: Array<ProductApi>;
+  processedFoods: Array<ProductApi>;
 }
 
 export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
@@ -14,20 +17,28 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   vegetables,
   processedFoods,
 }) => {
-  const renderProducts = (productList: Array<any>) => {
+  const renderProducts = (productList: Array<ProductApi>) => {
     return (
       <ul className="flex gap-1">
-        {productList.map((product: any) => {
+        {productList.map((product: ProductApi) => {
           const upperCaseProduct = {
             ...product,
             name: product.name.charAt(0).toUpperCase() + product.name.slice(1),
           };
+
           return (
             <li
               key={upperCaseProduct.id}
               className="flex flex-col gap-2 justify-center items-center"
             >
-              <SelectionProduct productId={upperCaseProduct.id}>
+              <SelectionProduct
+                productId={upperCaseProduct.id}
+                image={upperCaseProduct.image[0].url}
+                name={upperCaseProduct.name}
+                salesPresentation={upperCaseProduct.salesPresentation}
+                price={upperCaseProduct.price}
+                category={upperCaseProduct.category}
+              >
                 <div className="absolute bottom-5 backdrop-blur w-full text-center bg-white bg-opacity-50">
                   <strong className="text-xs">
                     $ {upperCaseProduct.price}
