@@ -1,21 +1,14 @@
-import { ButtonStandard, IconHuerta } from "@/app/components";
-import { Title } from "../../components";
+import { ButtonStandard } from "@/app/components";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import Image from "next/image";
+import { Title } from "../../components";
+import { Statement } from "../../subscriptions/components";
 
 export default function DeliveryOptions() {
   return (
     <div className="space-y-4">
-      {/* // falta cambiar lo q wagner hizo */}
-      <div className="flex gap-2 border-gray-200 border p-3 h-[4vw]">
-        <IconHuerta />
-        <span className="text-secondary-orange text-base sm:text-xl lg:text-2xl font-semibold pt-1">
-          La Huerta <span className="italic font-normal">Box</span> - EXPRESS
-        </span>
-      </div>
-      <p className="font-semibold sm:px-6 text-xs lg:text-base">
-        3. Escoge una forma de entrega:
-      </p>
+      <Title>La Huerta Box - EXPRESS</Title>
+      <Statement>3. Escoge una forma de entrega:</Statement>
       <ul className="space-y-6">
         {DELIVERY_OPTIONS.map((option: any) => (
           <li
