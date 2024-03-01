@@ -6,7 +6,7 @@ import { useOrderContext } from "../hooks";
 
 export const OrderContext = createContext<OrderContextData | null>(null);
 
-export const UserProvider: React.FC<{ children: React.ReactNode }> = ({
+export const OrderProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const contextValue = useOrderContext();
