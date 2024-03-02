@@ -1,16 +1,15 @@
-"use client"
 import { Button } from "@nextui-org/react";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import React from "react";
 
-interface ButtonProps {
+interface ButtonStandardProps {
   children: React.ReactNode;
   route?: string;
   bgColor: "primary-yellow" | "secondary-orange" | "tertiary-green";
 }
 
-export const ButtonC: React.FC<ButtonProps> = ({
+export const ButtonC: React.FC<ButtonStandardProps> = ({
   children,
   route,
   bgColor,
@@ -23,15 +22,27 @@ export const ButtonC: React.FC<ButtonProps> = ({
     const parts = text.split(/(\bBox\b)/);
 
     // Mapear las partes y aplicar estilos según corresponda
-    return parts.map((part, index) => {
-      // Si la parte es la palabra "Box", aplicar estilo italic
-      if (part.toLowerCase() === "box") {
-        return <span key={index} className="italic font-light">{part}</span>;
-      } else {
-        // Para el resto del texto, aplicar estilo semibold y reducir el margen inferior
-        return <span key={index} className="font-semibold mb-1">{part}</span>;
-      }
-    });
+    return (
+      <span className="whitespace-wrap">
+        {parts.map((part, index) => {
+          // Si la parte es la palabra "Box", aplicar estilo cursiva
+          if (part.toLowerCase() === "box") {
+            return (
+              <span key={index} className="italic font-extralight">
+                {part}
+              </span>
+            );
+          } else {
+            // Para el resto del texto, aplicar estilo negrita y reducir el margen inferior
+            return (
+              <span key={index} className="font-bold">
+                {part}
+              </span>
+            );
+          }
+        })}
+      </span>
+    );
   };
 
   return (
