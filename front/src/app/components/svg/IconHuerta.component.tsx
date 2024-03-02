@@ -1,13 +1,12 @@
 import { FC } from 'react';
 
 interface IconHuertaProps {
-  width?: string;
-  height?: string;
+  className?:string
 }
 
-export const IconHuerta: FC<IconHuertaProps> = ({ width="2rem", height="2rem" }) => {
+export const IconHuerta: FC<IconHuertaProps> = ({ className }) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox={`0 0 19 28`} width={width} height={height}>
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox={`0 0 19 28`} className={className}>
       <path fill="url(#a)" d="M0 0h18.484v27.803H0z" />
       <defs>
         <pattern

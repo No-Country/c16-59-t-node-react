@@ -27,8 +27,8 @@ const config = {
         "mbMain":"95vw"
       },
       minHeight:{
-        "dskMain":"86vh",
-        "tbMain":"88vh",
+        "dskMain":"56rem",
+        "tbMain":"53.2rem",
         "mbMain":"85vh"
       },
       minWidth:{

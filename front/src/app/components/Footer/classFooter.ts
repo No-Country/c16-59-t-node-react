@@ -2,6 +2,7 @@ export const footerContainer: string = `
   space-x-auto
   text-black 
   m-0
+  mt-auto
   p-1
   text-[0.9rem]
   text-nowrap

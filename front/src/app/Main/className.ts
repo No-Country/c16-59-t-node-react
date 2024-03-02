@@ -9,6 +9,7 @@ export const mainClass = `
 
   md:min-h-tbMain
   md:max-w-tbMain
+  md:mt-[4.25rem]
   
   lg:min-h-dskMain
   lg:max-w-dskMain  
