@@ -108,6 +108,16 @@
     animation: codely 40s linear infinite;
   }
 
+  .customInput::-webkit-outer-spin-button,
+  .customInput::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  .customInput {
+    -moz-appearance: textfield;
+  }
+
   @keyframes codely {
 
     0%,

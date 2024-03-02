@@ -5,6 +5,9 @@ import { OrderContext } from "../context";
 const INITIAL_VALUES: OrderStateData = {
   products: [],
   deliveryId: 0,
+  total: 0,
+  payment: 10000,
+  notes: "Notas o requerimientos especiales para el pedido o su entrega",
 };
 
 export const useOrder = () => {
@@ -23,6 +26,10 @@ export const useOrderContext = () => {
     setOrder((currentProducts: OrderStateData) => ({
       ...currentProducts,
       products: [...currentProducts.products, product],
+      total:
+        currentProducts.total +
+        (!currentProducts.products.length ? currentProducts.payment : 0) +
+        product.totalByUnit,
     }));
   }, []);
 
@@ -32,6 +39,10 @@ export const useOrderContext = () => {
       products: currentProducts.products.filter(
         ({ productId }) => productId !== id
       ),
+      total:
+        currentProducts.total -
+        (currentProducts.products.find(({ productId }) => productId === id)
+          ?.totalByUnit || 0),
     }));
   }, []);
 
@@ -46,6 +57,12 @@ export const useOrderContext = () => {
               : product
           ),
         ],
+        total:
+          currentProducts.total -
+          (currentProducts.products.find(
+            ({ productId: id }) => id === productId
+          )?.totalByUnit || 0) +
+          (restOfModifiedProduct.totalByUnit || 0),
       }));
     },
     []

@@ -14,6 +14,9 @@ export interface UserContextData {
 export interface OrderStateData {
   products: ProductData[];
   deliveryId: number;
+  total: number;
+  payment: number;
+  notes: string;
 }
 
 export interface ProductData {

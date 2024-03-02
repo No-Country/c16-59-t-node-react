@@ -65,7 +65,7 @@ export const RenderAccordionItem: React.FC<RenderAccordionItemProps> = ({
         onChange={handleChange}
         readOnly={readOnly}
       />
-      <p className="text-center">$ {totalByUnit}</p>
+      <p className="text-center pr-4">$ {totalByUnit}</p>
     </>
   );
 };
