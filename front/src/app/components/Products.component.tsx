@@ -1,6 +1,6 @@
 import { getProducts } from "@/utils/fetchApi";
-import { ProductsApi } from "../interfaces/products";
 import { Product } from ".";
+import { ProductsApi } from "../interfaces/products";
 
 export const Products = async () => {
   const products: ProductsApi[] = await getProducts();
