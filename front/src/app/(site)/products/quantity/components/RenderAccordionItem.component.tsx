@@ -1,65 +1,71 @@
 "use client";
 
 import { useOrder } from "@/app/hooks";
-import { Category } from "@/app/interfaces/products";
-import { AccordionItem } from "@nextui-org/react";
+import clsx from "clsx";
 import Image from "next/image";
 
 interface RenderAccordionItemProps {
-  id: string;
-  ariaLabel: string;
-  title: string;
-  category: Category;
+  productId: string;
+  name: string;
+  image: string;
+  salesPresentation: string;
+  quantity: number;
+  priceByUnit: number;
+  totalByUnit: number;
+  readOnly?: boolean;
 }
 
 export const RenderAccordionItem: React.FC<RenderAccordionItemProps> = ({
-  id,
-  ariaLabel,
-  title,
-  category,
+  productId,
+  name,
+  image,
+  priceByUnit,
+  salesPresentation,
+  quantity,
+  totalByUnit,
+  readOnly,
 }) => {
-  const { order } = useOrder();
+  const { updateProduct } = useOrder();
 
-  const productsByCategory = order?.products.filter(
-    (product) => product.category === category
-  );
+  const handleChange = ({
+    target: { value },
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    let valueNumber = parseInt(value, 10);
 
-  console.log("PRODUCTOS", productsByCategory);
+    (valueNumber < 1 || isNaN(valueNumber)) && (valueNumber = 1);
+
+    updateProduct({
+      productId,
+      quantity: valueNumber,
+      totalByUnit: priceByUnit * valueNumber,
+    });
+  };
 
   return (
-    <AccordionItem
-      key={id}
-      aria-label={ariaLabel}
-      title={title}
-      className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
-    >
-      <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
-        <p className="col-start-3">Cantidades</p>
-        <p className="col-start-4">Precio</p>
-        {/* {productsByCategory.map(({ name, image, price, salesPresentation }) => (
-          <>
-            <Image
-              className="aspect-[4/3]"
-              src={image}
-              alt={name}
-              width={50}
-              height={33}
-            />
-            <p>
-              {name} &#40; {salesPresentation} &#41;
-            </p>
-            <input
-              type="number"
-              className="m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green"
-              // value={quantity}
-              // onChange={(evt: React.ChangeEvent<HTMLInputElement>) =>
-              //   setQuantity(parseInt(evt.target.value, 10))
-              // }
-            />
-            <p className="text-center">$ {price}</p>
-          </>
-        ))} */}
-      </div>
-    </AccordionItem>
+    <>
+      <Image
+        className="aspect-[4/3]"
+        src={image}
+        alt={name}
+        width={50}
+        height={33}
+      />
+      <p>
+        {name} &#40; {salesPresentation} &#41;
+      </p>
+      <input
+        type="number"
+        min={1}
+        className={clsx(
+          `
+          m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green`,
+          readOnly ? "cursor-not-allowed focus:outline-0" : "cursor-pointer"
+        )}
+        value={quantity}
+        onChange={handleChange}
+        readOnly={readOnly}
+      />
+      <p className="text-center">$ {totalByUnit}</p>
+    </>
   );
 };

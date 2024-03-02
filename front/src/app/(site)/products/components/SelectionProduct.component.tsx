@@ -8,7 +8,7 @@ interface SelectionProductProps {
   image: string;
   name: string;
   salesPresentation: string;
-  price: number;
+  priceByUnit: number;
   category: Category;
 }
 
@@ -18,7 +18,7 @@ export const SelectionProduct: React.FC<SelectionProductProps> = ({
   image,
   name,
   salesPresentation,
-  price,
+  priceByUnit,
   category,
 }) => {
   const { order, addProduct, removeProduct } = useOrder();
@@ -31,8 +31,10 @@ export const SelectionProduct: React.FC<SelectionProductProps> = ({
       image,
       name,
       salesPresentation,
-      price,
+      priceByUnit,
       category,
+      quantity: 1,
+      totalByUnit: priceByUnit,
     };
 
     if (checked) {

@@ -36,7 +36,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
                 image={upperCaseProduct.image[0].url}
                 name={upperCaseProduct.name}
                 salesPresentation={upperCaseProduct.salesPresentation}
-                price={upperCaseProduct.price}
+                priceByUnit={upperCaseProduct.price}
                 category={upperCaseProduct.category}
               >
                 <div className="absolute bottom-5 backdrop-blur w-full text-center bg-white bg-opacity-50">

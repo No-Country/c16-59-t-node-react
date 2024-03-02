@@ -13,15 +13,17 @@ export interface UserContextData {
 
 export interface OrderStateData {
   products: ProductData[];
+  deliveryId: number;
 }
 
-interface ProductData {
+export interface ProductData {
   productId: string;
   image: string;
   name: string;
   salesPresentation: string;
-  price: number;
-  quantity?: number;
+  priceByUnit: number;
+  totalByUnit: number;
+  quantity: number;
   category: Category;
 }
 
@@ -29,4 +31,6 @@ export interface OrderContextData {
   order: OrderStateData;
   addProduct: (product: ProductData) => void;
   removeProduct: (productId: string) => void;
+  updateProduct: (modifiedProduct: Partial<ProductData>) => void;
+  setDelivery: (deliveryId: number) => void;
 }

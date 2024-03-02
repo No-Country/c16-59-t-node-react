@@ -5,8 +5,15 @@ import { Accordion, AccordionItem } from "@nextui-org/react";
 import { ButtonStandard } from "@/app/components";
 import { RenderAccordionItem } from "./components/RenderAccordionItem.component";
 import { PRODUCTS_CATEGORIES } from "@/constants/data";
+import { useOrder } from "@/app/hooks";
+import { Category } from "@/app/interfaces/products";
 
 export default function Quantity() {
+  const { order } = useOrder();
+
+  const productsByCategory = (category: Category) =>
+    order?.products.filter((product) => product.category === category);
+
   return (
     <div className="space-y-5">
       <Title>La Huerta Box - EXPRESS</Title>
@@ -22,45 +29,43 @@ export default function Quantity() {
         defaultExpandedKeys={PRODUCTS_CATEGORIES.map((category) => category.id)}
       >
         {PRODUCTS_CATEGORIES.map(({ id, ariaLabel, title, category }) => (
-          // <RenderAccordionItem
-          //   key={id}
-          //   id={id}
-          //   ariaLabel={ariaLabel}
-          //   title={title}
-          //   category={category}
-          // />
           <AccordionItem
             key={id}
             aria-label={ariaLabel}
             title={title}
             className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
           >
-            <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
-              <p className="col-start-3">Cantidades</p>
-              <p className="col-start-4">Precio</p>
-              {/* {productsByCategory.map(({ name, image, price, salesPresentation }) => (
-              <>
-                <Image
-                  className="aspect-[4/3]"
-                  src={image}
-                  alt={name}
-                  width={50}
-                  height={33}
-                />
-                <p>
-                  {name} &#40; {salesPresentation} &#41;
-                </p>
-                <input
-                  type="number"
-                  className="m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green"
-                  // value={quantity}
-                  // onChange={(evt: React.ChangeEvent<HTMLInputElement>) =>
-                  //   setQuantity(parseInt(evt.target.value, 10))
-                  // }
-                />
-                <p className="text-center">$ {price}</p>
-              </>
-            ))} */}
+            <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4 gap-y-2">
+              {productsByCategory(category).length ? (
+                <>
+                  <p className="col-start-3">Cantidades</p>
+                  <p className="col-start-4">Precio</p>
+                  {productsByCategory(category).map(
+                    ({
+                      productId,
+                      name,
+                      image,
+                      salesPresentation,
+                      priceByUnit,
+                      quantity,
+                      totalByUnit,
+                    }) => (
+                      <RenderAccordionItem
+                        key={productId}
+                        productId={productId}
+                        name={name}
+                        image={image}
+                        priceByUnit={priceByUnit}
+                        salesPresentation={salesPresentation}
+                        quantity={quantity}
+                        totalByUnit={totalByUnit}
+                      />
+                    )
+                  )}
+                </>
+              ) : (
+                <p className="col-start-1">No hay productos</p>
+              )}
             </div>
           </AccordionItem>
         ))}

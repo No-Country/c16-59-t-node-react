@@ -1,3 +1,4 @@
+import { DeliveryOptions } from "@/app/interfaces/constants";
 import { Category } from "@/app/interfaces/products";
 
 export const URL_API_FRUITS =
@@ -10,8 +11,9 @@ export const URL_API_PROCESSEDFOODS =
   "https://la-huerta.onrender.com/api/v1/products/category/processed-food";
 
 // delivery options
-export const DELIVERY_OPTIONS = [
+export const DELIVERY_OPTIONS: DeliveryOptions[] = [
   {
+    id: 1,
     title: "Entrega puerta a puerta:",
     description: [
       {
@@ -27,6 +29,7 @@ export const DELIVERY_OPTIONS = [
     titleButton: "Puerta a puerta",
   },
   {
+    id: 2,
     title: "Recógelo en nuestra sede:",
     description: [
       {
