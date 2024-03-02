@@ -2,7 +2,7 @@ import { Hero, Menu, Products } from "./components";
 
 export default function Home() {
   return (
-    <>
+    <div>
       <Hero />
       <div className="flex flex-col items-center justify-center text-secondary-orange m-auto md:h-[10rem] sm:h-[7rem]">
         <h3 className="font-semibold text-xs sm:text-[1.5rem] lg:text-[1.906rem] lg:gap-1 sm:text-[1.5rem] text-center sm:px-[1rem] sm:leading-8 md:text-[1.9rem]">
@@ -14,6 +14,6 @@ export default function Home() {
       </div>
       <Menu />
       <Products />
-    </>
+    </div>
   );
 }
