@@ -1,5 +1,5 @@
 import React from "react";
-import { Subscription } from "../components";
+import { Subscription } from "./Subscription";
 
 interface SubscriptionData {
   title: string;

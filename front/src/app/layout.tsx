@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Main } from "./Main/Main";
 import { Footer, NavBar } from "./components";
+import { Main } from "./components/Main/Main";
 import { UserOrderProvider } from "./context/app.context";
 import "./globals.css";
 

@@ -1,10 +1,10 @@
-import { ButtonStandard } from "@/app/components";
+import { ButtonStandard, Title } from "@/app/components";
 import {
   getFruitCatalog,
   getProcessedFoodsCatalog,
   getVegetablesCatalog,
 } from "@/utils/fetchApi";
-import { Title } from "../components";
+
 import { AccordionCatalog } from "./components";
 
 export default async function CatalogPage() {

@@ -1,10 +1,11 @@
 "use client"
 
-import { ButtonC } from '@/app/components/Button/Button';
+import { ButtonC } from '@/app/components/RouteBtn/Button';
 import React, { useState } from 'react';
-import { ForgotPasswordLink, RememberMeCheckbox, TextInput } from '../../components';
+import { ForgotPasswordLink, RememberMeCheckbox, Title } from '..';
 import { RoleI, roles } from '../../data/roles';
 import RoleSelector from '../RoleSelector/RoleSelector';
+import { TextInput } from '../TextInput/TextInput';
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ const LoginForm = () => {
   return (
     <div className="max-w-md mx-auto mt-8">
       <form onSubmit={handleSubmit} className="bg-white rounded px-2 pt-6 pb-4 mb-4">
+        <Title>Inicia sesión para finalizar la compra</Title>
         <RoleSelector
           roles={roles}
           selectedRole={formData.role}

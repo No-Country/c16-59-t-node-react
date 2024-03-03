@@ -1,10 +1,9 @@
-import { ButtonC } from "@/app/components/Button/Button";
+import { ButtonC, Title } from "@/app/components";
 import {
   getFruitCatalog,
   getProcessedFoodsCatalog,
   getVegetablesCatalog,
 } from "@/utils/fetchApi";
-import { Title } from "../components";
 import { AccordionCatalog } from "./components";
 
 export default async function Subscriptions() {

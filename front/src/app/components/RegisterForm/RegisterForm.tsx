@@ -1,10 +1,10 @@
-"use-client"
+"use client"
 
 import { ButtonC } from '@/app/components';
 import React, { useState } from 'react';
-import { TextInput } from "../../components";
 import { RoleI, roles } from "../../data/roles";
 import RoleSelector from "../RoleSelector/RoleSelector";
+import { TextInput } from '../TextInput/TextInput';
 
 
 interface FormData {

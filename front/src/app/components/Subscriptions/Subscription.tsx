@@ -1,11 +1,12 @@
 "use client";
-import { ButtonC } from "@/app/components/Button/Button";
+import { ButtonC } from "@/app/components/RouteBtn/Button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
-import { Price, SubscriptionName } from "..";
-import { UnorderedList } from "../../containers";
 import { Presentation } from "../Presentation/Presentation";
+import { Price } from "../Price/Price";
+import { UnorderedList } from "../UnorderedList/UnorderedList";
+import { SubscriptionName } from "./SubscriptionName";
 
 interface SubscriptionProps {
   children?: React.ReactNode;
@@ -25,7 +26,6 @@ export const Subscription: React.FC<SubscriptionProps> = ({
   route,
   color,
 }) => {
-  console.log(route)
   const borderColor = `border-${color}`;
   const btn = `Quiero ${title}`
   return (

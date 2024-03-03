@@ -1,4 +1,4 @@
-import { BulletText } from "../components"
+import { BulletText } from "./BulletText"
 
 interface UnorderedListProps{
   data:string[]
