@@ -22,8 +22,10 @@ export const Subscription: React.FC<SubscriptionProps> = ({
   price,
   content,
   img,
+  route,
   color,
 }) => {
+  console.log(route)
   const borderColor = `border-${color}`;
   const btn = `Quiero ${title}`
   return (
@@ -52,7 +54,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
           <UnorderedList data={content} />
         </CardBody>
         <CardFooter className="col-span-2 flex justify-center items-center">
-          <ButtonC bgColor={color}>{btn}</ButtonC>
+          <ButtonC bgColor={color} route={route}>{btn}</ButtonC>
         </CardFooter>
       </div>
       {/* <div className="col-span-1"> */}

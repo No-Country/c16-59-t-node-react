@@ -6,6 +6,7 @@ interface SubscriptionData {
   price: string;
   content: string[];
   img: string;
+  route:string;
   color:"primary-yellow" | "secondary-orange" | "tertiary-green"
 }
 
@@ -17,7 +18,7 @@ const SubscriptionsContainer: React.FC<Props> = ({ options }) => {
   return (
     <>
       {options.map((option, index) => {
-        const { title, price, content, img, color } = option;
+        const { title, price, content, img, route, color } = option;
         return (
           <Subscription
             key={index}
@@ -26,6 +27,7 @@ const SubscriptionsContainer: React.FC<Props> = ({ options }) => {
             content={content}
             img={img}
             color={color}
+            route={route}
           />
         );
       })}

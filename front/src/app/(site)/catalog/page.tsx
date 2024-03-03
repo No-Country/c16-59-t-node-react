@@ -1,8 +1,8 @@
-import { ButtonStandard, Footer } from "@/app/components";
+import { ButtonStandard } from "@/app/components";
 import {
-    getFruitCatalog,
-    getProcessedFoodsCatalog,
-    getVegetablesCatalog,
+  getFruitCatalog,
+  getProcessedFoodsCatalog,
+  getVegetablesCatalog,
 } from "@/utils/fetchApi";
 import { Title } from "../components";
 import { AccordionCatalog } from "./components";
@@ -29,8 +29,6 @@ export default async function CatalogPage() {
           Volver al inicio
         </ButtonStandard>
       </div>
-
-      <Footer />
     </>
   );
 }

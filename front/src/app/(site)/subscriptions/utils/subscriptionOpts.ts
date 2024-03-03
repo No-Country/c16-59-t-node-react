@@ -4,7 +4,7 @@ interface Subscription {
   price: string;
   content: string[];
   img: string;
-  color: "primary-yellow" | "secondary-orange" | "tertiary-green"
+  color: "primary-yellow" | "secondary-orange" | "tertiary-green";
   route:string
 }
 
@@ -20,7 +20,7 @@ export const data: Subscription[] = [
     ],
     img: "https://s3-alpha-sig.figma.com/img/bb93/8520/88d4ee249515e371002fbceda76b239e?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=IhgaLeuSA1PKoQ3vNxHCF8llIQDrYruu-RX3q-ppZXwSoFLcMebhs0l5kcQrewqVRaBq4o6Op8D1rZKYLmXZdXBvSA0UCF9vyUVaganRFFUmFnpEJ9prpcrhSlqPea-siPNdIbBNmZaW~Mdn0AsuxZ~psrEX2bxrOwaYDpIoLl7KykbuMyb8hYfuCsxyAgVUwelgGprjJDF8F7p~6PMsEv8ssQtVMaqhfBtzu6cL0HqSg184JBYpa3EdVH-bZ~7wnBvPqJ4EVnvbSKfrHjQ2NoPF6sIYOCCjB0vx~m4OZN4mN20Wejldnvr2JLru0Mirk4wrQe05JjyvPhfJri6MSw__",
     color: "secondary-orange",
-    route:""
+    route:"/products"
   },
   {
     id: 1,
