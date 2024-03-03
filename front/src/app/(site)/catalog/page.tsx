@@ -1,12 +1,11 @@
-import { AccordionCatalog } from "./components";
-import { Title } from "../components";
-import {
-  getFruitCatalog,
-  getVegetablesCatalog,
-  getProcessedFoodsCatalog,
-} from "@/utils/fetchApi";
 import { ButtonStandard, Footer } from "@/app/components";
-import { Button2 } from "@/app/components/Button2";
+import {
+    getFruitCatalog,
+    getProcessedFoodsCatalog,
+    getVegetablesCatalog,
+} from "@/utils/fetchApi";
+import { Title } from "../components";
+import { AccordionCatalog } from "./components";
 
 export default async function CatalogPage() {
   // aqui haz las peticiones para frutas, vegetales y productos envasados
