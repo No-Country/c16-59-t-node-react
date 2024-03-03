@@ -3,6 +3,7 @@ import { Button } from "@nextui-org/react";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import React from "react";
+import { BoxItalic } from "../BoxItalic/BoxItalic";
 
 interface ButtonStandardProps {
   children: React.ReactNode;
@@ -17,35 +18,6 @@ export const ButtonC: React.FC<ButtonStandardProps> = ({
 }) => {
   const router = useRouter();
 
-  // Función para aplicar estilos a la palabra "Box"
-  const applyStyles = (text: string) => {
-    // Separar el texto en partes, identificando la palabra "Box"
-    const parts = text.split(/(\bBox\b)/);
-
-    // Mapear las partes y aplicar estilos según corresponda
-    return (
-      <span className="whitespace-wrap">
-        {parts.map((part, index) => {
-          // Si la parte es la palabra "Box", aplicar estilo cursiva
-          if (part.toLowerCase() === "box") {
-            return (
-              <span key={index} className="italic font-extralight">
-                {part}
-              </span>
-            );
-          } else {
-            // Para el resto del texto, aplicar estilo negrita y reducir el margen inferior
-            return (
-              <span key={index} className="font-bold">
-                {part}
-              </span>
-            );
-          }
-        })}
-      </span>
-    );
-  };
-
   return (
     <Button
       className={clsx(
@@ -55,8 +27,7 @@ export const ButtonC: React.FC<ButtonStandardProps> = ({
       )}
       onClick={() => route && router.push(route)}
     >
-      {/* Aplicar estilos a children */}
-      {applyStyles(children as string)}
+      {BoxItalic(children as string)}
     </Button>
   );
 };
