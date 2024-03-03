@@ -1,8 +1,10 @@
 "use client";
 
+import LoginForm from "@/app/(site)/auth/containers/LogInForm/LogInForm";
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { IconHuerta, Phone, QuestionMark, User } from "..";
+import { ModalBtn } from "../ModalBtn/ModalBtn";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
 
 export const NavBar = () => {
@@ -36,9 +38,7 @@ export const NavBar = () => {
       </NavbarBrand>
       <div className={separator} />
       <NavbarContent justify="end" className={NavContent}>
-        <button>
-          <User />
-        </button>
+        <ModalBtn btnContent={<User/>} modalContent={<LoginForm/>}/>
         <button>
           <QuestionMark />
         </button>
