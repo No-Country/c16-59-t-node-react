@@ -1,6 +1,6 @@
 "use-client"
 
-import { Button2 } from "@/app/components/Button/Button";
+import { ButtonC } from '@/app/components';
 import React, { useState } from 'react';
 import { TextInput } from "../../components";
 import { RoleI, roles } from "../../data/roles";
@@ -68,7 +68,7 @@ export const RegisterForm: React.FC = () => {
         />
         {/* Repite este patrón para los demás campos del formulario */}
         <div className="flex items-center justify-center mb-4">
-          <Button2 bgColor="tertiary-green">Crear cuenta</Button2>
+          <ButtonC bgColor="tertiary-green">Crear cuenta</ButtonC>
         </div>
       </form>
     </div>
