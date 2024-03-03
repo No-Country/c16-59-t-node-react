@@ -13,8 +13,6 @@ export default function Quantity() {
     order: { statusUpdateProdToResume, products },
   } = useOrder();
 
-  console.log(statusUpdateProdToResume);
-
   const productsByCategory = (category: Category) =>
     products.filter((product) => product.category === category);
 

@@ -9,8 +9,6 @@ export const ButtonOptions = () => {
     updatedProductsToResume,
   } = useOrder();
 
-  console.log(statusUpdateProdToResume);
-
   return (
     <Button2
       bgColor="primary-yellow"
