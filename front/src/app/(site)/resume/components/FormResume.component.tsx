@@ -107,9 +107,7 @@ export const FormResume = () => {
         </label>
       </div>
       <div className="col-span-2 w-full flex justify-center items-center">
-        <Button2 bgColor="primary-yellow" route="/register">
-          Editar Datos
-        </Button2>
+        <Button2 bgColor="primary-yellow">Editar Datos</Button2>
       </div>
     </div>
   );

@@ -9,10 +9,14 @@ import { useOrder } from "@/app/hooks";
 import { Category } from "@/app/interfaces/products";
 
 export default function Quantity() {
-  const { order } = useOrder();
+  const {
+    order: { statusUpdateProdToResume, products },
+  } = useOrder();
+
+  console.log(statusUpdateProdToResume);
 
   const productsByCategory = (category: Category) =>
-    order?.products.filter((product) => product.category === category);
+    products.filter((product) => product.category === category);
 
   return (
     <div className="space-y-5">

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { IconHuerta, Phone, QuestionMark, User } from "..";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
 import { useState } from "react";
-import { useUser } from "@/app/hooks";
+import { removeToken, setToken } from "@/utils/localStorage.utils";
 
 export const NavBar = () => {
   const router = useRouter();
@@ -16,8 +16,6 @@ export const NavBar = () => {
     }
     return true;
   });
-
-  const { setToken, removeToken } = useUser();
 
   const handleClick = () => {
     !show ? removeToken() : setToken();

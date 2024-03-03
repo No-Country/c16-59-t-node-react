@@ -73,3 +73,13 @@ export const PRODUCTS_CATEGORIES = [
     category: Category.ProcessedFood,
   },
 ];
+
+// Stripe
+export const STRIPE_PROMISE_CLIENT = process.env.STRIPE_PUBLIC_KEY_PARSER;
+export const STRIPE_SERVER = process.env.STRIPE_SECRET_KEY;
+
+// localstorage
+export const DATA_USER = {
+  token: "tokendelusuario",
+  email: "luis@gmail.com",
+};

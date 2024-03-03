@@ -90,7 +90,7 @@ const nextConfig = {
     ],
   },
   env: {
-    STRIPE_PUBLIC_KEY: process.env.STRIPE_PUBLIC_KEY,
+    STRIPE_PUBLIC_KEY_PARSER: process.env.STRIPE_PUBLIC_KEY,
   },
 };
 

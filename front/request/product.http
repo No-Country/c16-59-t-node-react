@@ -9,3 +9,23 @@ GET https://la-huerta.onrender.com/api/v1/products/category/vegetable
 
 ### GET PROCESSED FOOD
 GET https://la-huerta.onrender.com/api/v1/products/category/processed-food
+
+### POST STRIPE
+POST http://localhost:3001/api/create-checkout-session
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "id": 1,
+      "price": 60.99,
+      "image": "https://res.cloudinary.com/dnautzk6f/image/upload/v1708368602/br7oaeocwvl0htipd8dq.png",
+      "title": "hola soy un titulo",
+      "description": "lorem ipsum",
+      "category": "lorem",
+      "rating": 1,
+      "hasPrime": false
+    }
+  ],
+  "email": "luis1@gmail.com"
+}

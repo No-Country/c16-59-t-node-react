@@ -6,7 +6,7 @@ import {
 } from "@/utils/fetchApi";
 import { Title } from "../components";
 import { Statement } from "../subscriptions/components";
-import { AccordionCatalog } from "./components";
+import { AccordionCatalog, ButtonOptions } from "./components";
 import { ProductApi } from "@/app/interfaces/products";
 
 export default async function Subscriptions() {
@@ -35,9 +35,8 @@ export default async function Subscriptions() {
           <Button2 bgColor="secondary-orange" route="/">
             Anterior
           </Button2>
-          <Button2 bgColor="primary-yellow" route="/products/quantity">
-            Siguiente
-          </Button2>
+          {/* perdonen muchachos pero se me ocurrio esto y pense que podria ser chevere */}
+          <ButtonOptions />
         </div>
       </div>
     </div>

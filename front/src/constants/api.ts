@@ -1,9 +1,4 @@
-import { Stripe, loadStripe } from "@stripe/stripe-js";
-
 export const API_URL = process.env.DEPLOY_URL;
-export const stripePromise = loadStripe(
-  process.env.STRIPE_PUBLIC_KEY as string
-) as Promise<Stripe>;
 
 //Products
 export const URL_API_PRODUCTS = `${API_URL}/products`;

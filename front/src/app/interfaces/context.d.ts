@@ -1,22 +1,12 @@
 import { Category } from "./products";
 
-export interface UserStateData {
-  token: string;
-}
-
-export interface UserContextData {
-  user: UserStateData;
-  getToken: () => void;
-  setToken: () => void;
-  removeToken: () => void;
-}
-
 export interface OrderStateData {
   products: ProductData[];
   deliveryId: number;
   total: number;
   payment: number;
   notes: string;
+  statusUpdateProdToResume: boolen;
 }
 
 export interface ProductData {
@@ -36,4 +26,5 @@ export interface OrderContextData {
   removeProduct: (productId: string) => void;
   updateProduct: (modifiedProduct: Partial<ProductData>) => void;
   setDelivery: (deliveryId: number) => void;
+  updatedProductsToResume: () => void;
 }

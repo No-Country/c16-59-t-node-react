@@ -1,6 +1,5 @@
 import { useOrder } from "@/app/hooks";
 import { RenderAccordionItem } from "../../products/quantity/components/RenderAccordionItem.component";
-import { Button2 } from "@/app/components/Button2";
 
 export const OrderResume = () => {
   const { order } = useOrder();
@@ -49,11 +48,6 @@ export const OrderResume = () => {
           <p className="text-start font-semibold">Notas del pedido:</p>
           <p>{order.notes}</p>
         </div>
-      </div>
-      <div className="w-full m-auto flex justify-center items-center">
-        <Button2 bgColor="primary-yellow" route="/products">
-          Agregar mas productos
-        </Button2>
       </div>
     </>
   );

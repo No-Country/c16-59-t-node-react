@@ -33,9 +33,6 @@ export default function DeliveryOptions() {
         <ButtonStandard secondary route="/products/quantity">
           Anterior
         </ButtonStandard>
-        {/* <ButtonStandard primary route="/resume">
-          Siguiente
-        </ButtonStandard> */}
       </div>
     </div>
   );

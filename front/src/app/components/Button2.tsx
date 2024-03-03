@@ -7,13 +7,13 @@ import { useRouter } from "next/navigation";
 interface ButtonStandardProps {
   children: React.ReactNode;
   route?: string;
-  bgColor: "primary-yellow" | "secondary-orange" | "tertiary-green"
+  bgColor: "primary-yellow" | "secondary-orange" | "tertiary-green";
 }
 
 export const Button2: React.FC<ButtonStandardProps> = ({
   children,
   route,
-  bgColor
+  bgColor,
 }) => {
   const router = useRouter();
 

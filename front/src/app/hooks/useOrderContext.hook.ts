@@ -8,6 +8,7 @@ const INITIAL_VALUES: OrderStateData = {
   total: 0,
   payment: 10000,
   notes: "Notas o requerimientos especiales para el pedido o su entrega",
+  statusUpdateProdToResume: false,
 };
 
 export const useOrder = () => {
@@ -75,8 +76,30 @@ export const useOrderContext = () => {
     }));
   }, []);
 
+  // adicional sino quitar
+  const updatedProductsToResume = useCallback(() => {
+    setOrder((currentProducts: OrderStateData) => ({
+      ...currentProducts,
+      statusUpdateProdToResume: !currentProducts.statusUpdateProdToResume,
+    }));
+  }, []);
+
   return useMemo(
-    () => ({ order, addProduct, removeProduct, updateProduct, setDelivery }),
-    [order, addProduct, removeProduct, updateProduct, setDelivery]
+    () => ({
+      order,
+      addProduct,
+      removeProduct,
+      updateProduct,
+      setDelivery,
+      updatedProductsToResume,
+    }),
+    [
+      order,
+      addProduct,
+      removeProduct,
+      updateProduct,
+      setDelivery,
+      updatedProductsToResume,
+    ]
   );
 };

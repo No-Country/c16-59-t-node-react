@@ -14,10 +14,13 @@ import {
 import { Button2 } from "@/app/components/Button2";
 
 export default function Resume() {
-  const { order } = useOrder();
+  const {
+    order: { products, statusUpdateProdToResume, deliveryId },
+    updatedProductsToResume,
+  } = useOrder();
 
   const { id, title, description, image, titleButton } =
-    DELIVERY_OPTIONS.find(({ id }) => id === order.deliveryId) ||
+    DELIVERY_OPTIONS.find(({ id }) => id === deliveryId) ||
     ({} as DeliveryOptions);
 
   return (
@@ -30,7 +33,7 @@ export default function Resume() {
         </ElementResume>
 
         <ElementResume title="Forma de entrega">
-          {order.deliveryId ? (
+          {deliveryId ? (
             <div className="flex flex-col gap-3 justify-center items-center m-auto">
               <CardDelivery
                 id={id}
@@ -40,20 +43,32 @@ export default function Resume() {
                 image={image}
                 statusResume
               />
-              <Button2
-                bgColor="primary-yellow"
-                route="/products/delivery-options"
-              >
-                Cambiar
-              </Button2>
             </div>
           ) : (
             <p>No hay datos de envío</p>
           )}
+          <div className="w-full m-auto flex justify-center items-center">
+            <Button2
+              bgColor="primary-yellow"
+              route="/products/delivery-options"
+            >
+              Cambiar
+            </Button2>
+          </div>
         </ElementResume>
 
         <ElementResume title="Resumen de compra">
-          {order.products.length ? <OrderResume /> : <p>No hay productos</p>}
+          {products.length ? <OrderResume /> : <p>No hay productos</p>}
+          <div className="w-full m-auto flex justify-center items-center">
+            <Button2 bgColor="primary-yellow" route="/products">
+              <button
+                onClick={updatedProductsToResume}
+                className="m-0 p-0 w-full h-full"
+              >
+                Agregar mas productos
+              </button>
+            </Button2>
+          </div>
         </ElementResume>
 
         {/* decirle a wagner que en el boton se tiene dar la posibilidad de abrir el modal */}
