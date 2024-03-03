@@ -1,8 +1,6 @@
-import { ButtonStandard } from "@/app/components";
+import { ButtonStandard, Statement, Title } from "@/app/components";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import Image from "next/image";
-import { Title } from "../../components";
-import { Statement } from "../../subscriptions/components";
 
 export default function DeliveryOptions() {
   return (
