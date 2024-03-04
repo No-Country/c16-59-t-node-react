@@ -9,7 +9,7 @@ interface ModalPresentationProps{
 
 export const ModalPresentation:React.FC<ModalPresentationProps> = ({isOpen, modalContent, onOpenChange}) =>{
   return(
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="radius-none"> 
+    <Modal isOpen={isOpen} onOpenChange={onOpenChange} radius={"none"} size={"sm"}> 
         <ModalContent>
           {modalContent}
           </ModalContent>
