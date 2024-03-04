@@ -15,6 +15,7 @@ import { Product } from './entities/product.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { PaginationDto } from 'src/common/dto/pagination.dto';
 import { isUUID } from 'class-validator';
+import { User } from 'src/auth/entities/user.entity';
 
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_NAME,
@@ -41,22 +42,23 @@ export class ProductsService {
     private readonly dataSource: DataSource,
   ) {}
 
-  async create(createProductDto: CreateProductDto) {
+  async create(createProductDto: CreateProductDto, user: User) {
     try {
       const { image = [], ...propertiesProduct } = createProductDto;
 
-      //Solo crea
+      //Only create
       const product = this.productRepository.create({
         ...propertiesProduct,
+        user,
         image: image.map((image) =>
           this.productImageRepository.create({ url: image }),
         ),
       });
 
-      //Guarda en la Baase de Datos
+      //Save on DB
       await this.productRepository.save(product);
 
-      // Para evitar retornar el id en las imagenes
+      //Not return id images
       return { ...product, image };
     } catch (error) {
       this.handleDBExceptions(error);

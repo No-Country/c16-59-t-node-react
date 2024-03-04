@@ -5,6 +5,7 @@ import { ProductsModule } from './products/products.module';
 import { CloudinaryModule } from './cloudinary/cloudinary.module';
 import { CommonModule } from './common/common.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -36,6 +37,8 @@ import { SubscriptionsModule } from './subscriptions/subscriptions.module';
     CommonModule,
 
     SubscriptionsModule,
+
+    AuthModule,
   ],
 })
 export class AppModule {}
