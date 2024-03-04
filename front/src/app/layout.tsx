@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/components/theme-provider";
+import { Providers } from "./providers";
+import { NavBar } from "./components";
 
-// fonts
-// const inter = Inter({ subsets: ["latin"] });
 export const montserrat = Montserrat({
   subsets: ["latin"],
 });
@@ -23,14 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={montserrat.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <NavBar />
+        <main className="max-w-5xl m-auto space-y-4 p-4">{children}</main>
+        {/* <Providers>{children}</Providers> */}
       </body>
     </html>
   );
