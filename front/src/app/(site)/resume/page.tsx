@@ -15,7 +15,7 @@ import { Button2 } from "@/app/components/Button2";
 
 export default function Resume() {
   const {
-    order: { products, statusUpdateProdToResume, deliveryId },
+    order: { products, deliveryId },
     updatedProductsToResume,
   } = useOrder();
 

@@ -6,9 +6,10 @@ export const OrderResume = () => {
 
   return (
     <>
-      <div className="m-auto w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4 gap-y-2 ">
+      <div className="m-auto w-full grid grid-cols-[auto_1fr_auto_auto_auto] justify-center items-center gap-x-4 gap-y-2 ">
         <p className="col-start-3">Cantidades</p>
         <p className="col-start-4">Precio</p>
+        <p className="col-start-5"></p>
         {order.products.map(
           ({
             productId,

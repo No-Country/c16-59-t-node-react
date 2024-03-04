@@ -1,5 +1,6 @@
 "use client";
 
+import { CloseButtonResume } from "@/app/(site)/resume/components";
 import { useOrder } from "@/app/hooks";
 import clsx from "clsx";
 import Image from "next/image";
@@ -57,15 +58,15 @@ export const RenderAccordionItem: React.FC<RenderAccordionItemProps> = ({
         type="number"
         min={1}
         className={clsx(
-          `
-          m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green`,
-          readOnly ? "cursor-not-allowed focus:outline-0" : "cursor-pointer"
+          `m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green`
+          // readOnly ? "cursor-not-allowed focus:outline-0" : "cursor-pointer"
         )}
         value={quantity}
         onChange={handleChange}
-        readOnly={readOnly}
+        // readOnly={readOnly}
       />
       <p className="text-center pr-4">$ {totalByUnit}</p>
+      <CloseButtonResume productId={productId} />
     </>
   );
 };

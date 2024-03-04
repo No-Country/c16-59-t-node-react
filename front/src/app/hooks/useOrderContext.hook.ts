@@ -28,7 +28,7 @@ export const useOrderContext = () => {
       ...currentProducts,
       products: [...currentProducts.products, product],
       total:
-        currentProducts.total +
+        (!currentProducts.products.length ? 0 : currentProducts.total) +
         (!currentProducts.products.length ? currentProducts.payment : 0) +
         product.totalByUnit,
     }));
