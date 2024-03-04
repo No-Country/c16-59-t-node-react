@@ -24,13 +24,14 @@ export default async function CatalogPage() {
         fruits={fruits}
         processedFoods={processedFoods}
       />
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard primary route="/">
-          Volver al inicio
-        </ButtonStandard>
-      </div>
+    <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+          <Button2 bgColor="primary-yellow" route="/">
+            Volver al inicio
+          </Button2>
+          
+        </div>
 
-      <Footer />
+      
     </>
   );
 }

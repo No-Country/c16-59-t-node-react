@@ -4,6 +4,7 @@ import Image from "next/image";
 import { Title } from "../../components";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import { ButtonStandard, IconHuerta } from "@/app/components";
+import { Button2 } from "@/app/components/Button2";
 
 // data para eliminar
 const verduras = [
@@ -130,14 +131,14 @@ export default function Quantity() {
           </div>
         </AccordionItem>
       </Accordion>
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard secondary route="/products">
-          Anterior
-        </ButtonStandard>
-        <ButtonStandard primary route="/products/delivery-options">
-          Siguiente
-        </ButtonStandard>
-      </div>
+      <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+          <Button2 bgColor="secondary-orange" route="/products">
+            Anterior
+          </Button2>
+          <Button2 bgColor="primary-yellow" route="/products/delivery-options">
+            Siguiente
+          </Button2>
+        </div>
     </div>
   );
 }
