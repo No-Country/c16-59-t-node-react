@@ -1,6 +1,15 @@
 import { BoxItalic, IconHuerta } from "@/app/components";
 
-export const Title = ({ children }: { children: string }) => {
+interface TitleProps{
+  children: string
+  size: "sm" | "md" | "lg"
+  border:boolean
+  icon?:boolean
+  color?: "secondary-orange"
+
+}
+
+export const Title:React.FC<TitleProps> = ({ children,size="lg", border, icon, color }) => {
   // Función para aplicar estilos a la palabra "Box"
 
   return (

@@ -41,12 +41,12 @@ export const NavBar = () => {
         <ModalBtn btnContent={<User />}>
           <LoginForm />
         </ModalBtn>
-        <button>
-          <QuestionMark />
-        </button>
-        <button>
-          <Phone />
-        </button>
+        <ModalBtn btnContent={<QuestionMark />}>
+          {"QuestionMark"}
+        </ModalBtn>
+        <ModalBtn btnContent={<Phone />}>
+          {"Phone"}
+        </ModalBtn>
         {/* <ThemeSwitcher /> */}
       </NavbarContent>
     </Navbar>

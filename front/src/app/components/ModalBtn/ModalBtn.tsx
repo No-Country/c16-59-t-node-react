@@ -13,7 +13,7 @@ export const ModalBtn:React.FC<ModalBtnProps> =  ({btnContent, children})=>{
 
   return (
     <>
-      <Button onPress={onOpen}>{btnContent}</Button>
+      <Button onPress={onOpen} variant={"light"} color="success" isIconOnly>{btnContent}</Button>
       <ModalPresentation isOpen={isOpen} onOpenChange={onOpenChange} modalContent={children}/>
     </>
   );
