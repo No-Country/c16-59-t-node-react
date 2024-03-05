@@ -1,6 +1,13 @@
 import { ButtonStandard, Statement, Title } from "@/app/components";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import Image from "next/image";
+<<<<<<< HEAD
+=======
+import { Title } from "../../components";
+import { Statement } from "../../subscriptions/components";
+import { Button2 } from "@/app/components/Button2";
+
+>>>>>>> 24f11b964e48ed8a07125ae7a600841b4adf9a49
 
 export default function DeliveryOptions() {
   return (
@@ -49,14 +56,15 @@ export default function DeliveryOptions() {
         ))}
       </ul>
 
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard secondary route="/products/quantity">
-          Anterior
-        </ButtonStandard>
-        <ButtonStandard primary route="/resume">
-          Siguiente
-        </ButtonStandard>
-      </div>
+      <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+          <Button2 bgColor="secondary-orange" route="/products/quantity">
+            Anterior
+          </Button2>
+          <Button2 bgColor="primary-yellow" route="/resume">
+            Siguiente
+          </Button2>
+        </div>
+
     </div>
   );
 }
