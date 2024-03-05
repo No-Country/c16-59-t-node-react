@@ -36,7 +36,7 @@ export default function Success() {
 
   return (
     <div className="space-y-4">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
       <div />
 
       <div className="m-auto flex flex-col justify-center items-center">

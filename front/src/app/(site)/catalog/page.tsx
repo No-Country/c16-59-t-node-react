@@ -18,7 +18,7 @@ export default async function CatalogPage() {
 
   return (
     <>
-      <Title>Productos del Mes</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>Productos del Mes</Title>
       <AccordionCatalog
         vegetables={vegetables}
         fruits={fruits}

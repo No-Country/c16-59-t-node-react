@@ -25,7 +25,7 @@ const verduras = [
 export default function Quantity() {
   return (
     <div className="space-y-5">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
 
       <p className="text-base sm:text-xl  font-bold sm:px-6">
         2. Escoge las cantidades a comprar

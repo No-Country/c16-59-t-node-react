@@ -38,9 +38,9 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
+    <div className="max-w-md mx-auto p-[0.75rem]">
       <form onSubmit={handleSubmit} className="bg-white rounded px-2 pt-6 pb-4 mb-4">
-        <Title>Inicia sesión para finalizar la compra</Title>
+        <Title color={"secondary-orange"} size={"sm"} border icon>Inicia sesión para finalizar la compra</Title>
         <RoleSelector
           roles={roles}
           selectedRole={formData.role}

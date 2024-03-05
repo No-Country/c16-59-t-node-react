@@ -3,10 +3,10 @@ import { ButtonC } from "@/app/components/RouteBtn/Button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
+import { Title } from "..";
 import { Presentation } from "../Presentation/Presentation";
 import { Price } from "../Price/Price";
 import { UnorderedList } from "../UnorderedList/UnorderedList";
-import { SubscriptionName } from "./SubscriptionName";
 
 interface SubscriptionProps {
   children?: React.ReactNode;
@@ -47,7 +47,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
         )}
       >
         <CardHeader className="pb-0">
-          <SubscriptionName>{title}</SubscriptionName>
+          <Title size={"md"} color={"secondary-orange"}>{title}</Title>
         </CardHeader>
         <CardBody className="pt-0">
           <Presentation price={price}/>

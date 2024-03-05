@@ -17,7 +17,7 @@ export default async function Subscriptions() {
 
   return (
     <div className="space-y-4">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
       <div className="flex flex-col  ">
         
         <p className="font-semibold sm:px-6 text-xs lg:text-base mb-4">
