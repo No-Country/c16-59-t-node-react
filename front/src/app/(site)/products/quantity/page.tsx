@@ -3,6 +3,7 @@ import { ButtonC, Title } from "@/app/components";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
 
+
 // data para eliminar
 const verduras = [
   {
