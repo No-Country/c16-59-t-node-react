@@ -1,8 +1,8 @@
 "use client";
-import { ButtonC } from "@/app/components";
+import { ButtonC, Title } from "@/app/components";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
-import { Title } from "../../components";
+
 
 // data para eliminar
 const verduras = [

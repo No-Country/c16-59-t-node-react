@@ -1,10 +1,6 @@
-import { ButtonStandard } from "@/app/components";
+import { ButtonC, Statement, Title } from "@/app/components";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import Image from "next/image";
-import { Title } from "../../components";
-import { Statement } from "../../subscriptions/components";
-import { Button2 } from "@/app/components/Button2";
-
 
 export default function DeliveryOptions() {
   return (
@@ -36,9 +32,9 @@ export default function DeliveryOptions() {
                     )
                   )}
                 </p>
-                <ButtonStandard primary route="/">
+                <ButtonC bgColor="primary-yellow" route="/">
                   {option.titleButton}
-                </ButtonStandard>
+                </ButtonC>
               </div>
             </div>
 
@@ -54,12 +50,12 @@ export default function DeliveryOptions() {
       </ul>
 
       <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <Button2 bgColor="secondary-orange" route="/products/quantity">
+          <ButtonC bgColor="secondary-orange" route="/products/quantity">
             Anterior
-          </Button2>
-          <Button2 bgColor="primary-yellow" route="/resume">
+          </ButtonC>
+          <ButtonC bgColor="primary-yellow" route="/resume">
             Siguiente
-          </Button2>
+          </ButtonC>
         </div>
 
     </div>

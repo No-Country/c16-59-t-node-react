@@ -1,10 +1,10 @@
-import { ButtonStandard, Footer } from "@/app/components";
+import { ButtonC, Title } from "@/app/components";
 import {
-    getFruitCatalog,
-    getProcessedFoodsCatalog,
-    getVegetablesCatalog,
+  getFruitCatalog,
+  getProcessedFoodsCatalog,
+  getVegetablesCatalog,
 } from "@/utils/fetchApi";
-import { Title } from "../components";
+
 import { AccordionCatalog } from "./components";
 
 export default async function CatalogPage() {
@@ -25,13 +25,11 @@ export default async function CatalogPage() {
         processedFoods={processedFoods}
       />
     <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <Button2 bgColor="primary-yellow" route="/">
+          <ButtonC bgColor="primary-yellow" route="/">
             Volver al inicio
-          </Button2>
+          </ButtonC>
           
         </div>
-
-      
     </>
   );
 }

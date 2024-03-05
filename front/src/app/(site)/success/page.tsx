@@ -1,13 +1,9 @@
 "use client"
-import { Button2 } from "@/app/components/Button2"
-import { Title } from "../components";
+import { ButtonC, Title } from "@/app/components";
 import Image from "next/image";
-import { ButtonStandard } from "@/app/components";
-import { DELIVERY_OPTIONS } from "@/constants/data";
-import { AccordionItem } from "@nextui-org/react";
-import ConfettiExplosion,  { ConfettiProps } from "react-confetti-explosion";
 import { useState } from "react";
-import './page.css'
+import ConfettiExplosion, { ConfettiProps } from "react-confetti-explosion";
+import './page.css';
 
 
 // data para eliminar
@@ -117,9 +113,9 @@ export default function Success() {
       </div>
 
       <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-        <Button2 bgColor="tertiary-green" route="/">
+        <ButtonC bgColor="tertiary-green" route="/">
           Volver al inicio
-        </Button2></div>
+        </ButtonC></div>
         <button className="button" onClick={() => setIsLargeExploding(!isLargeExploding)}>
         {isLargeExploding && <ConfettiExplosion {...largeProps} />}
         <span>large</span>
