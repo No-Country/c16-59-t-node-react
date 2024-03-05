@@ -8,7 +8,6 @@ const INITIAL_VALUES: OrderStateData = {
   total: 0,
   payment: 10000,
   notes: "Notas o requerimientos especiales para el pedido o su entrega",
-  statusUpdateProdToResume: false,
 };
 
 export const useOrder = () => {
@@ -30,7 +29,7 @@ export const useOrderContext = () => {
       total:
         (!currentProducts.products.length ? 0 : currentProducts.total) +
         (!currentProducts.products.length ? currentProducts.payment : 0) +
-        product.totalByUnit,
+        product.subTotal,
     }));
   }, []);
 
@@ -43,7 +42,7 @@ export const useOrderContext = () => {
       total:
         currentProducts.total -
         (currentProducts.products.find(({ productId }) => productId === id)
-          ?.totalByUnit || 0),
+          ?.subTotal || 0),
     }));
   }, []);
 
@@ -62,8 +61,8 @@ export const useOrderContext = () => {
           currentProducts.total -
           (currentProducts.products.find(
             ({ productId: id }) => id === productId
-          )?.totalByUnit || 0) +
-          (restOfModifiedProduct.totalByUnit || 0),
+          )?.subTotal || 0) +
+          (restOfModifiedProduct.subTotal || 0),
       }));
     },
     []
@@ -76,14 +75,6 @@ export const useOrderContext = () => {
     }));
   }, []);
 
-  // adicional sino quitar
-  const updatedProductsToResume = useCallback(() => {
-    setOrder((currentProducts: OrderStateData) => ({
-      ...currentProducts,
-      statusUpdateProdToResume: !currentProducts.statusUpdateProdToResume,
-    }));
-  }, []);
-
   return useMemo(
     () => ({
       order,
@@ -91,15 +82,7 @@ export const useOrderContext = () => {
       removeProduct,
       updateProduct,
       setDelivery,
-      updatedProductsToResume,
     }),
-    [
-      order,
-      addProduct,
-      removeProduct,
-      updateProduct,
-      setDelivery,
-      updatedProductsToResume,
-    ]
+    [order, addProduct, removeProduct, updateProduct, setDelivery]
   );
 };

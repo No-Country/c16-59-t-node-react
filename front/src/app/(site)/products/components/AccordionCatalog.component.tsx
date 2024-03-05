@@ -5,6 +5,8 @@ import Image from "next/image";
 import "./AccordionCatalog.css";
 import { SelectionProduct } from "./SelectionProduct.component";
 import { ProductApi } from "@/app/interfaces/products";
+import { useOrder } from "@/app/hooks";
+import clsx from "clsx";
 
 interface AccordionCatalogProps {
   fruits: Array<ProductApi>;
@@ -17,6 +19,8 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   vegetables,
   processedFoods,
 }) => {
+  const { order } = useOrder();
+
   const renderProducts = (productList: Array<ProductApi>) => {
     return (
       <ul className="flex gap-1">
@@ -25,6 +29,10 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
             ...product,
             name: product.name.charAt(0).toUpperCase() + product.name.slice(1),
           };
+
+          const statusChecked = order.products.some(
+            ({ productId: id }) => id === upperCaseProduct.id
+          );
 
           return (
             <li
@@ -38,14 +46,19 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
                 salesPresentation={upperCaseProduct.salesPresentation}
                 priceByUnit={upperCaseProduct.price}
                 category={upperCaseProduct.category}
+                statusChecked={statusChecked}
               >
-                <div className="absolute bottom-5 backdrop-blur w-full text-center bg-white bg-opacity-50">
+                <div className="absolute bottom-5 backdrop-blur w-full text-center bg-white bg-opacity-50 z-10">
                   <strong className="text-xs">
                     $ {upperCaseProduct.price}
                   </strong>
                 </div>
                 <Image
-                  className="max-w-none object-cover size-16 md:size-20 lg:size-24 aspect-auto m-auto"
+                  className={clsx(
+                    "max-w-none object-cover size-16 md:size-20 lg:size-24 aspect-auto m-auto hover:filter hover:brightness-110 hover:saturate-50 hover:opacity-30",
+                    statusChecked &&
+                      "filter brightness-110 saturate-50 opacity-30"
+                  )}
                   src={upperCaseProduct.image[0].url}
                   alt={upperCaseProduct.name}
                   width={250}

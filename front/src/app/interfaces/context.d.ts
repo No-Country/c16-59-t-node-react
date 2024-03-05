@@ -6,7 +6,6 @@ export interface OrderStateData {
   total: number;
   payment: number;
   notes: string;
-  statusUpdateProdToResume: boolen;
 }
 
 export interface ProductData {
@@ -15,7 +14,7 @@ export interface ProductData {
   name: string;
   salesPresentation: string;
   priceByUnit: number;
-  totalByUnit: number;
+  subTotal: number;
   quantity: number;
   category: Category;
 }
@@ -26,5 +25,4 @@ export interface OrderContextData {
   removeProduct: (productId: string) => void;
   updateProduct: (modifiedProduct: Partial<ProductData>) => void;
   setDelivery: (deliveryId: number) => void;
-  updatedProductsToResume: () => void;
 }

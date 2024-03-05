@@ -12,8 +12,10 @@ interface RenderAccordionItemProps {
   salesPresentation: string;
   quantity: number;
   priceByUnit: number;
-  totalByUnit: number;
+  subTotal: number;
   readOnly?: boolean;
+  viewPriceUnit?: boolean;
+  viewCloseButton?: boolean;
 }
 
 export const RenderAccordionItem: React.FC<RenderAccordionItemProps> = ({
@@ -23,8 +25,10 @@ export const RenderAccordionItem: React.FC<RenderAccordionItemProps> = ({
   priceByUnit,
   salesPresentation,
   quantity,
-  totalByUnit,
+  subTotal,
   readOnly,
+  viewPriceUnit,
+  viewCloseButton,
 }) => {
   const { updateProduct } = useOrder();
 
@@ -38,7 +42,7 @@ export const RenderAccordionItem: React.FC<RenderAccordionItemProps> = ({
     updateProduct({
       productId,
       quantity: valueNumber,
-      totalByUnit: priceByUnit * valueNumber,
+      subTotal: priceByUnit * valueNumber,
     });
   };
 
@@ -51,22 +55,23 @@ export const RenderAccordionItem: React.FC<RenderAccordionItemProps> = ({
         width={50}
         height={33}
       />
-      <p>
+      <p className="font-semibold">
         {name} &#40; {salesPresentation} &#41;
       </p>
       <input
         type="number"
         min={1}
         className={clsx(
-          `m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green`
-          // readOnly ? "cursor-not-allowed focus:outline-0" : "cursor-pointer"
+          `m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green`,
+          readOnly ? "cursor-not-allowed focus:outline-0" : "cursor-pointer"
         )}
         value={quantity}
         onChange={handleChange}
-        // readOnly={readOnly}
+        readOnly={readOnly}
       />
-      <p className="text-center pr-4">$ {totalByUnit}</p>
-      <CloseButtonResume productId={productId} />
+      {viewPriceUnit && <p className="text-center">$ {priceByUnit}</p>}
+      <p className="text-right pr-4">$ {subTotal}</p>
+      {viewCloseButton && <CloseButtonResume productId={productId} />}
     </>
   );
 };

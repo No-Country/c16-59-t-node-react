@@ -16,7 +16,6 @@ import { Button2 } from "@/app/components/Button2";
 export default function Resume() {
   const {
     order: { products, deliveryId },
-    updatedProductsToResume,
   } = useOrder();
 
   const { id, title, description, image, titleButton } =
@@ -61,12 +60,7 @@ export default function Resume() {
           {products.length ? <OrderResume /> : <p>No hay productos</p>}
           <div className="w-full m-auto flex justify-center items-center">
             <Button2 bgColor="primary-yellow" route="/products">
-              <button
-                onClick={updatedProductsToResume}
-                className="m-0 p-0 w-full h-full"
-              >
-                Agregar mas productos
-              </button>
+              Agregar mas productos
             </Button2>
           </div>
         </ElementResume>

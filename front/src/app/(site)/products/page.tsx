@@ -5,18 +5,13 @@ import {
   getVegetablesCatalog,
 } from "@/utils/fetchApi";
 import { Title } from "../components";
-import { Statement } from "../subscriptions/components";
-import { AccordionCatalog, ButtonOptions } from "./components";
+import { AccordionCatalog } from "./components";
 import { ProductApi } from "@/app/interfaces/products";
 
 export default async function Subscriptions() {
-  // aqui haz las peticiones para frutas, vegetales y productos envasados
-  const fruits: ProductApi[] = await getFruitCatalog();
-  const vegetables: ProductApi[] = await getVegetablesCatalog();
-  const processedFoods: ProductApi[] = await getProcessedFoodsCatalog();
-  // const productsEnvasados = await getProdComesCatalog();
-  // console.log("frutas ?", fruits);
-  // console.log("vegetales ?", vegetables);
+  const [fruits, vegetables, processedFoods] = await Promise.all<
+    Array<ProductApi>
+  >([getFruitCatalog(), getVegetablesCatalog(), getProcessedFoodsCatalog()]);
 
   return (
     <div className="space-y-4">
@@ -35,8 +30,9 @@ export default async function Subscriptions() {
           <Button2 bgColor="secondary-orange" route="/">
             Anterior
           </Button2>
-          {/* perdonen muchachos pero se me ocurrio esto y pense que podria ser chevere */}
-          <ButtonOptions />
+          <Button2 bgColor="primary-yellow" route="/products/quantity">
+            Siguiente
+          </Button2>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@ import { Category } from "@/app/interfaces/products";
 
 export default function Quantity() {
   const {
-    order: { statusUpdateProdToResume, products },
+    order: { products },
   } = useOrder();
 
   const productsByCategory = (category: Category) =>
@@ -21,7 +21,7 @@ export default function Quantity() {
       <Title>La Huerta Box - EXPRESS</Title>
 
       <p className="text-base sm:text-xl  font-bold sm:px-6">
-        2. Escoge las cantidades a comprar
+        2. Escribe las cantidades a comprar en el cuadro de texto
       </p>
 
       <Accordion
@@ -37,11 +37,13 @@ export default function Quantity() {
             title={title}
             className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
           >
-            <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4 gap-y-2">
+            <div className="w-full grid grid-cols-[auto_1fr_auto_auto_auto_auto] justify-center items-center gap-x-4 gap-y-2">
               {productsByCategory(category).length ? (
                 <>
-                  <p className="col-start-3">Cantidades</p>
-                  <p className="col-start-4">Precio</p>
+                  <p className="col-start-3 font-semibold">Cantidades</p>
+                  <p className="col-start-4 font-semibold">Precio unitario</p>
+                  <p className="col-start-5 font-semibold">Subtotal</p>
+                  <p className="col-start-6"></p>
                   {productsByCategory(category).map(
                     ({
                       productId,
@@ -50,7 +52,7 @@ export default function Quantity() {
                       salesPresentation,
                       priceByUnit,
                       quantity,
-                      totalByUnit,
+                      subTotal,
                     }) => (
                       <RenderAccordionItem
                         key={productId}
@@ -60,7 +62,9 @@ export default function Quantity() {
                         priceByUnit={priceByUnit}
                         salesPresentation={salesPresentation}
                         quantity={quantity}
-                        totalByUnit={totalByUnit}
+                        subTotal={subTotal}
+                        viewPriceUnit
+                        viewCloseButton
                       />
                     )
                   )}

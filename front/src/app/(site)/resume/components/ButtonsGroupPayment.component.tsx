@@ -32,11 +32,11 @@ export const ButtonsGroupPayment = () => {
             image,
             salesPresentation,
             category,
-            totalByUnit,
+            subTotal,
           }) => {
             return {
               id: productId,
-              price: totalByUnit,
+              price: subTotal,
               image,
               title: name,
               description: salesPresentation,
@@ -103,6 +103,8 @@ export const ButtonsGroupPayment = () => {
     <>
       <div className="m-auto flex gap-3">
         <Button2 bgColor="tertiary-green">PSE</Button2>
+
+        {/* cambiar la logica del boton para que tambien tenga disabled y lo demas*/}
         <Button2 bgColor="tertiary-green">
           <button
             onClick={handleOpenPayment}
@@ -117,7 +119,6 @@ export const ButtonsGroupPayment = () => {
           </button>
         </Button2>
 
-        {/* cambiar la logica del boton para que tambien disabled y lo demas*/}
         <Button2 bgColor="tertiary-green">Contraentrega</Button2>
       </div>
       {loadingModal && <ModalOpenPayment isOpen={isOpen} />}

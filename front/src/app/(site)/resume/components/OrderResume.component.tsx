@@ -6,10 +6,10 @@ export const OrderResume = () => {
 
   return (
     <>
-      <div className="m-auto w-full grid grid-cols-[auto_1fr_auto_auto_auto] justify-center items-center gap-x-4 gap-y-2 ">
-        <p className="col-start-3">Cantidades</p>
-        <p className="col-start-4">Precio</p>
-        <p className="col-start-5"></p>
+      <div className="m-auto w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4 gap-y-2 ">
+        <p className="col-start-3 font-semibold">Cantidades</p>
+        <p className="col-start-4 font-semibold">SubTotal</p>
+        {/* <p className="col-start-5"></p> */}
         {order.products.map(
           ({
             productId,
@@ -18,7 +18,7 @@ export const OrderResume = () => {
             salesPresentation,
             priceByUnit,
             quantity,
-            totalByUnit,
+            subTotal,
           }) => (
             <RenderAccordionItem
               key={productId}
@@ -28,21 +28,21 @@ export const OrderResume = () => {
               priceByUnit={priceByUnit}
               salesPresentation={salesPresentation}
               quantity={quantity}
-              totalByUnit={totalByUnit}
+              subTotal={subTotal}
               readOnly={true}
             />
           )
         )}
-        <p className="col-start-2">Costo de Envío</p>
+        <p className="col-start-2 ">Costo de Envío</p>
         <p className="col-start-4 pr-4">$ {order.payment}</p>
 
         <div className="border-t border-gray-200 col-span-4" />
 
-        <div className="col-start-3 col-span-2 flex gap-x-4 items-center border border-gray-200 pr-4">
+        <div className="col-start-3 col-span-2 flex gap-x-4 items-center border border-gray-400 pr-4">
           <div className="col-start-3 m-auto">
-            <p className="text-center">Total</p>
+            <p className="text-center font-semibold">Total</p>
           </div>
-          <p className="col-start-4">$ {order.total}</p>
+          <p className="col-start-4 font-bold">$ {order.total}</p>
         </div>
 
         <div className="col-start-1 col-span-4 border border-gray-200 p-4">
