@@ -1,6 +1,6 @@
 "use client"
 
-import { Button2 } from '@/app/components/Button2';
+import { ButtonC } from '@/app/components/Button/Button';
 import React, { useState } from 'react';
 import { ForgotPasswordLink, RememberMeCheckbox, TextInput } from '../../components';
 import { RoleI, roles } from '../../data/roles';
@@ -64,11 +64,11 @@ const LoginForm = () => {
           onChange={(value) => handleChange('rememberMe', value)}
         />
         <div className="flex items-center justify-center mb-4">
-          <Button2 bgColor="primary-yellow">Inciar sesión</Button2>
+          <ButtonC bgColor="primary-yellow">Inciar sesión</ButtonC>
         </div>
         <div className="text-center">
           <p className="text-gray-600 mb-2">¿No tienes cuenta?</p>
-          <Button2 bgColor="tertiary-green">Crear cuenta</Button2>
+          <ButtonC bgColor="tertiary-green">Crear cuenta</ButtonC>
         </div>
       </form>
     </div>

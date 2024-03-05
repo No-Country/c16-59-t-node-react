@@ -1,10 +1,11 @@
-"use-client";
-import { Button2 } from "@/app/components/Button2";
+"use client";
+import { ButtonC } from "@/app/components/Button/Button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
 import { Price, SubscriptionName } from "..";
 import { UnorderedList } from "../../containers";
+import { Presentation } from "../Presentation/Presentation";
 
 interface SubscriptionProps {
   children?: React.ReactNode;
@@ -24,6 +25,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
   color,
 }) => {
   const borderColor = `border-${color}`;
+  const btn = `Quiero ${title}`
   return (
     <Card className="relative grid grid-cols-4 m-[1.25rem] pt-0 rounded-none overflow-visible">
       <div className="col-start-3 col-end-4  p-0 m-0">
@@ -46,13 +48,11 @@ export const Subscription: React.FC<SubscriptionProps> = ({
           <SubscriptionName>{title}</SubscriptionName>
         </CardHeader>
         <CardBody className="pt-0">
-          <span className="lg:pb-3 md:mt-[3vh] sm:mt-[3vh] text-[1vh] md:text-[0.9rem] lg:text-[1.1rem]">Contiene*:</span>
+          <Presentation price={price}/>
           <UnorderedList data={content} />
         </CardBody>
         <CardFooter className="col-span-2 flex justify-center items-center">
-          <Button2 bgColor={color} route="/products">
-            Quiero {title}
-          </Button2>
+          <ButtonC bgColor={color}>{btn}</ButtonC>
         </CardFooter>
       </div>
       {/* <div className="col-span-1"> */}

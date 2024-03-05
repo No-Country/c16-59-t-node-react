@@ -1,12 +1,11 @@
-import { AccordionCatalog } from "./components";
-import { Title } from "../components";
-import {
-  getFruitCatalog,
-  getVegetablesCatalog,
-  getProcessedFoodsCatalog,
-} from "@/utils/fetchApi";
 import { ButtonStandard, Footer } from "@/app/components";
-import { Button2 } from "@/app/components/Button2";
+import {
+    getFruitCatalog,
+    getProcessedFoodsCatalog,
+    getVegetablesCatalog,
+} from "@/utils/fetchApi";
+import { Title } from "../components";
+import { AccordionCatalog } from "./components";
 
 export default async function CatalogPage() {
   // aqui haz las peticiones para frutas, vegetales y productos envasados
@@ -25,13 +24,14 @@ export default async function CatalogPage() {
         fruits={fruits}
         processedFoods={processedFoods}
       />
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard primary route="/">
-          Volver al inicio
-        </ButtonStandard>
-      </div>
+    <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+          <Button2 bgColor="primary-yellow" route="/">
+            Volver al inicio
+          </Button2>
+          
+        </div>
 
-      <Footer />
+      
     </>
   );
 }

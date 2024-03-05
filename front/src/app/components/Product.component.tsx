@@ -2,9 +2,9 @@
 
 import {
   Modal,
+  ModalBody,
   ModalContent,
   ModalHeader,
-  ModalBody,
   useDisclosure,
 } from "@nextui-org/react";
 import Image from "next/image";
@@ -38,7 +38,7 @@ export const Product: React.FC<ProductProps> = ({ image, name }) => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex justify-center items-center uppercase font-bold w-full absolute text-center backdrop-blur-xl bottom-0">
+              <ModalHeader className="flex justify-center items-center uppercase font-bold w-full absolute text-center backdrop-blur-xl bottom-0 text-secondary-orange">
                 {name}
               </ModalHeader>
               <ModalBody className="flex justify-center items-center p-0">
