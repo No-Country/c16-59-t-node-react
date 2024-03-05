@@ -1,6 +1,5 @@
 "use client";
-
-import { Button2 } from "@/app/components/Button2";
+import { ButtonC } from "@/app/components";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
 import { Title } from "../../components";
@@ -131,12 +130,12 @@ export default function Quantity() {
         </AccordionItem>
       </Accordion>
       <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <Button2 bgColor="secondary-orange" route="/products">
+          <ButtonC bgColor="secondary-orange" route="/products">
             Anterior
-          </Button2>
-          <Button2 bgColor="primary-yellow" route="/products/delivery-options">
+          </ButtonC>
+          <ButtonC bgColor="primary-yellow" route="/products/delivery-options">
             Siguiente
-          </Button2>
+          </ButtonC>
         </div>
     </div>
   );
