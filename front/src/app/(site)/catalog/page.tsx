@@ -1,4 +1,4 @@
-import { ButtonStandard, Title } from "@/app/components";
+import { ButtonC, Title } from "@/app/components";
 import {
   getFruitCatalog,
   getProcessedFoodsCatalog,
@@ -24,22 +24,12 @@ export default async function CatalogPage() {
         fruits={fruits}
         processedFoods={processedFoods}
       />
-<<<<<<< HEAD
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard primary route="/">
-          Volver al inicio
-        </ButtonStandard>
-      </div>
-=======
     <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <Button2 bgColor="primary-yellow" route="/">
+          <ButtonC bgColor="primary-yellow" route="/">
             Volver al inicio
-          </Button2>
+          </ButtonC>
           
         </div>
-
-      
->>>>>>> 24f11b964e48ed8a07125ae7a600841b4adf9a49
     </>
   );
 }
