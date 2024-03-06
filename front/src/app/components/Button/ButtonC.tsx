@@ -5,13 +5,13 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import { BoxItalic } from "../BoxItalic/BoxItalic";
 
-interface ButtonStandardProps {
+interface ButtonI {
   children: React.ReactNode;
   route?: string;
   bgColor: "primary-yellow" | "secondary-orange" | "tertiary-green";
 }
 
-export const ButtonC: React.FC<ButtonStandardProps> = ({
+export const ButtonC: React.FC<ButtonI> = ({
   children,
   route,
   bgColor,

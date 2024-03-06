@@ -1,5 +1,5 @@
 "use client";
-import { ButtonC } from "@/app/components/RouteBtn/Button";
+import { ButtonC } from "@/app/components/Button/ButtonC";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";

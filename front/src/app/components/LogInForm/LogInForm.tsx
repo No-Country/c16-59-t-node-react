@@ -1,6 +1,6 @@
 "use client"
 
-import { ButtonC } from '@/app/components/RouteBtn/Button';
+import { ButtonC } from '@/app/components/Button/ButtonC';
 import React, { useState } from 'react';
 import { ForgotPasswordLink, RememberMeCheckbox, Title } from '..';
 import { RoleI, roles } from '../../data/roles';
