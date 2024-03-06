@@ -1,5 +1,5 @@
 "use client"
-import { ButtonC, Title } from "@/app/components";
+import { RouteBtn, Title } from "@/app/components";
 import Image from "next/image";
 import { useState } from "react";
 import ConfettiExplosion, { ConfettiProps } from "react-confetti-explosion";
@@ -36,7 +36,7 @@ export default function Success() {
 
   return (
     <div className="space-y-4">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
       <div />
 
       <div className="m-auto flex flex-col justify-center items-center">
@@ -113,9 +113,9 @@ export default function Success() {
       </div>
 
       <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-        <ButtonC bgColor="tertiary-green" route="/">
+        <RouteBtn size="lg" bgColor="tertiary-green" route="/">
           Volver al inicio
-        </ButtonC></div>
+        </RouteBtn></div>
         <button className="button" onClick={() => setIsLargeExploding(!isLargeExploding)}>
         {isLargeExploding && <ConfettiExplosion {...largeProps} />}
         <span>large</span>

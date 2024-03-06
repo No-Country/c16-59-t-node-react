@@ -1,4 +1,4 @@
-import { ButtonC } from "./components";
+import { RouteBtn } from "./components";
 
 export default function Custom404() {
   return (
@@ -439,9 +439,9 @@ export default function Custom404() {
       <p>
         Sorry, the page you were looking for in the LaHuerta does not exist.
       </p>
-      <ButtonC bgColor="secondary-orange" route="/">
+      <RouteBtn size="lg" bgColor="secondary-orange" route="/">
         Go Home
-      </ButtonC>
+      </RouteBtn>
     </div>
   );
 }

@@ -28,6 +28,8 @@ export const separator = `
 
 export const NavContent = `
   items-center
+  mx-0
+  px-0
   
 
   lg:col-start-3

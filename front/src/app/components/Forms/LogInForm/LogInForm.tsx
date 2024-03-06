@@ -1,9 +1,9 @@
 "use client"
 
-import { ButtonC } from '@/app/components/RouteBtn/Button';
+import { RoleI, roles } from '@/app/data/roles';
 import React, { useState } from 'react';
-import { ForgotPasswordLink, RememberMeCheckbox, Title } from '..';
-import { RoleI, roles } from '../../data/roles';
+import { ForgotPasswordLink, RememberMeCheckbox, Title } from '../..';
+import { RouteBtn } from '../../Buttons/RouteBtn/RouteBtn';
 import RoleSelector from '../RoleSelector/RoleSelector';
 import { TextInput } from '../TextInput/TextInput';
 
@@ -38,9 +38,9 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
+    <div className="max-w-md mx-auto p-[0.75rem]">
       <form onSubmit={handleSubmit} className="bg-white rounded px-2 pt-6 pb-4 mb-4">
-        <Title>Inicia sesión para finalizar la compra</Title>
+        <Title color={"secondary-orange"} size={"sm"} border icon>Inicia sesión para finalizar la compra</Title>
         <RoleSelector
           roles={roles}
           selectedRole={formData.role}
@@ -66,11 +66,11 @@ const LoginForm = () => {
           onChange={(value) => handleChange('rememberMe', value)}
         />
         <div className="flex items-center justify-center mb-4">
-          <ButtonC bgColor="primary-yellow">Inciar sesión</ButtonC>
+          <RouteBtn bgColor="primary-yellow" size="lg" route="/">Inciar sesión</RouteBtn>
         </div>
         <div className="text-center">
           <p className="text-gray-600 mb-2">¿No tienes cuenta?</p>
-          <ButtonC bgColor="tertiary-green">Crear cuenta</ButtonC>
+          <RouteBtn bgColor="tertiary-green" size="lg" route="/">Crear cuenta</RouteBtn>
         </div>
       </form>
     </div>

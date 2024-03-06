@@ -1,7 +1,8 @@
 
 // RoleSelector.tsx
 import React from 'react';
-import { RoleI } from '../../data/roles';
+
+import { RoleI } from '@/app/data/roles';
 import { RoleOption } from './RoleOption';
 
 interface RoleSelectorProps {

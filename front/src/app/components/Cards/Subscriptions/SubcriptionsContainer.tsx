@@ -1,3 +1,4 @@
+import { Route } from "@/app/interfaces/types";
 import React from "react";
 import { Subscription } from "./Subscription";
 
@@ -6,7 +7,7 @@ interface SubscriptionData {
   price: string;
   content: string[];
   img: string;
-  route:string;
+  route:Route;
   color:"primary-yellow" | "secondary-orange" | "tertiary-green"
 }
 

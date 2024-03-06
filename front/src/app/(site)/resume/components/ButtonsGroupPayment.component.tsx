@@ -1,16 +1,16 @@
 "use client";
 
-import { useDisclosure } from "@nextui-org/react";
-import { ModalOpenPayment } from "./ModalOpenPayment.component";
-import { stripePromiseClient } from "@/app/lib/stripeConfig";
+import { RouteBtn } from "@/app/components";
+import { FncBtn } from "@/app/components/Buttons/FncBtn/FncBtn";
 import { useOrder } from "@/app/hooks";
-import { ToastContainer } from "react-toastify";
-import { toastifyTyped } from "@/utils/toastity.utils";
 import { TypeToastify } from "@/app/interfaces/toastify";
-import { useState } from "react";
+import { stripePromiseClient } from "@/app/lib/stripeConfig";
 import { getToken } from "@/utils/localStorage.utils";
-import clsx from "clsx";
-import { ButtonC } from "@/app/components";
+import { toastifyTyped } from "@/utils/toastity.utils";
+import { useDisclosure } from "@nextui-org/react";
+import { useState } from "react";
+import { ToastContainer } from "react-toastify";
+import { ModalOpenPayment } from "./ModalOpenPayment.component";
 
 // componente modal se puede mejorar
 export const ButtonsGroupPayment = () => {
@@ -102,26 +102,22 @@ export const ButtonsGroupPayment = () => {
   return (
     <>
       <div className="m-auto flex gap-3">
-        <ButtonC bgColor="tertiary-green">PSE</ButtonC>
+        <RouteBtn size="lg" bgColor="tertiary-green" route="/">PSE</RouteBtn>
 
         {/* cambiar la logica del boton para que tambien tenga disabled y lo demas*/}
-        <ButtonC bgColor="tertiary-green">
-          PORFA WAGNER REVISALO - mas importante la funcion handleOpenPayment
-          PROBANDO 1 2 3 4
+        <FncBtn size="lg" bgColor="tertiary-green" onClick={handleOpenPayment}>Tarjeta de Débito/Credito</FncBtn>
           {/* <button
             onClick={handleOpenPayment}
             className={clsx(
               "w-full p-0 m-0",
               (!products.length || !deliveryId) &&
-                "bg-gray-300 cursor-not-allowed"
+              "bg-gray-300 cursor-not-allowed"
             )}
             disabled={!products.length || !deliveryId}
-          >
-          Tarjeta de Débito/Credito
+            >
+            Tarjeta de Débito/Credito
           </button> */}
-        </ButtonC>
-
-        <ButtonC bgColor="tertiary-green">Contraentrega</ButtonC>
+        <RouteBtn size="lg" route="/" bgColor="tertiary-green">Contraentrega</RouteBtn>
       </div>
       {loadingModal && <ModalOpenPayment isOpen={isOpen} />}
       <ToastContainer />
