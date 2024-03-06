@@ -15,10 +15,10 @@ const nextConfig = {
         pathname: "/dnautzk6f/image/**",
       },
       {
-        protocol: 'https',
-        hostname: 's3-alpha-sig.figma.com',
-        port: '',
-        pathname: '/img/**',
+        protocol: "https",
+        hostname: "s3-alpha-sig.figma.com",
+        port: "",
+        pathname: "/img/**",
       },
       {
         protocol: "https",
@@ -94,6 +94,9 @@ const nextConfig = {
         pathname: "/**",
       }
     ],
+  },
+  env: {
+    STRIPE_PUBLIC_KEY_PARSER: process.env.STRIPE_PUBLIC_KEY,
   },
 };
 
