@@ -1,4 +1,5 @@
 import { FreshProduceMessage, Hero, Menu, Products } from "./components";
+import LoginForm from "./components/Forms/LogInForm/LogInForm";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <FreshProduceMessage/>
       <Menu/>
       <Products />
+      <LoginForm/>
     </div>
   );
 }

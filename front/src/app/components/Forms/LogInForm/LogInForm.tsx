@@ -31,6 +31,7 @@ const LoginForm = () => {
       console.log('Soy:', role.name);
       console.log('Recordar mis datos:', rememberMe);
     }
+    return alert(formData)
   };
 
   const handleSelectRole = (selectedRole: RoleI) => {
@@ -66,13 +67,13 @@ const LoginForm = () => {
           onChange={(value) => handleChange('rememberMe', value)}
         />
         <div className="flex items-center justify-center mb-4">
-          <RouteBtn bgColor="primary-yellow" size="lg" route="/">Inciar sesión</RouteBtn>
+          <RouteBtn bgColor="primary-yellow" size="lg" route="/">Iniciar sesión</RouteBtn>
         </div>
-        <div className="text-center">
+      </form>
+      <div className="text-center">
           <p className="text-gray-600 mb-2">¿No tienes cuenta?</p>
           <RouteBtn bgColor="tertiary-green" size="lg" route="/">Crear cuenta</RouteBtn>
         </div>
-      </form>
     </div>
   );
 };
