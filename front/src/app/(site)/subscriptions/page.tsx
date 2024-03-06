@@ -1,5 +1,5 @@
 import { Statement, Title } from "@/app/components";
-import SubscriptionsContainer from "../../components/Subscriptions/SubcriptionsContainer";
+import SubscriptionsContainer from "../../components/Cards/Subscriptions/SubcriptionsContainer";
 import { data } from "../../data/subscriptionOpts";
 export default function SubscriptionsPage() {
   return (

@@ -1,27 +1,33 @@
-export * from "./BoxItalic/BoxItalic";
-export * from "./Footer/Footer.component";
-export * from "./ForgotPasswordLink/ForgotPasswordLink";
-export * from "./Home/FreshProduceMessage/FreshProduceMessage";
-export * from "./Home/Hero.component";
-export * from "./Home/Menu.component";
-export * from "./LogInForm/LogInForm";
-export * from "./Main/Main";
-export * from "./ModalBtn/ModalBtn";
-export * from "./NavBar/NavBar.component";
-export * from "./Presentation/Presentation";
-export * from "./Price/Price";
-export * from "./Products/Products.component";
-export * from "./RegisterForm/RegisterForm";
-export * from "./RememberCheckbox/RememeberCheckbox";
-export * from "./RoleSelector/RoleSelector";
-export * from "./RouteBtn/Button";
-export * from "./Statement/Statement";
-export * from "./Subscriptions/SubcriptionsContainer";
-export * from "./ThemeSwitcher/ThemeSwitcher.component";
-export * from "./Title/Title.component";
-
+//Buttons
+export * from "./Buttons/ModalBtn/ModalBtn";
+export * from "./Buttons/RouteBtn/Button";
+//Cards
+export * from "./Cards/Price/Price";
+export * from "./Cards/Products/Products.component";
+export * from "./Cards/Subscriptions/SubcriptionsContainer";
+//Colors
+export * from "./Colors/ThemeSwitcher/ThemeSwitcher.component";
+//Forms
+export * from "./Forms/ForgotPasswordLink/ForgotPasswordLink";
+export * from "./Forms/LogInForm/LogInForm";
+export * from "./Forms/RegisterForm/RegisterForm";
+export * from "./Forms/RememberCheckbox/RememeberCheckbox";
+export * from "./Forms/RoleSelector/RoleSelector";
+//Structure
+export * from "./Structure/Footer/Footer.component";
+export * from "./Structure/Home/FreshProduceMessage/FreshProduceMessage";
+export * from "./Structure/Home/Hero.component";
+export * from "./Structure/Home/Menu.component";
+export * from "./Structure/Main/Main";
+export * from "./Structure/NavBar/NavBar.component";
+//txts
+export * from "./Txts/BoxItalic/BoxItalic";
+export * from "./Txts/Presentation/Presentation";
+export * from "./Txts/Statement/Statement";
+export * from "./Txts/Title/Title.component";
 // svg components
 export * from "./svg/IconHuerta.component";
 export * from "./svg/Phone.component";
 export * from "./svg/QuestionMark.component";
 export * from "./svg/User.component";
+

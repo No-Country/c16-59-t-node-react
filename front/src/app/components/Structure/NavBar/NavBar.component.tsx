@@ -1,13 +1,12 @@
 "use client";
 
-import LoginForm from "@/app/components/LogInForm/LogInForm";
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import { IconHuerta, Phone, QuestionMark, User } from "..";
-import { ModalBtn } from "../ModalBtn/ModalBtn";
-import { NavContent, classNavBar, classNavBrand, separator } from "./className";
 import { useState } from "react";
-import { removeToken, setToken } from "@/utils/localStorage.utils";
+import { IconHuerta, Phone, QuestionMark, User } from "../..";
+import { ModalBtn } from "../../Buttons/ModalBtn/ModalBtn";
+import LoginForm from "../../Forms/LogInForm/LogInForm";
+import { NavContent, classNavBar, classNavBrand, separator } from "./className";
 
 export const NavBar = () => {
   const router = useRouter();

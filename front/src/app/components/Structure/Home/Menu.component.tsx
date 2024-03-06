@@ -1,4 +1,4 @@
-import { ButtonC } from "../RouteBtn/Button";
+import { ButtonC } from "../Buttons/RouteBtn/Button";
 
 
 export const Menu = () => {

@@ -2,7 +2,7 @@
 
 import { ButtonC } from '@/app/components';
 import React, { useState } from 'react';
-import { RoleI, roles } from "../../data/roles";
+import { RoleI, roles } from "../../../data/roles";
 import RoleSelector from "../RoleSelector/RoleSelector";
 import { TextInput } from '../TextInput/TextInput';
 

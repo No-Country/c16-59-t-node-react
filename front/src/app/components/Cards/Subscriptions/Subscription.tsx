@@ -1,10 +1,10 @@
 "use client";
-import { ButtonC } from "@/app/components/RouteBtn/Button";
+import { ButtonC } from "@/app/components/Buttons/RouteBtn/Button";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
-import { Title } from "..";
-import { Presentation } from "../Presentation/Presentation";
+import { Title } from "../..";
+import { Presentation } from "../../Txts/Presentation/Presentation";
 import { Price } from "../Price/Price";
 import { UnorderedList } from "../UnorderedList/UnorderedList";
 
