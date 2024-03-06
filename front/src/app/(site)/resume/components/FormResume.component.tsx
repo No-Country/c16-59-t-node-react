@@ -1,8 +1,8 @@
 "use client";
 
-import { Button2 } from "@/app/components/Button2";
 import { useState } from "react";
 import { FormProduct } from "@/app/interfaces/form";
+import { ButtonC } from "@/app/components";
 
 const INITIAL_VALUES: FormProduct = {
   name: "Luis Suarez",
@@ -107,7 +107,7 @@ export const FormResume = () => {
         </label>
       </div>
       <div className="col-span-2 w-full flex justify-center items-center">
-        <Button2 bgColor="primary-yellow">Editar Datos</Button2>
+        <ButtonC bgColor="primary-yellow">Editar Datos</ButtonC>
       </div>
     </div>
   );

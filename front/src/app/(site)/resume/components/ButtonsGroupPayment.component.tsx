@@ -1,7 +1,6 @@
 "use client";
 
 import { useDisclosure } from "@nextui-org/react";
-import { Button2 } from "@/app/components/Button2";
 import { ModalOpenPayment } from "./ModalOpenPayment.component";
 import { stripePromiseClient } from "@/app/lib/stripeConfig";
 import { useOrder } from "@/app/hooks";
@@ -11,6 +10,7 @@ import { TypeToastify } from "@/app/interfaces/toastify";
 import { useState } from "react";
 import { getToken } from "@/utils/localStorage.utils";
 import clsx from "clsx";
+import { ButtonC } from "@/app/components";
 
 // componente modal se puede mejorar
 export const ButtonsGroupPayment = () => {
@@ -102,11 +102,12 @@ export const ButtonsGroupPayment = () => {
   return (
     <>
       <div className="m-auto flex gap-3">
-        <Button2 bgColor="tertiary-green">PSE</Button2>
+        <ButtonC bgColor="tertiary-green">PSE</ButtonC>
 
         {/* cambiar la logica del boton para que tambien tenga disabled y lo demas*/}
-        <Button2 bgColor="tertiary-green">
-          <button
+        <ButtonC bgColor="tertiary-green">
+          PORFA WAGNER REVISALO - mas importante la funcion handleOpenPayment
+          {/* <button
             onClick={handleOpenPayment}
             className={clsx(
               "w-full p-0 m-0",
@@ -115,11 +116,11 @@ export const ButtonsGroupPayment = () => {
             )}
             disabled={!products.length || !deliveryId}
           >
-            Tarjeta de Débito/Credito
-          </button>
-        </Button2>
+          Tarjeta de Débito/Credito
+          </button> */}
+        </ButtonC>
 
-        <Button2 bgColor="tertiary-green">Contraentrega</Button2>
+        <ButtonC bgColor="tertiary-green">Contraentrega</ButtonC>
       </div>
       {loadingModal && <ModalOpenPayment isOpen={isOpen} />}
       <ToastContainer />

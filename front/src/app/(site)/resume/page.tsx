@@ -1,7 +1,6 @@
 "use client";
 
 import { useOrder } from "@/app/hooks";
-import { Title } from "../components";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import { CardDelivery } from "../products/delivery-options/components/CardDelivery.components";
 import { DeliveryOptions } from "@/app/interfaces/constants";
@@ -11,7 +10,7 @@ import {
   FormResume,
   OrderResume,
 } from "./components";
-import { Button2 } from "@/app/components/Button2";
+import { ButtonC, Title } from "@/app/components";
 
 export default function Resume() {
   const {
@@ -24,7 +23,7 @@ export default function Resume() {
 
   return (
     <div className="space-y-6 m-auto">
-      <Title>La Huerta Box - Express</Title>
+      <Title>La Huerta Box - EXPRESS</Title>
 
       <div className="max-w-5xl mx-auto space-y-4">
         <ElementResume title="Datos de Facturación">
@@ -47,21 +46,21 @@ export default function Resume() {
             <p>No hay datos de envío</p>
           )}
           <div className="w-full m-auto flex justify-center items-center">
-            <Button2
+            <ButtonC
               bgColor="primary-yellow"
               route="/products/delivery-options"
             >
               Cambiar
-            </Button2>
+            </ButtonC>
           </div>
         </ElementResume>
 
         <ElementResume title="Resumen de compra">
           {products.length ? <OrderResume /> : <p>No hay productos</p>}
           <div className="w-full m-auto flex justify-center items-center">
-            <Button2 bgColor="primary-yellow" route="/products">
+            <ButtonC bgColor="primary-yellow" route="/products">
               Agregar mas productos
-            </Button2>
+            </ButtonC>
           </div>
         </ElementResume>
 
@@ -71,9 +70,9 @@ export default function Resume() {
         </ElementResume>
       </div>
       <div className="w-full flex justify-center items-center m-auto">
-        <Button2 bgColor="secondary-orange" route="/products/delivery-options">
+        <ButtonC bgColor="secondary-orange" route="/products/delivery-options">
           Anterior
-        </Button2>
+        </ButtonC>
       </div>
     </div>
   );

@@ -1,10 +1,9 @@
-import { Button2 } from "@/app/components/Button2";
+import { ButtonC, Title } from "@/app/components";
 import {
   getFruitCatalog,
   getProcessedFoodsCatalog,
   getVegetablesCatalog,
 } from "@/utils/fetchApi";
-import { Title } from "../components";
 import { AccordionCatalog } from "./components";
 import { ProductApi } from "@/app/interfaces/products";
 
@@ -27,12 +26,12 @@ export default async function Subscriptions() {
           processedFoods={processedFoods}
         />
         <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <Button2 bgColor="secondary-orange" route="/">
+          <ButtonC bgColor="secondary-orange" route="/">
             Anterior
-          </Button2>
-          <Button2 bgColor="primary-yellow" route="/products/quantity">
+          </ButtonC>
+          <ButtonC bgColor="primary-yellow" route="/products/quantity">
             Siguiente
-          </Button2>
+          </ButtonC>
         </div>
       </div>
     </div>

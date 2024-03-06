@@ -87,6 +87,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "la-huerta.onrender.com",
+        port: "",
+        pathname: "/**",
+      }
     ],
   },
   env: {

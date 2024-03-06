@@ -1,12 +1,11 @@
 "use client";
 
-import { Title } from "../../components";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { ButtonStandard } from "@/app/components";
 import { RenderAccordionItem } from "./components/RenderAccordionItem.component";
 import { PRODUCTS_CATEGORIES } from "@/constants/data";
 import { useOrder } from "@/app/hooks";
 import { Category } from "@/app/interfaces/products";
+import { ButtonC, Title } from "@/app/components";
 
 export default function Quantity() {
   const {
@@ -76,13 +75,13 @@ export default function Quantity() {
           </AccordionItem>
         ))}
       </Accordion>
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard secondary route="/products">
+      <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+        <ButtonC bgColor="secondary-orange" route="/products">
           Anterior
-        </ButtonStandard>
-        <ButtonStandard primary route="/products/delivery-options">
+        </ButtonC>
+        <ButtonC bgColor="primary-yellow" route="/products/delivery-options">
           Siguiente
-        </ButtonStandard>
+        </ButtonC>
       </div>
     </div>
   );
