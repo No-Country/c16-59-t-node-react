@@ -1,8 +1,8 @@
 "use client"
 
 import { RouteBtn } from '@/app/components';
+import { RoleI, roles } from '@/app/data/roles';
 import React, { useState } from 'react';
-import { RoleI, roles } from "../../../data/roles";
 import RoleSelector from "../RoleSelector/RoleSelector";
 import { TextInput } from '../TextInput/TextInput';
 

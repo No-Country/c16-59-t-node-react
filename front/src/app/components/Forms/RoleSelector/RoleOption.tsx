@@ -1,4 +1,5 @@
 // RoleOption.tsx
+
 import { RoleI } from '@/app/data/roles';
 import Image from 'next/image';
 import React from 'react';
