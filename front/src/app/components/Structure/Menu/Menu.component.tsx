@@ -1,3 +1,4 @@
+"use client"
 import { menuButtons } from "@/app/data/menuButtons";
 import { RouteBtn } from "../../Buttons/RouteBtn/RouteBtn";
 
@@ -9,7 +10,6 @@ export const Menu = () => {
         const {children, route, bgColor, size } = element
         return <RouteBtn key={index} route={route} bgColor={bgColor} size={size}>{children}</RouteBtn>
       })}
-      
     </div>//boludo
   );
 };

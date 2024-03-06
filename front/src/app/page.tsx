@@ -5,7 +5,7 @@ export default function Home() {
     <div>
       <Hero />
       <FreshProduceMessage/>
-      <Menu />
+      <Menu/>
       <Products />
     </div>
   );

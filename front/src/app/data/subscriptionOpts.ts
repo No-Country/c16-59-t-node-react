@@ -32,7 +32,7 @@ export const data: Subscription[] = [
       "4 opciones de productos procesados naturalmente"
     ],
     img: "https://s3-alpha-sig.figma.com/img/96c4/1c11/095a8ebaae318a9cb468006eaf6ada70?Expires=1710115200&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=jyUpK0B7giV7k-ChuD0eiAnaqkG~TAk5YTjFFSavzRa2WDDgZs3pW1dAqqjeL4PQaG8hHMqyJRnTNSdq090Yk9TU~h1Eve2w3p0upx-RKRyYNHY2n~FWc1HUNiXSsCuGjlOT-DO7-rrulqOnkpkO9g5tlG-a1uAPjQhBLBdJLUINKbIlJZge9p6DOrAAM0lmWDZ~bGLzD49-Fqv2MqBMBFsV--gnp-rGpUtxCUdabOiHzOgYkizhaD4DXWZklEsQHza9gghiiarwAluRIir7WflgCz~Q-40X70lAhHZNns7DjPHrzCq84yiHcsqIlaXjhHnO0xmBrJjvhfPrOHL5xg__",
-    color: "tertiary-green",
+    color:"tertiary-green",
     route:"/"
   },
   {

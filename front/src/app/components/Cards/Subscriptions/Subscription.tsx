@@ -1,4 +1,5 @@
 "use client";
+import { Route } from "@/app/interfaces/types";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
@@ -8,7 +9,7 @@ import { Presentation } from "../../Txts/Presentation/Presentation";
 import { UnorderedList } from "../../Txts/UnorderedList/UnorderedList";
 import { Price } from "../Price/Price";
 
-type Route = `/${string}`
+
 interface SubscriptionProps {
   children?: React.ReactNode;
   route: Route;

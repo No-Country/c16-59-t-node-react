@@ -1,8 +1,8 @@
+import { Route } from "next";
 import { ReactNode } from "react";
+import { Color, Size } from "./types";
 
-type Color = "primary-yellow" | "secondary-orange" | "tertiary-green"
-type Route = `/${string}`
-type Size = "none" | "lg"
+
  
 interface ButtonI {
   children: ReactNode;

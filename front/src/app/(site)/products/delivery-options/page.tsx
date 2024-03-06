@@ -1,4 +1,4 @@
-import { ButtonC, Statement, Title } from "@/app/components";
+import { RouteBtn, Statement, Title } from "@/app/components";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import { CardDelivery } from "./components/CardDelivery.components";
 
@@ -23,9 +23,9 @@ export default function DeliveryOptions() {
       </div>
 
       <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonC bgColor="secondary-orange" route="/products/quantity">
+        <RouteBtn bgColor="secondary-orange" route="/products/quantity" size="lg">
           Anterior
-        </ButtonC>
+        </RouteBtn>
       </div>
     </div>
   );
