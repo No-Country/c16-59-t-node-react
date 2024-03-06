@@ -5,25 +5,21 @@ import {
   getVegetablesCatalog,
 } from "@/utils/fetchApi";
 import { AccordionCatalog } from "./components";
+import { ProductApi } from "@/app/interfaces/products";
 
 export default async function Subscriptions() {
-  // aqui haz las peticiones para frutas, vegetales y productos envasados
-  const fruits: any = await getFruitCatalog();
-  const vegetables: any = await getVegetablesCatalog();
-  const processedFoods: any = await getProcessedFoodsCatalog();
-  // const productsEnvasados = await getProdComesCatalog();
-  console.log("frutas ?", fruits);
-  console.log("vegetales ?", vegetables);
+  const [fruits, vegetables, processedFoods] = await Promise.all<
+    Array<ProductApi>
+  >([getFruitCatalog(), getVegetablesCatalog(), getProcessedFoodsCatalog()]);
 
   return (
     <div className="space-y-4">
       <Title>La Huerta Box - EXPRESS</Title>
       <div className="flex flex-col  ">
-        
         <p className="font-semibold sm:px-6 text-xs lg:text-base mb-4">
-        1. Escoge los productos que deseas clickeando sobre cada ítem:
-      </p>
-      
+          1. Escoge los productos que deseas clickeando sobre cada ítem:
+        </p>
+
         <AccordionCatalog
           vegetables={vegetables}
           fruits={fruits}
