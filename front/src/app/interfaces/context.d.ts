@@ -1,5 +1,7 @@
 import { Category } from "./products";
 
+// -------------------------- Order Context --------------------------
+
 export interface OrderStateData {
   products: ProductData[];
   deliveryId: number;
@@ -25,4 +27,16 @@ export interface OrderContextData {
   removeProduct: (productId: string) => void;
   updateProduct: (modifiedProduct: Partial<ProductData>) => void;
   setDelivery: (deliveryId: number) => void;
+}
+
+// -------------------------- User Context --------------------------
+export interface UserStateData {
+  token: string;
+  email: string;
+}
+
+export interface UserContextData {
+  user: UserStateData;
+  getTokenUser: () => void;
+  removeTokenUser: () => void;
 }

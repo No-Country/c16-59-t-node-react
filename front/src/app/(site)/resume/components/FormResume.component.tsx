@@ -23,7 +23,7 @@ export const FormResume = () => {
   };
 
   return (
-    <div className="w-full grid grid-cols-2 gap-y-3 gap-x-3 md:gap-x-24 lg:gap-x-36 [&_span]:text-secondary-orange [&_span]:font-semibold [&_span]:text-sm [&_input]:text-sm [&_input]:px-2 [&_input]:py-1 [&_input]: max-w-4xl m-auto [&_input]:outline-none focus:[&_input]:border-gray-400 [&_input]:font-medium">
+    <div className="w-full grid grid-cols-2 gap-y-3 gap-x-3 md:gap-x-32 [&_span]:text-secondary-orange [&_span]:font-semibold [&_span]:text-xs [&_input]:text-xs [&_span]:md:text-base [&_input]:md:text-base [&_input]:px-2 [&_input]:py-1 [&_input]:max-w-4xl m-auto [&_input]:outline-none focus:[&_input]:border-gray-400 [&_input]:font-medium">
       <div className="space-y-3">
         <label htmlFor="name" className="flex flex-col gap-2">
           <span>Nombre Completo</span>
@@ -106,7 +106,7 @@ export const FormResume = () => {
           />
         </label>
       </div>
-      <div className="col-span-2 w-full flex justify-center items-center">
+      <div className="col-span-2 w-full flex justify-center items-center [&_span_span]:text-black ">
         <ButtonC bgColor="primary-yellow">Editar Datos</ButtonC>
       </div>
     </div>

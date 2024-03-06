@@ -43,7 +43,7 @@ export default function Resume() {
               />
             </div>
           ) : (
-            <p>No hay datos de envío</p>
+            <p className="text-xs md:text-base">No hay datos de envío</p>
           )}
           <div className="w-full m-auto flex justify-center items-center">
             <ButtonC
@@ -56,7 +56,11 @@ export default function Resume() {
         </ElementResume>
 
         <ElementResume title="Resumen de compra">
-          {products.length ? <OrderResume /> : <p>No hay productos</p>}
+          {products.length ? (
+            <OrderResume />
+          ) : (
+            <p className="text-xs md:text-base">No hay productos</p>
+          )}
           <div className="w-full m-auto flex justify-center items-center">
             <ButtonC bgColor="primary-yellow" route="/products">
               Agregar mas productos

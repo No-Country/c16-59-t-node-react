@@ -1,4 +1,4 @@
-import { URL_API_PRODUCTS } from "@/constants/api";
+import { URL_API_PRODUCTS, URL_AUTH_LOGIN } from "@/constants/api";
 import {
   URL_API_FRUITS,
   URL_API_PROCESSEDFOODS,
@@ -27,3 +27,21 @@ export const getProducts = cache(async () => {
   const { data } = await axios(URL_API_PRODUCTS);
   return data;
 });
+
+export const getDataUser = async ({
+  email,
+  password,
+}: {
+  email: string;
+  password: string;
+}) => {
+  const res = await fetch(URL_AUTH_LOGIN, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  });
+  const data = await res.json();
+  return data;
+};

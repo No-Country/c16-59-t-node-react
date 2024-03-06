@@ -21,9 +21,12 @@ export const ButtonC: React.FC<ButtonStandardProps> = ({
   return (
     <Button
       className={clsx(
-        "btn rounded-none font-bold",
-        `bg-${bgColor}`,
-        "sm:text-[0.8rem] text-wrap h-[2.2781rem] w-[12.88rem] lg:w-[20rem] lg:text-[1rem]"
+        "btn rounded-none font-bold sm:text-[0.8rem] text-wrap h-[2.2781rem] w-[12.88rem] lg:w-[20rem] lg:text-[1rem]",
+        bgColor === "primary-yellow"
+          ? "bg-primary-yellow"
+          : bgColor === "secondary-orange"
+          ? "bg-secondary-orange"
+          : "bg-tertiary-green"
       )}
       onClick={() => route && router.push(route)}
     >

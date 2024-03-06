@@ -1,0 +1,2 @@
+### GET deliverys
+GET https://la-huerta.onrender.com/api/v1/deliveries

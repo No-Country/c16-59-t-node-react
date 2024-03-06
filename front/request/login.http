@@ -1,0 +1,8 @@
+### POST login
+POST https://la-huerta.onrender.com/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "email": "carla@gmail.com",
+  "password": "#45DTerli"
+}
