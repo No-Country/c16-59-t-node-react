@@ -1,8 +1,8 @@
 "use client"
 import { ButtonC, Title } from "@/app/components";
 import Image from "next/image";
-import { useState } from "react";
-import ConfettiExplosion, { ConfettiProps } from "react-confetti-explosion";
+
+
 import './page.css';
 
 
@@ -23,16 +23,9 @@ const verduras = [
     precio: "$3000",
   },
 ];
-const largeProps: ConfettiProps = {
-  force: 0.8,
-  duration: 3000,
-  particleCount: 300,
-  width: 1600,
-  colors: ['#041E43', '#1471BF', '#5BB4DC', '#FC027B', '#66D805'],
-};
 
 export default function Success() {
-  const [isLargeExploding, setIsLargeExploding] = useState(false);
+  
 
   return (
     <div className="space-y-4">
@@ -55,20 +48,20 @@ export default function Success() {
 
       <div className="m-auto   ">
         <div>
-          <strong>Comprador:</strong>
+          <strong>Comprador: </strong>
           <span>Luis Suarez</span>
         </div>
         <div>
           {" "}
-          <strong>Dirección de entrega:</strong>Calle 2 # 3 - 4<span></span>
+          <strong>Dirección de entrega: </strong>Calle 2 # 3 - 4<span></span>
         </div>
         <div>
-          <strong>Fecha de entrega:</strong>
+          <strong>Fecha estimada de entrega: </strong>
           <span>08/03/24</span>
         </div>
         <div>
           {" "}
-          <strong>Medio de pago:</strong>
+          <strong>Medio de pago: </strong>
           <span>Tarjeta Débito **** **** **** 0123</span>
         </div>
       </div>
@@ -116,10 +109,7 @@ export default function Success() {
         <ButtonC bgColor="tertiary-green" route="/">
           Volver al inicio
         </ButtonC></div>
-        <button className="button" onClick={() => setIsLargeExploding(!isLargeExploding)}>
-        {isLargeExploding && <ConfettiExplosion {...largeProps} />}
-        <span>large</span>
-      </button>
+        
       </div>
   );
 }
