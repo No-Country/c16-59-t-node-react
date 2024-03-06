@@ -10,13 +10,11 @@ export * from "./ModalBtn/ModalBtn";
 export * from "./NavBar/NavBar.component";
 export * from "./Presentation/Presentation";
 export * from "./Price/Price";
-export * from "./Products/Product.component";
 export * from "./Products/Products.component";
 export * from "./RegisterForm/RegisterForm";
 export * from "./RememberCheckbox/RememeberCheckbox";
 export * from "./RoleSelector/RoleSelector";
 export * from "./RouteBtn/Button";
-export * from "./RouteBtn/ButtonStandard.component";
 export * from "./Statement/Statement";
 export * from "./Subscriptions/SubcriptionsContainer";
 export * from "./ThemeSwitcher/ThemeSwitcher.component";
@@ -27,4 +25,3 @@ export * from "./svg/IconHuerta.component";
 export * from "./svg/Phone.component";
 export * from "./svg/QuestionMark.component";
 export * from "./svg/User.component";
-

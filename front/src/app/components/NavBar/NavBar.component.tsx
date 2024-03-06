@@ -6,16 +6,21 @@ import { useRouter } from "next/navigation";
 import { IconHuerta, Phone, QuestionMark, User } from "..";
 import { ModalBtn } from "../ModalBtn/ModalBtn";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
+import { useState } from "react";
+import { removeToken, setToken } from "@/utils/localStorage.utils";
 
 export const NavBar = () => {
   const router = useRouter();
 
-  // const [show, setShow] = useState(() => !!localStorage.getItem("token"));
-
-  // const { setToken, removeToken } = useUserOrder();
+  const [show, setShow] = useState(() => {
+    if (globalThis.localStorage) {
+      return !globalThis.localStorage.getItem("token");
+    }
+    return true;
+  });
 
   // const handleClick = () => {
-  //   show ? removeToken() : setToken();
+  //   !show ? removeToken() : setToken();
   //   setShow(!show);
   // };
 
@@ -38,6 +43,9 @@ export const NavBar = () => {
       </NavbarBrand>
       <div className={separator} />
       <NavbarContent justify="end" className={NavContent}>
+        {/* <button onClick={handleClick}>
+          <User />
+        </button> */}
         <ModalBtn btnContent={<User />}>
           <LoginForm />
         </ModalBtn>

@@ -1,11 +1,17 @@
 "use client";
+
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Image from "next/image";
 import "./AccordionCatalog.css";
+import { SelectionProduct } from "./SelectionProduct.component";
+import { ProductApi } from "@/app/interfaces/products";
+import { useOrder } from "@/app/hooks";
+import clsx from "clsx";
+
 interface AccordionCatalogProps {
-  fruits: Array<any>;
-  vegetables: Array<any>;
-  processedFoods: Array<any>;
+  fruits: Array<ProductApi>;
+  vegetables: Array<ProductApi>;
+  processedFoods: Array<ProductApi>;
 }
 
 export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
@@ -13,31 +19,56 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
   vegetables,
   processedFoods,
 }) => {
- 
-  const renderProducts = (productList: Array<any>) => {
+  const { order } = useOrder();
+
+  const renderProducts = (productList: Array<ProductApi>) => {
     return (
-      <ul className="flex gap-4">
-        {productList.map((product: any) => {
+      <ul className="flex gap-1">
+        {productList.map((product: ProductApi) => {
           const upperCaseProduct = {
             ...product,
-            name: product.name.charAt(0).toUpperCase() + product.name.slice(1)
-          }
-          return (
-            <li key={upperCaseProduct.id}
-            className="flex flex-col gap-2 justify-center items-center relative"
-            >
-               <div className="absolute bottom-6 backdrop-blur w-full text-center">
-                <strong className="text-xs">$ {upperCaseProduct.price}</strong>
-              </div>
-              <Image
-               className="max-w-none object-cover size-16 md:size-20 lg:size-24 aspect-auto"
-                src={upperCaseProduct.image[0].url}
-                alt={upperCaseProduct.name}
-                width={250}
-                height={100}
-              />
+            name: product.name.charAt(0).toUpperCase() + product.name.slice(1),
+          };
 
-              <strong className="text-xs"> {upperCaseProduct.name.split(" ")[0]}</strong>
+          const statusChecked = order.products.some(
+            ({ productId: id }) => id === upperCaseProduct.id
+          );
+
+          return (
+            <li
+              key={upperCaseProduct.id}
+              className="flex flex-col gap-2 justify-center items-center"
+            >
+              <SelectionProduct
+                productId={upperCaseProduct.id}
+                image={upperCaseProduct.image[0].url}
+                name={upperCaseProduct.name}
+                salesPresentation={upperCaseProduct.salesPresentation}
+                priceByUnit={upperCaseProduct.price}
+                category={upperCaseProduct.category}
+                statusChecked={statusChecked}
+              >
+                <div className="absolute bottom-5 backdrop-blur w-full text-center bg-white bg-opacity-50 z-10">
+                  <strong className="text-xs">
+                    $ {upperCaseProduct.price}
+                  </strong>
+                </div>
+                <Image
+                  className={clsx(
+                    "max-w-none object-cover size-16 md:size-20 lg:size-24 aspect-auto m-auto hover:filter hover:brightness-110 hover:saturate-50 hover:opacity-30",
+                    statusChecked &&
+                      "filter brightness-110 saturate-50 opacity-30"
+                  )}
+                  src={upperCaseProduct.image[0].url}
+                  alt={upperCaseProduct.name}
+                  width={250}
+                  height={100}
+                />
+
+                <strong className="text-xs">
+                  {upperCaseProduct.name.split(" ")[0]}
+                </strong>
+              </SelectionProduct>
             </li>
           );
         })}

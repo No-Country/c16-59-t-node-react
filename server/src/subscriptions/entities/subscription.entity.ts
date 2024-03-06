@@ -43,4 +43,3 @@ export class Subscription {
   )
   user: User;
 }
-//Creo el error es tener que borrar la base de datos
