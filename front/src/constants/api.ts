@@ -1,7 +1,3 @@
-// import dotenv from 'dotenv';
-// dotenv.config({ path: '.env.local' });
-// no es nesario el uso de dotenv. nextjs lo hace por defecto
-
 export const API_URL = process.env.DEPLOY_URL;
 
 //Products

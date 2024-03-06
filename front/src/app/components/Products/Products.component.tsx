@@ -1,15 +1,15 @@
+import { ProductsTotalApi } from "@/app/interfaces/products";
 import { getProducts } from "@/utils/fetchApi";
-import { Product } from "..";
-import { ProductsApi } from "../../interfaces/products";
+import { Product } from "./Product.component";
 
 export const Products = async () => {
-  const products: ProductsApi[] = await getProducts();
+  const products: ProductsTotalApi[] = await getProducts();
 
   const renderProducts = ({
     products,
     ariaHidden = false,
   }: {
-    products: ProductsApi[];
+    products: ProductsTotalApi[];
     ariaHidden?: boolean;
   }) => {
     return (
@@ -17,7 +17,7 @@ export const Products = async () => {
         className="products-item group-hover:paused py-4"
         aria-hidden={ariaHidden}
       >
-        {products.map(({ id, image, name }: ProductsApi) => (
+        {products.map(({ id, image, name }: ProductsTotalApi) => (
           <Product key={id} image={image} name={name} />
         ))}
       </ul>
