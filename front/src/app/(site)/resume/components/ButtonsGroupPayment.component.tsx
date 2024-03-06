@@ -107,6 +107,7 @@ export const ButtonsGroupPayment = () => {
         {/* cambiar la logica del boton para que tambien tenga disabled y lo demas*/}
         <ButtonC bgColor="tertiary-green">
           PORFA WAGNER REVISALO - mas importante la funcion handleOpenPayment
+          PROBANDO 1 2 3 4
           {/* <button
             onClick={handleOpenPayment}
             className={clsx(
