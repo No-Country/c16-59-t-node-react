@@ -1,4 +1,5 @@
-import { IconHuerta } from "..";
+import { IconHuerta } from "../..";
+
 
 export const Hero = () => {
   return (

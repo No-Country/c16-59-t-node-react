@@ -1,5 +1,4 @@
-import { Hero, Menu, Products } from "./components";
-import FreshProduceMessage from "./components/Home/FreshProduceMessage/FreshProduceMessage";
+import { FreshProduceMessage, Hero, Menu, Products } from "./components";
 
 export default function Home() {
   return (

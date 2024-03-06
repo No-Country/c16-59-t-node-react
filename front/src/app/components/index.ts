@@ -1,6 +1,6 @@
 //Buttons
 export * from "./Buttons/ModalBtn/ModalBtn";
-export * from "./Buttons/RouteBtn/Button";
+export * from "./Buttons/RouteBtn/RouteBtn";
 //Cards
 export * from "./Cards/Price/Price";
 export * from "./Cards/Products/Products.component";
@@ -15,10 +15,10 @@ export * from "./Forms/RememberCheckbox/RememeberCheckbox";
 export * from "./Forms/RoleSelector/RoleSelector";
 //Structure
 export * from "./Structure/Footer/Footer.component";
-export * from "./Structure/Home/FreshProduceMessage/FreshProduceMessage";
-export * from "./Structure/Home/Hero.component";
-export * from "./Structure/Home/Menu.component";
+export * from "./Structure/FreshProduceMessage/FreshProduceMessage";
+export * from "./Structure/Hero/Hero.component";
 export * from "./Structure/Main/Main";
+export * from "./Structure/Menu/Menu.component";
 export * from "./Structure/NavBar/NavBar.component";
 //txts
 export * from "./Txts/BoxItalic/BoxItalic";
