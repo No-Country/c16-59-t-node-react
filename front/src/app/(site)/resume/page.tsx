@@ -1,16 +1,16 @@
 "use client";
 
+import { RouteBtn, Title } from "@/app/components";
 import { useOrder } from "@/app/hooks";
+import { DeliveryOptions } from "@/app/interfaces/constants";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import { CardDelivery } from "../products/delivery-options/components/CardDelivery.components";
-import { DeliveryOptions } from "@/app/interfaces/constants";
 import {
   ButtonsGroupPayment,
   ElementResume,
   FormResume,
   OrderResume,
 } from "./components";
-import { ButtonC, Title } from "@/app/components";
 
 export default function Resume() {
   const {
@@ -23,7 +23,7 @@ export default function Resume() {
 
   return (
     <div className="space-y-6 m-auto">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border icon color="secondary-orange">La Huerta Box - EXPRESS</Title>
 
       <div className="max-w-5xl mx-auto space-y-4">
         <ElementResume title="Datos de Facturación">
@@ -46,21 +46,22 @@ export default function Resume() {
             <p>No hay datos de envío</p>
           )}
           <div className="w-full m-auto flex justify-center items-center">
-            <ButtonC
+            <RouteBtn 
+              size="lg"
               bgColor="primary-yellow"
               route="/products/delivery-options"
             >
               Cambiar
-            </ButtonC>
+            </RouteBtn>
           </div>
         </ElementResume>
 
         <ElementResume title="Resumen de compra">
           {products.length ? <OrderResume /> : <p>No hay productos</p>}
           <div className="w-full m-auto flex justify-center items-center">
-            <ButtonC bgColor="primary-yellow" route="/products">
+            <RouteBtn size="lg" bgColor="primary-yellow" route="/products">
               Agregar mas productos
-            </ButtonC>
+            </RouteBtn>
           </div>
         </ElementResume>
 
@@ -70,9 +71,9 @@ export default function Resume() {
         </ElementResume>
       </div>
       <div className="w-full flex justify-center items-center m-auto">
-        <ButtonC bgColor="secondary-orange" route="/products/delivery-options">
+        <RouteBtn size="lg" bgColor="secondary-orange" route="/products/delivery-options">
           Anterior
-        </ButtonC>
+        </RouteBtn>
       </div>
     </div>
   );

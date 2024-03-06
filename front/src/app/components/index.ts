@@ -1,4 +1,5 @@
 //Buttons
+export * from "./Buttons/FncBtn/FncBtn";
 export * from "./Buttons/ModalBtn/ModalBtn";
 export * from "./Buttons/RouteBtn/RouteBtn";
 //Cards
