@@ -18,7 +18,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
       <ul className="flex gap-4">
         {productList.map((product: any) => {
           console.log(product);
-
+          
           const upperCaseProduct = {
             ...product,
             name: product.name.charAt(0).toUpperCase() + product.name.slice(1),
