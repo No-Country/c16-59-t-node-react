@@ -3,6 +3,8 @@
 export const defaultBtn = ` 
   rounded-none 
   font-bold
+  w-auto
+  h-auto
 `
 
 export const btnSize = {

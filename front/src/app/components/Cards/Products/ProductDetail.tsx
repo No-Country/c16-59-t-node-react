@@ -22,10 +22,10 @@ export const ProductDetail: React.FC<CarProductI> = ({
     : null;
   const nameU:string = name.toUpperCase()
   return (
-    <Card className="relative grid grid-cols-4 pt-0 rounded-none overflow-visible">
-      <div className="col-start-3 col-end-4  p-0 m-0">
-        <PriceC price={price} color={"secondary-orange"} />
-      </div>
+    <Card className="relative grid grid-cols-5 pt-0 rounded-none overflow-visible">
+      <div className="col-start-3 col-end-3  p-0 place-self-end mr-[7rem]">
+            <PriceC price={price} color={"secondary-orange"} className="place-self-end" />
+            </div>
       <div
         className={clsx(
           "col-span-3",
@@ -34,7 +34,7 @@ export const ProductDetail: React.FC<CarProductI> = ({
           "border-dotted",
           "border-2",
           "sm:p-0.5"
-        )}
+          )}
       >
         <CardHeader className="pb-0">
           <Title size={"md"} color={"secondary-orange"}>{nameU}</Title>
@@ -47,7 +47,7 @@ export const ProductDetail: React.FC<CarProductI> = ({
         </CardFooter>
       </div>
       <Image
-        className="object-cover col-start-4 col-span-1 h-full"
+        className="object-cover col-start-4 col-span-2 h-full"
         src={image[0]}
         alt={name}
         width={379.69}
