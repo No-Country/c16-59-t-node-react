@@ -33,7 +33,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
               </div>
               <Image
                 className="max-w-none object-cover size-16 md:size-20 lg:size-24 aspect-auto"
-                src={upperCaseProduct.image[0].url}
+                src={upperCaseProduct["image"][0]["url"]}
                 alt={upperCaseProduct.name}
                 width={250}
                 height={100}
