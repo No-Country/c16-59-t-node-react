@@ -1,3 +1,4 @@
+
 import { SubscriptionI } from "../interfaces/Subscription";
 
 
@@ -5,7 +6,6 @@ export const data: SubscriptionI[] = [
   {
     id: "3",
     title: "La Huerta Box - EXPRESS",
-    price: "",
     content: [
       "︎Opciones de verdura de temporada a preferencia",
       "Opciones de fruta de temporada a preferencia",
@@ -18,7 +18,7 @@ export const data: SubscriptionI[] = [
   {
     id: "1",
     title: "La Huerta Box - SEMANAL",
-    price: "$20.000",
+    price: 20.000,
     content: [
       "︎5 opciones de verdura de temporada",
       "4 opciones de fruta de temporada",
@@ -31,7 +31,7 @@ export const data: SubscriptionI[] = [
   {
     id: "2",
     title: "La Huerta Box - MENSUAL",
-    price: "$20.000",
+    price: 40.000,
     content: [
       "2 opciones de verdura de temporada",
       "2 opciones de fruta de temporada",
@@ -42,3 +42,4 @@ export const data: SubscriptionI[] = [
     route:"/"
   },
 ];
+
