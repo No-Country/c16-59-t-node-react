@@ -44,7 +44,7 @@ export default function Resume() {
           </div>
         </ElementResume> */}
 
-        {/* <ElementResume title="Resumen de compra">
+        <ElementResume title="Resumen de compra">
           {products.length ? (
             <OrderResume />
           ) : (
@@ -55,7 +55,7 @@ export default function Resume() {
               Agregar mas productos
             </RouteBtn>
           </div>
-        </ElementResume> */}
+        </ElementResume>
 
         <ElementResume title="Formas de pago">
           <ButtonsGroupPayment />
