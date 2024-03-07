@@ -23,7 +23,7 @@ export const ModalBtn:React.FC<ModalBtnI> =  ({children,bgColor,size,btnContent}
       >
       {typeof children === "string"?BoxItalic(children as string):children}
     </Button>
-      <ModalPresentation isOpen={isOpen} onOpenChange={onOpenChange} modalContent={btnContent}/>
+      <ModalPresentation isOpen={isOpen} onOpenChange={onOpenChange} modalContent={btnContent} />
     </>
   );
 }

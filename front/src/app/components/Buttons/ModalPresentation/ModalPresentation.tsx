@@ -11,7 +11,7 @@ interface ModalPresentationProps{
 
 export const ModalPresentation:React.FC<ModalPresentationProps> = ({isOpen, modalContent, onOpenChange}) =>{
   return(
-    <Modal backdrop={"blur"} isOpen={isOpen} onOpenChange={onOpenChange} radius={"none"} shouldBlockScroll className={clsx(defaultModalContent)}> 
+    <Modal backdrop={"blur"} isOpen={isOpen} onOpenChange={onOpenChange} radius={"none"} shouldBlockScroll size="4xl" className={clsx(defaultModalContent)}> 
         <ModalContent>
           {modalContent}
           </ModalContent>
