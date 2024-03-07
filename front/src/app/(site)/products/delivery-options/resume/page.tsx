@@ -29,8 +29,7 @@ export default function Resume() {
         <ElementResume title="Forma de entrega">
           {deliveryId ? (
             <div className="flex flex-col gap-3 justify-center items-center m-auto">
-              {/* <FetchIdDelivery deliveryId={deliveryId} /> */}
-              hola
+              <FetchIdDelivery deliveryId={deliveryId} />
             </div>
           ) : (
             <p className="text-xs md:text-base">No hay datos de envío</p>

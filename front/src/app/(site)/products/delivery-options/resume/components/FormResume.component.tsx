@@ -1,8 +1,8 @@
-// "use client";
+"use client";
 
 import { RouteBtn } from "@/app/components";
 import { FormProduct } from "@/app/interfaces/form";
-// import { useState } from "react";
+import { useState } from "react";
 
 const INITIAL_VALUES: FormProduct = {
   name: "Luis Suarez",
@@ -11,16 +11,16 @@ const INITIAL_VALUES: FormProduct = {
   email: "comprador123@gmail.com",
   direction: "Calle 2 # 3 - 4",
   district: "Las Azuleras",
-  phone: 3112578916,
+  phone: 3112578918,
 };
 
 export const FormResume = () => {
-  // const [form, setForm] = useState<FormProduct>(INITIAL_VALUES);
+  const [form, setForm] = useState<FormProduct>(INITIAL_VALUES);
 
-  // const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-  //   const { name, value } = evt.target;
-  //   setForm({ ...form, [name]: value });
-  // };
+  const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = evt.target;
+    setForm({ ...form, [name]: value });
+  };
 
   return (
     <div className="w-full grid grid-cols-2 gap-y-3 gap-x-3 md:gap-x-32 [&_span]:text-secondary-orange [&_span]:font-semibold [&_span]:text-xs [&_input]:text-xs [&_span]:md:text-base [&_input]:md:text-base [&_input]:px-2 [&_input]:py-1 [&_input]:max-w-4xl m-auto [&_input]:outline-none focus:[&_input]:border-gray-400 [&_input]:font-medium">
@@ -32,9 +32,8 @@ export const FormResume = () => {
             type="text"
             name="name"
             placeholder="Ingresa tu nombre"
-            defaultValue={INITIAL_VALUES.name}
-            // value={form.name}
-            // onChange={handleChange}
+            value={form.name}
+            onChange={handleChange}
           />
         </label>
         <label htmlFor="typeIdentification" className="flex flex-col gap-2">
@@ -44,9 +43,8 @@ export const FormResume = () => {
             type="text"
             name="typeIdentification"
             placeholder="Ingresa tu tipo de identificación"
-            defaultValue={INITIAL_VALUES.typeIdentification}
-            // value={form.typeIdentification}
-            // onChange={handleChange}
+            value={form.typeIdentification}
+            onChange={handleChange}
           />
         </label>
         <label htmlFor="numberIdentification" className="flex flex-col gap-2">
@@ -56,22 +54,20 @@ export const FormResume = () => {
             type="number"
             name="numberIdentification"
             placeholder="Ingresa tu número de identificación"
-            defaultValue={INITIAL_VALUES.numberIdentification}
-            // value={form.numberIdentification}
-            // onChange={handleChange}
-            // onWheel={(e) => e.preventDefault()}
+            value={form.numberIdentification}
+            onChange={handleChange}
+            onWheel={(e) => e.preventDefault()}
           />
         </label>
         <label htmlFor="email" className="flex flex-col gap-2">
           <span>Correo Electrónico</span>
           <input
             className="border-2 border-gray-300"
-            type="email"
+            type="text"
             name="email"
             placeholder="Ingresa tu correo electrónico"
-            defaultValue={INITIAL_VALUES.email}
-            // value={form.email}
-            // onChange={handleChange}
+            value={form.email}
+            onChange={handleChange}
           />
         </label>
       </div>
@@ -83,9 +79,8 @@ export const FormResume = () => {
             type="text"
             name="direction"
             placeholder="Ingresa tu dirección"
-            defaultValue={INITIAL_VALUES.direction}
-            // value={form.direction}
-            // onChange={handleChange}
+            value={form.direction}
+            onChange={handleChange}
           />
         </label>
         <label htmlFor="district" className="flex flex-col gap-2">
@@ -95,9 +90,8 @@ export const FormResume = () => {
             type="text"
             name="district"
             placeholder="Ingresa tu barrio"
-            defaultValue={INITIAL_VALUES.district}
-            // value={form.district}
-            // onChange={handleChange}
+            value={form.district}
+            onChange={handleChange}
           />
         </label>
         <label htmlFor="phone" className="flex flex-col gap-2">
@@ -107,9 +101,8 @@ export const FormResume = () => {
             type="number"
             name="phone"
             placeholder="Ingresa tu teléfono"
-            defaultValue={INITIAL_VALUES.phone}
-            // value={form.phone}
-            // onChange={handleChange}
+            value={form.phone}
+            onChange={handleChange}
           />
         </label>
       </div>
