@@ -59,7 +59,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
                     statusChecked &&
                       "filter brightness-110 saturate-50 opacity-30"
                   )}
-                  src={upperCaseProduct.image[0].url}
+                  src={upperCaseProduct.image[0]}
                   alt={upperCaseProduct.name}
                   width={250}
                   height={100}
