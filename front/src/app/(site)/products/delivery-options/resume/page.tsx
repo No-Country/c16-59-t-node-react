@@ -21,7 +21,7 @@ export default function Resume() {
         La Huerta Box - EXPRESS
       </Title>
 
-      <div className="max-w-5xl mx-auto space-y-4">
+      {/* <div className="max-w-5xl mx-auto space-y-4">
         <ElementResume title="Datos de Facturación">
           <FormResume />
         </ElementResume>
@@ -60,7 +60,7 @@ export default function Resume() {
         <ElementResume title="Formas de pago">
           <ButtonsGroupPayment />
         </ElementResume>
-      </div>
+      </div> */}
       <div className="w-full flex justify-center items-center m-auto">
         <RouteBtn
           size="lg"
