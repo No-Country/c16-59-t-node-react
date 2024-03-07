@@ -32,7 +32,12 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
 
   const handleGetResume = () => {
     if (token) {
+      console.log("PROBANDO PORQUE NO LLEGA AL RESUMEN", token, id);
+
       setDelivery(id);
+
+      console.log("ir a resumen");
+
       router.push("/resume");
     } else {
       toastifyTyped({
