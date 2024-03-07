@@ -6,6 +6,7 @@ export const data: SubscriptionI[] = [
   {
     id: "3",
     title: "La Huerta Box - EXPRESS",
+    price:0,
     content: [
       "︎Opciones de verdura de temporada a preferencia",
       "Opciones de fruta de temporada a preferencia",
