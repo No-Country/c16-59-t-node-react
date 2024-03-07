@@ -22,9 +22,9 @@ export default function Resume() {
       </Title>
 
       <div className="max-w-5xl mx-auto space-y-4">
-        {/* <ElementResume title="Datos de Facturación">
+        <ElementResume title="Datos de Facturación">
           <FormResume />
-        </ElementResume> */}
+        </ElementResume>
 
         {/* <ElementResume title="Forma de entrega">
           {deliveryId ? (
