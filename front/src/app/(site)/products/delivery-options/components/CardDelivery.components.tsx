@@ -5,8 +5,8 @@ import { useOrder, useUser } from "@/app/hooks";
 import { TypeToastify } from "@/app/interfaces/toastify";
 import { toastifyTyped } from "@/utils/toastity.utils";
 import { ButtonGeneral } from "@/app/components";
-import Link from "next/link";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 interface CardDeliveryProps {
   id: string;
@@ -25,11 +25,19 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
   image,
   statusResume,
 }) => {
-  const { setDelivery } = useOrder();
-  // const router = useRouter();
+  const {
+    setDelivery,
+    order: { deliveryId },
+  } = useOrder();
+
+  const router = useRouter();
   const {
     user: { token },
   } = useUser();
+
+  useEffect(() => {
+    deliveryId && router.push("/products/delivery-options/resume");
+  }, [deliveryId]);
 
   // const handleGetResume = () => {
   //   if (token) {
@@ -64,7 +72,6 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
               <ButtonGeneral
                 bgColor="primary-yellow"
                 addFunc={() => setDelivery(id)}
-                route="/products/delivery-options/resume"
               >
                 {/* <Link
                   href={
