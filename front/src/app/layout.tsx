@@ -1,11 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Footer, NavBar } from "./components";
-import { OrderProvider } from "./context";
-import { Main } from "./components/Main/Main";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Footer, NavBar } from "./components";
+import { Main } from "./components/Structure/Main/Main";
+import { OrderProvider } from "./context";
+import "./globals.css";
+import { ToastContainer } from "react-toastify";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],

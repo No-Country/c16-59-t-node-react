@@ -4,7 +4,7 @@ import { Category } from "./products";
 
 export interface OrderStateData {
   products: ProductData[];
-  deliveryId: number;
+  deliveryId: string;
   total: number;
   payment: number;
   notes: string;

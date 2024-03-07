@@ -11,7 +11,7 @@ import { ButtonC } from "@/app/components";
 import { DeliveryType } from "@/app/interfaces/delivery";
 
 interface CardDeliveryProps {
-  id: number;
+  id: string;
   description: string;
   image: string;
   title: string;

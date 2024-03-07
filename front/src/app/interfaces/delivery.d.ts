@@ -1,5 +1,5 @@
 export interface DeliveryOptions {
-  id: number;
+  id: string;
   type: DeliveryType;
   description: string;
   image: string;
