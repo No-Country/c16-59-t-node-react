@@ -39,5 +39,3 @@ const subscriptions: readonly SubscriptionApi[] = [
   },
 ];
 
-const createData: (subscriptions)
-
