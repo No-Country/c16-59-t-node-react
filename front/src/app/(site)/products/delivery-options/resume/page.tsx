@@ -26,7 +26,7 @@ export default function Resume() {
           <FormResume />
         </ElementResume> */}
 
-        <ElementResume title="Forma de entrega">
+        {/* <ElementResume title="Forma de entrega">
           {deliveryId ? (
             <div className="flex flex-col gap-3 justify-center items-center m-auto">
               <FetchIdDelivery deliveryId={deliveryId} />
@@ -42,9 +42,9 @@ export default function Resume() {
               Cambiar
             </ButtonGeneral>
           </div>
-        </ElementResume>
+        </ElementResume> */}
 
-        <ElementResume title="Resumen de compra">
+        {/* <ElementResume title="Resumen de compra">
           {products.length ? (
             <OrderResume />
           ) : (
@@ -55,7 +55,7 @@ export default function Resume() {
               Agregar mas productos
             </RouteBtn>
           </div>
-        </ElementResume>
+        </ElementResume> */}
 
         <ElementResume title="Formas de pago">
           <ButtonsGroupPayment />
