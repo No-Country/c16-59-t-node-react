@@ -38,7 +38,7 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
 
       console.log("ir a resumen");
 
-      router.push("/resume");
+      router.push("/products/resume");
     } else {
       toastifyTyped({
         type: TypeToastify.WARNING,

@@ -1,9 +1,9 @@
 "use client";
 
-import { CloseButtonResume } from "@/app/(site)/resume/components";
 import { useOrder } from "@/app/hooks";
 import clsx from "clsx";
 import Image from "next/image";
+import { CloseButtonResume } from "../../resume/components";
 
 interface RenderAccordionItemProps {
   productId: string;
