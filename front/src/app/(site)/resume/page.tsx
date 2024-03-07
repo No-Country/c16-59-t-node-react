@@ -1,12 +1,11 @@
 "use client";
 
 import { useOrder } from "@/app/hooks";
-import { DELIVERY_OPTIONS } from "@/constants/data";
 import { CardDelivery } from "../products/delivery-options/components/CardDelivery.components";
-import { DeliveryOptions } from "@/app/interfaces/constants";
 import {
   ButtonsGroupPayment,
   ElementResume,
+  FetchIdDelivery,
   FormResume,
   OrderResume,
 } from "./components";
@@ -16,10 +15,6 @@ export default function Resume() {
   const {
     order: { products, deliveryId },
   } = useOrder();
-
-  const { id, title, description, image, titleButton } =
-    DELIVERY_OPTIONS.find(({ id }) => id === deliveryId) ||
-    ({} as DeliveryOptions);
 
   return (
     <div className="space-y-6 m-auto">
@@ -33,14 +28,7 @@ export default function Resume() {
         <ElementResume title="Forma de entrega">
           {deliveryId ? (
             <div className="flex flex-col gap-3 justify-center items-center m-auto">
-              <CardDelivery
-                id={id}
-                title={title}
-                titleButton={titleButton}
-                description={description}
-                image={image}
-                statusResume
-              />
+              <FetchIdDelivery deliveryId={deliveryId} />
             </div>
           ) : (
             <p className="text-xs md:text-base">No hay datos de envío</p>

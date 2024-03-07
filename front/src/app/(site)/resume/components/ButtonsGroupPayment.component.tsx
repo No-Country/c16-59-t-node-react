@@ -124,7 +124,7 @@ export const ButtonsGroupPayment = () => {
         <ButtonC bgColor="tertiary-green">Contraentrega</ButtonC>
       </div>
       {loadingModal && <ModalOpenPayment isOpen={isOpen} />}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </>
   );
 };

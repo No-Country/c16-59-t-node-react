@@ -11,3 +11,6 @@ export const URL_API_PROCESSEDFOODS = `${API_URL}/products/category/processed-fo
 
 //login auth
 export const URL_AUTH_LOGIN = `${API_URL}/auth/login`;
+
+//delivery options
+export const URL_DELIVERY = `${API_URL}/deliveries`;

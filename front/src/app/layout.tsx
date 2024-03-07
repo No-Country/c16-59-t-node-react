@@ -1,11 +1,11 @@
+import "./globals.css";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import { Footer, NavBar } from "./components";
-import "./globals.css";
 import { OrderProvider } from "./context";
-import "react-toastify/dist/ReactToastify.css";
 import { Main } from "./components/Main/Main";
-import "./globals.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export const montserrat = Montserrat({
   subsets: ["latin"],
@@ -31,6 +31,7 @@ export default function RootLayout({
           {/* <Providers>{children}</Providers> despues de la demo xd */}
           <Footer />
         </OrderProvider>
+        <ToastContainer />
       </body>
     </html>
   );

@@ -2,20 +2,20 @@
 
 import Image from "next/image";
 import { useOrder } from "@/app/hooks";
-import { DescriptionDelivery } from "@/app/interfaces/constants";
 import { TypeToastify } from "@/app/interfaces/toastify";
 import { getToken } from "@/utils/localStorage.utils";
 import { toastifyTyped } from "@/utils/toastity.utils";
 import { Button } from "@nextui-org/react";
 import { ToastContainer } from "react-toastify";
 import { ButtonC } from "@/app/components";
+import { DeliveryType } from "@/app/interfaces/delivery";
 
 interface CardDeliveryProps {
   id: number;
-  title: string;
-  titleButton: string;
-  description: DescriptionDelivery[];
+  description: string;
   image: string;
+  title: string;
+  titleButton?: string;
   statusResume?: boolean;
 }
 
@@ -47,12 +47,13 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
     <>
       <div className="flex justify-between items-center gap-4 border-gray-200 border">
         <div className="space-y-2 md:space-y-6 px-3 md:px-6">
-          <h4 className="text-secondary-orange text-xs md:text-lg font-semibold">
+          <h4 className="text-secondary-orange text-xs md:text-lg font-semibold capitalize">
             {title}
           </h4>
           <div className="m-auto flex flex-col justify-center items-center space-y-2 md:space-y-6 md:px-6 md:[&_button]:w-[60%]">
-            <p className="text-start text-pretty text-xs md:text-base">
-              {description.map(({ bold, text }: any) =>
+            <p className="text-start text-pretty text-xs md:text-base [&_button_span_span]:normal-case">
+              {description}
+              {/* {description.map(({ bold, text }: any) =>
                 !bold ? (
                   text
                 ) : (
@@ -63,7 +64,7 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
                     {text}
                   </span>
                 )
-              )}
+              )} */}
             </p>
 
             {!statusResume ? (
@@ -86,7 +87,7 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
           height={427}
         />
       </div>
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </>
   );
 };

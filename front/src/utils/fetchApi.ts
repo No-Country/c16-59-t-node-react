@@ -1,3 +1,4 @@
+import { LoginResponse } from "@/app/interfaces/login";
 import { URL_API_PRODUCTS, URL_AUTH_LOGIN } from "@/constants/api";
 import {
   URL_API_FRUITS,
@@ -34,7 +35,7 @@ export const getDataUser = async ({
 }: {
   email: string;
   password: string;
-}) => {
+}): Promise<LoginResponse> => {
   const res = await fetch(URL_AUTH_LOGIN, {
     method: "POST",
     headers: {
