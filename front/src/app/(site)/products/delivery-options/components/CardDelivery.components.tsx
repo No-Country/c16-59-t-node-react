@@ -5,7 +5,8 @@ import { useOrder, useUser } from "@/app/hooks";
 import { TypeToastify } from "@/app/interfaces/toastify";
 import { toastifyTyped } from "@/utils/toastity.utils";
 import { ButtonGeneral } from "@/app/components";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+// import { useRouter } from "next/navigation";
 
 interface CardDeliveryProps {
   id: string;
@@ -25,27 +26,27 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
   statusResume,
 }) => {
   const { setDelivery } = useOrder();
-  const router = useRouter();
+  // const router = useRouter();
   const {
     user: { token },
   } = useUser();
 
-  const handleGetResume = () => {
-    if (token) {
-      console.log("PROBANDO PORQUE NO LLEGA AL RESUMEN", token, id);
+  // const handleGetResume = () => {
+  //   if (token) {
+  //     console.log("PROBANDO PORQUE NO LLEGA AL RESUMEN", token, id);
 
-      setDelivery(id);
+  //     setDelivery(id);
 
-      console.log("ir a resumen");
+  //     console.log("ir a resumen");
 
-      router.push("/products/delivery-options/resume");
-    } else {
-      toastifyTyped({
-        type: TypeToastify.WARNING,
-        message: "Debes iniciar sesión para continuar",
-      });
-    }
-  };
+  //     // router.push("/products/delivery-options/resume");
+  //   } else {
+  //     toastifyTyped({
+  //       type: TypeToastify.WARNING,
+  //       message: "Debes iniciar sesión para continuar",
+  //     });
+  //   }
+  // };
 
   return (
     <>
@@ -60,8 +61,20 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
             </p>
 
             {!statusResume ? (
-              <ButtonGeneral bgColor="primary-yellow" addFunc={handleGetResume}>
+              <ButtonGeneral
+                bgColor="primary-yellow"
+                addFunc={() => setDelivery(id)}
+                route="/products/delivery-options/resume"
+              >
+                {/* <Link
+                  href={
+                    token
+                      ? "/products/delivery-options/resume"
+                      : "/products/delivery-options"
+                  }
+                > */}
                 {titleButton}
+                {/* </Link> */}
               </ButtonGeneral>
             ) : null}
           </div>
