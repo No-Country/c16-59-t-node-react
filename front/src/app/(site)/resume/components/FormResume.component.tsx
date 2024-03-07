@@ -11,7 +11,7 @@ const INITIAL_VALUES: FormProduct = {
   email: "comprador123@gmail.com",
   direction: "Calle 2 # 3 - 4",
   district: "Las Azuleras",
-  phone: 3112578941,
+  phone: 3112578940,
 };
 
 export const FormResume = () => {
@@ -107,7 +107,7 @@ export const FormResume = () => {
         </label>
       </div>
       <div className="col-span-2 text- w-full flex justify-center items-center [&_span_span]:text-sm [&_span_span]:text-black">
-        <RouteBtn size="lg" bgColor="primary-yellow" route="/">
+        <RouteBtn size="lg" bgColor="primary-yellow" route="/resume">
           Editar Datos
         </RouteBtn>
       </div>

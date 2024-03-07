@@ -13,10 +13,7 @@ import {
 export default function Resume() {
   const {
     order: { products, deliveryId },
-    setGoRouteResumeStatus,
   } = useOrder();
-
-  console.log("fasdfasdsssf", deliveryId);
 
   return (
     <div className="space-y-6 m-auto">
@@ -40,18 +37,10 @@ export default function Resume() {
           <div className="w-full m-auto flex justify-center items-center">
             <ButtonGeneral
               bgColor="primary-yellow"
-              // addFunc={() => setGoRouteResumeStatus(false)}
               route="/products/delivery-options"
             >
               Cambiar
             </ButtonGeneral>
-            {/* <RouteBtn
-              size="lg"
-              bgColor="primary-yellow"
-              route="/products/delivery-options"
-            >
-              Cambiar
-            </RouteBtn> */}
           </div>
         </ElementResume>
 
@@ -68,7 +57,6 @@ export default function Resume() {
           </div>
         </ElementResume>
 
-        {/* decirle a wagner que en el boton se tiene dar la posibilidad de abrir el modal */}
         <ElementResume title="Formas de pago">
           <ButtonsGroupPayment />
         </ElementResume>
