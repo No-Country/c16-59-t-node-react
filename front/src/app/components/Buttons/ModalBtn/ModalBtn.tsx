@@ -1,3 +1,4 @@
+"use client"
 import { ModalBtnI } from "@/app/interfaces/Buttons";
 import { Button, useDisclosure } from "@nextui-org/react";
 import clsx from "clsx";
@@ -12,13 +13,12 @@ export const ModalBtn:React.FC<ModalBtnI> =  ({children,bgColor,size,btnContent}
 
   return (
     <>
-       <Button variant="ghost" isIconOnly
+       <Button onPress={onOpen} variant={"light"} color="success" isIconOnly
       className={clsx(
         `bg-${bgColor}`,
         defaultBtn,
         size==="lg" && btnSize.lg
       )}
-      onPress={onOpen}
       >
       {typeof children === "string"?BoxItalic(children as string):children}
     </Button>

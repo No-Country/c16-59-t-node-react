@@ -2,10 +2,9 @@ import { Route } from "next";
 import { ReactNode } from "react";
 import { Color, Size } from "./types";
 
-
  
 interface ButtonI {
-  children: ReactNode;
+  children: string | ReactNode;
   bgColor?: Color
   size?: Size
 }
@@ -19,6 +18,5 @@ export interface FncBtnI extends ButtonI{
 }
 
 export interface ModalBtnI extends ButtonI{
-  btnContent: string | React.ReactNode
-  children: React.ReactNode
+  btnContent: string | ReactNode
 }

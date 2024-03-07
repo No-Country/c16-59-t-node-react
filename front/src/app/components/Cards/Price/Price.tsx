@@ -1,14 +1,15 @@
+import { Color, Price } from "@/app/interfaces/types"
 import { classPriceContainer, priceDisplay } from "./classNames"
 
 interface PriceProps {
-  price: string
-  color: string
+  price: Price
+  color: Color
 }
 
-export const Price: React.FC<PriceProps> = ({ price, color }) => {
+export const PriceC: React.FC<PriceProps> = ({ price, color }) => {
   const bgColor = `bg-${color}`
   // Verifica si price tiene un valor; si no, muestra "N/A" o cualquier otro valor predeterminado
-  const displayPrice = price
+  const displayPrice = `$${price}`
 
   return (
     <div className={classPriceContainer}>

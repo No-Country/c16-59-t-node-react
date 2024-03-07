@@ -1,17 +1,28 @@
+import { Img, PrdDescription, PrdId, PrdName, PrdSalesPresentation, Price } from "./types";
+
 export interface ProductApi {
-  id: string;
-  name: string;
-  price: number;
-  description: null;
+  id: PrdId;
+  name: PrdName;
+  price: Price;
+  description: PrdDescription;
   category: Category;
-  salesPresentation: string;
-  image: Image[];
+  salesPresentation: PrdSalesPresentation;
+  image: Img;
+}
+
+export interface CarProductI extends Pick
+<ProductApi, "id" | "name" | "price" | "image" | "description">{
+
 }
 
 export interface ProductsTotalApi extends Omit<ProductApi, "image"> {
   stock: number;
   slug: string;
   image: string[];
+}
+
+export interface PrdDetailI extends Omit<ProductApi, "image" | "salesPresentation">{
+  image: Img
 }
 
 export enum Category {
