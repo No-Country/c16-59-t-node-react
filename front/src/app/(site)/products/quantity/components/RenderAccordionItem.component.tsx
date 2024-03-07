@@ -3,7 +3,7 @@
 import { useOrder } from "@/app/hooks";
 import clsx from "clsx";
 import Image from "next/image";
-import { CloseButtonResume } from "../../resume/components";
+import { CloseButtonResume } from "../../delivery-options/resume/components";
 
 interface RenderAccordionItemProps {
   productId: string;

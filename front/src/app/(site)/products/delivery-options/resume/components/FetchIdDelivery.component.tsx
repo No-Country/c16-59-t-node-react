@@ -2,7 +2,7 @@ import { URL_DELIVERY } from "@/constants/api";
 
 import { DeliveryOptions } from "@/app/interfaces/delivery";
 import { unScripted } from "@/utils/parseWords";
-import { CardDelivery } from "../../delivery-options/components/CardDelivery.components";
+import { CardDelivery } from "../../components/CardDelivery.components";
 
 export const FetchIdDelivery = async ({
   deliveryId,

@@ -1,5 +1,5 @@
 import { useOrder } from "@/app/hooks";
-import { RenderAccordionItem } from "../../quantity/components/RenderAccordionItem.component";
+import { RenderAccordionItem } from "../../../quantity/components/RenderAccordionItem.component";
 
 export const OrderResume = () => {
   const { order } = useOrder();
