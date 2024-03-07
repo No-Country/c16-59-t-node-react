@@ -92,11 +92,12 @@ const nextConfig = {
         hostname: "la-huerta.onrender.com",
         port: "",
         pathname: "/**",
-      }
+      },
     ],
   },
   env: {
     STRIPE_PUBLIC_KEY_PARSER: process.env.STRIPE_PUBLIC_KEY,
+    DEPLOY_URL_PARSER: process.env.DEPLOY_URL,
   },
 };
 

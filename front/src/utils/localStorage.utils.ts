@@ -1,5 +1,3 @@
-import { DATA_USER } from "@/constants/data";
-
 type User = {
   email: string;
   token: string;
@@ -8,7 +6,6 @@ type User = {
 // Función para setear el token
 export const getToken = (): User => {
   const dataUser = localStorage.getItem("user");
-  console.log("VER QUE ME TRAE", dataUser);
 
   if (dataUser) {
     return JSON.parse(dataUser);
@@ -20,12 +17,12 @@ export const getToken = (): User => {
 };
 
 // Función para setear el token
-export const setToken = (token: string) =>
+export const setToken = (token: string, email: string) =>
   localStorage.setItem(
     "user",
     JSON.stringify({
       token,
-      email: DATA_USER.email,
+      email,
     })
   );
 

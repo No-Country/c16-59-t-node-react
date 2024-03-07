@@ -1,0 +1,58 @@
+.buttonMod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 10px;
+  color: black;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: #88BE40;
+  width: 206px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+}
+
+.buttonMod.disabledButton {
+  cursor: not-allowed;
+  background-color: rgb(209 213 219);
+}
+
+.buttonMod:active {
+  transform: scale(0.95);
+  transition: all 100ms ease;
+}
+
+.buttonMod img {
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.play {
+  transition: all 0.5s ease;
+  transition-delay: 300ms;
+}
+
+.buttonMod:hover img {
+  transform: scale(2) translate(100%);
+}
+
+.now {
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+  z-index: 2;
+}
+
+.buttonMod:hover .now {
+  transform: translateX(30px);
+  transition-delay: 300ms;
+}
+
+.buttonMod:hover .play {
+  transform: translateX(200%);
+  transition-delay: 100ms;
+}

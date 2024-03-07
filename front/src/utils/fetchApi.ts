@@ -35,14 +35,26 @@ export const getDataUser = async ({
 }: {
   email: string;
   password: string;
-}): Promise<LoginResponse> => {
-  const res = await fetch(URL_AUTH_LOGIN, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ email, password }),
-  });
-  const data = await res.json();
-  return data;
+}) => {
+  try {
+    const res = await fetch(URL_AUTH_LOGIN, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+
+    if (data.error) {
+      const error = new Error(data.message[0]);
+      error.cause = data.error;
+      throw error;
+    }
+
+    return data;
+  } catch (error: any) {
+    throw error;
+  }
 };

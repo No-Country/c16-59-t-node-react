@@ -26,7 +26,7 @@ export interface OrderContextData {
   addProduct: (product: ProductData) => void;
   removeProduct: (productId: string) => void;
   updateProduct: (modifiedProduct: Partial<ProductData>) => void;
-  setDelivery: (deliveryId: number) => void;
+  setDelivery: (deliveryId: string) => void;
 }
 
 // -------------------------- User Context --------------------------

@@ -2,10 +2,20 @@
 
 import { RoleI, roles } from "@/app/data/roles";
 import React, { useState } from "react";
-import { ForgotPasswordLink, RememberMeCheckbox, Title } from "../..";
+import {
+  ButtonGeneral,
+  ForgotPasswordLink,
+  RememberMeCheckbox,
+  Title,
+} from "../..";
 import { RouteBtn } from "../../Buttons/RouteBtn/RouteBtn";
 import RoleSelector from "../RoleSelector/RoleSelector";
 import { TextInput } from "../TextInput/TextInput";
+import { toastifyTyped } from "@/utils/toastity.utils";
+import { TypeToastify } from "@/app/interfaces/toastify";
+import { getDataUser } from "@/utils/fetchApi";
+import { useUser } from "@/app/hooks";
+import { setToken } from "@/utils/localStorage.utils";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -14,6 +24,8 @@ const LoginForm = () => {
     role: null as RoleI | null,
     rememberMe: false,
   });
+
+  const { getTokenUser } = useUser();
 
   const handleChange = (
     key: keyof typeof formData,
@@ -25,15 +37,41 @@ const LoginForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const { email, password, role, rememberMe } = formData;
 
-    if (role) {
-      console.log("Correo electrónico:", email);
-      console.log("Contraseña:", password);
-      console.log("Soy:", role.name);
-      console.log("Recordar mis datos:", rememberMe);
+    try {
+      const { email, password, role, rememberMe } = formData;
+
+      console.log("ESTADO", email, password);
+
+      const { email: emailFromApi, token } = await getDataUser({
+        email,
+        password,
+      });
+
+      toastifyTyped({
+        type: TypeToastify.SUCESS,
+        message: "Login Sucessful",
+      });
+
+      setToken(token, emailFromApi);
+      getTokenUser();
+
+      // if (role) {
+      //   console.log("Correo electrónico:", email);
+      //   console.log("Contraseña:", password);
+      //   console.log("Soy:", role.name);
+      //   console.log("Recordar mis datos:", rememberMe);
+      // }
+    } catch (error: any) {
+      toastifyTyped({
+        type: TypeToastify.ERROR,
+        message:
+          error.cause === "Bad Request"
+            ? error.message
+            : "Credenciales incorrectas",
+      });
     }
   };
 
@@ -75,9 +113,12 @@ const LoginForm = () => {
           onChange={(value) => handleChange("rememberMe", value)}
         />
         <div className="flex items-center justify-center mb-4">
-          <RouteBtn bgColor="primary-yellow" size="lg" route="/">
+          <ButtonGeneral bgColor="primary-yellow" type="submit">
+            Iniciar sesión
+          </ButtonGeneral>
+          {/* <RouteBtn bgColor="primary-yellow" size="lg" route="/">
             Inciar sesión
-          </RouteBtn>
+          </RouteBtn> */}
         </div>
         <div className="text-center">
           <p className="text-gray-600 mb-2">¿No tienes cuenta?</p>

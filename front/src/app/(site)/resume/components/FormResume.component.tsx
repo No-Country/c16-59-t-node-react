@@ -106,7 +106,7 @@ export const FormResume = () => {
           />
         </label>
       </div>
-      <div className="col-span-2 w-full flex justify-center items-center">
+      <div className="col-span-2 text- w-full flex justify-center items-center [&_span_span]:text-sm [&_span_span]:text-black">
         <RouteBtn size="lg" bgColor="primary-yellow" route="/">
           Editar Datos
         </RouteBtn>

@@ -1,14 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useOrder } from "@/app/hooks";
+import { useOrder, useUser } from "@/app/hooks";
 import { TypeToastify } from "@/app/interfaces/toastify";
 import { getToken } from "@/utils/localStorage.utils";
 import { toastifyTyped } from "@/utils/toastity.utils";
 import { Button } from "@nextui-org/react";
 import { ToastContainer } from "react-toastify";
-import { ButtonC } from "@/app/components";
 import { DeliveryType } from "@/app/interfaces/delivery";
+import { ButtonGeneral, RouteBtn } from "@/app/components";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 interface CardDeliveryProps {
   id: string;
@@ -27,21 +29,30 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
   image,
   statusResume,
 }) => {
-  const { setDelivery } = useOrder();
+  const {
+    setDelivery,
+    order: { deliveryId },
+  } = useOrder();
+  const router = useRouter();
+  const {
+    user: { token },
+  } = useUser();
 
-  // const handleGetResume = () => {
-  //   const { token } = getToken();
+  useEffect(() => {
+    console.log("deliveryId", deliveryId);
+    deliveryId && router.push("/resume");
+  }, [deliveryId, router]);
 
-  //   if (token) {
-  //     setDelivery(id);
-  //     router.push("/resume");
-  //   } else {
-  //     toastifyTyped({
-  //       type: TypeToastify.WARNING,
-  //       message: "Debes iniciar sesión para continuar",
-  //     });
-  //   }
-  // };
+  const handleGetResume = () => {
+    if (token) {
+      setDelivery(id);
+    } else {
+      toastifyTyped({
+        type: TypeToastify.WARNING,
+        message: "Debes iniciar sesión para continuar",
+      });
+    }
+  };
 
   return (
     <>
@@ -68,13 +79,9 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
             </p>
 
             {!statusResume ? (
-              <ButtonC
-                bgColor="primary-yellow"
-                route="/resume"
-                // onClick={handleGetResume}
-              >
+              <ButtonGeneral bgColor="primary-yellow" addFunc={handleGetResume}>
                 {titleButton}
-              </ButtonC>
+              </ButtonGeneral>
             ) : null}
           </div>
         </div>

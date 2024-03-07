@@ -15,6 +15,8 @@ export default function Resume() {
     order: { products, deliveryId },
   } = useOrder();
 
+  console.log("fasdfasdf", deliveryId);
+
   return (
     <div className="space-y-6 m-auto">
       <Title size="lg" border icon color="secondary-orange">
