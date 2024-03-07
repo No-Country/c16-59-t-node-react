@@ -41,7 +41,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
             >
               <SelectionProduct
                 productId={upperCaseProduct.id}
-                image={upperCaseProduct.image[0]}
+                image={upperCaseProduct.image[0].url}
                 name={upperCaseProduct.name}
                 salesPresentation={upperCaseProduct.salesPresentation}
                 priceByUnit={upperCaseProduct.price}
@@ -59,7 +59,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
                     statusChecked &&
                       "filter brightness-110 saturate-50 opacity-30"
                   )}
-                  src={upperCaseProduct.image[0]}
+                  src={upperCaseProduct.image[0].url}
                   alt={upperCaseProduct.name}
                   width={250}
                   height={100}
