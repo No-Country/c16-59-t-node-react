@@ -1,8 +1,9 @@
+import { Price } from '@/app/interfaces/types';
 import React from 'react';
 import { presentationClass } from './classNames';
 
 interface PresentationProps {
-  price: string;
+  price: Price;
 }
 
 export const Presentation: React.FC<PresentationProps> = ({ price }) => (
