@@ -66,7 +66,7 @@ export const FormResume = () => {
           <span>Correo Electrónico</span>
           <input
             className="border-2 border-gray-300"
-            type="text"
+            type="email"
             name="email"
             placeholder="Ingresa tu correo electrónico"
             defaultValue={INITIAL_VALUES.email}
