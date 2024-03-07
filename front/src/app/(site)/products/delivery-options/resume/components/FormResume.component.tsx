@@ -11,7 +11,7 @@ const INITIAL_VALUES: FormProduct = {
   email: "comprador123@gmail.com",
   direction: "Calle 2 # 3 - 4",
   district: "Las Azuleras",
-  phone: 3112578940,
+  phone: 3112578933,
 };
 
 export const FormResume = () => {
