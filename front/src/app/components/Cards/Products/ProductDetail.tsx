@@ -6,8 +6,9 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Title } from "../..";
 import { RouteBtn } from "../../Buttons/RouteBtn/RouteBtn";
+
+import { DescriptionC } from "../../Description/Description";
 import { PriceC } from "../Price/Price";
-import { PrdDescriptionC } from "./PrdDescription";
 
 export const ProductDetail: React.FC<CarProductI> = ({
   id, name, price, description, image
@@ -19,9 +20,9 @@ export const ProductDetail: React.FC<CarProductI> = ({
     : pathname === "/products"
     ? "Compralo ahora"
     : null;
-
+  const nameU:string = name.toUpperCase()
   return (
-    <Card className="relative grid grid-cols-4 m-[1.25rem] pt-0 rounded-none overflow-visible">
+    <Card className="relative grid grid-cols-4 pt-0 rounded-none overflow-visible">
       <div className="col-start-3 col-end-4  p-0 m-0">
         <PriceC price={price} color={"secondary-orange"} />
       </div>
@@ -36,10 +37,10 @@ export const ProductDetail: React.FC<CarProductI> = ({
         )}
       >
         <CardHeader className="pb-0">
-          <Title size={"md"} color={"secondary-orange"}>{name}</Title>
+          <Title size={"md"} color={"secondary-orange"}>{nameU}</Title>
         </CardHeader>
         <CardBody className="pt-0">
-          <PrdDescriptionC description={description}/>
+          <DescriptionC description={description}/>
         </CardBody>
         <CardFooter className="col-span-2 flex justify-center items-center">
           <RouteBtn size="lg" bgColor={"tertiary-green"} route={"/"}>{btn}</RouteBtn>

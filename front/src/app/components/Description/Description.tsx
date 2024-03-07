@@ -3,11 +3,11 @@ import { FC } from "react";
 
 interface DescriptionProps extends Pick<PrdDetailI, "description">{}
 
-export const PrdDescriptionC:FC<DescriptionProps> = ({description}) =>{
+export const DescriptionC:FC<DescriptionProps> = ({description}) =>{
   return(
     <div>
       <strong>Descripción:</strong>
-      <p>{description}</p>
+      <p className="">{description}</p>
     </div>
   )
 }
