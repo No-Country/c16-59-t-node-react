@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { User } from 'src/auth/entities/user.entity';
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'subscriptions' })
 export class Subscription {
@@ -34,4 +35,11 @@ export class Subscription {
     type: 'int',
   })
   quantityProcessedFood: number;
+
+  @OneToMany(
+    () => User,
+    //Relacion
+    (user) => user.subscription,
+  )
+  user: User;
 }

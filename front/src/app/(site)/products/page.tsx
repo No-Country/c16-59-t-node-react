@@ -1,43 +1,37 @@
-import { Button2 } from "@/app/components/Button2";
+import { RouteBtn, Title } from "@/app/components";
+import { ProductApi } from "@/app/interfaces/products";
 import {
   getFruitCatalog,
   getProcessedFoodsCatalog,
   getVegetablesCatalog,
 } from "@/utils/fetchApi";
-import { Title } from "../components";
-import { Statement } from "../subscriptions/components";
 import { AccordionCatalog } from "./components";
 
 export default async function Subscriptions() {
-  // aqui haz las peticiones para frutas, vegetales y productos envasados
-  const fruits: any = await getFruitCatalog();
-  const vegetables: any = await getVegetablesCatalog();
-  const processedFoods: any = await getProcessedFoodsCatalog();
-  // const productsEnvasados = await getProdComesCatalog();
-  console.log("frutas ?", fruits);
-  console.log("vegetales ?", vegetables);
+  const [fruits, vegetables, processedFoods] = await Promise.all<
+    Array<ProductApi>
+  >([getFruitCatalog(), getVegetablesCatalog(), getProcessedFoodsCatalog()]);
 
   return (
     <div className="space-y-4">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
       <div className="flex flex-col  ">
-        
         <p className="font-semibold sm:px-6 text-xs lg:text-base mb-4">
-        1. Escoge los productos que deseas clickeando sobre cada ítem:
-      </p>
-      
+          1. Escoge los productos que deseas clickeando sobre cada ítem:
+        </p>
+
         <AccordionCatalog
           vegetables={vegetables}
           fruits={fruits}
           processedFoods={processedFoods}
         />
         <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <Button2 bgColor="secondary-orange" route="/">
+          <RouteBtn bgColor="secondary-orange" route="/" size="lg">
             Anterior
-          </Button2>
-          <Button2 bgColor="primary-yellow" route="/products/quantity">
+          </RouteBtn>
+          <RouteBtn bgColor="primary-yellow" route="/products/quantity" size="lg">
             Siguiente
-          </Button2>
+          </RouteBtn>
         </div>
       </div>
     </div>

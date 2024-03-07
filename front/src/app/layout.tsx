@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Main } from "./Main/Main";
+import "react-toastify/dist/ReactToastify.css";
 import { Footer, NavBar } from "./components";
-import { UserOrderProvider } from "./context/app.context";
+import { Main } from "./components/Structure/Main/Main";
+import { OrderProvider } from "./context";
 import "./globals.css";
 
 export const montserrat = Montserrat({
@@ -22,13 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
-        <UserOrderProvider>
+      <body className={`${montserrat.className} overflow-x-hidden`}>
+        <OrderProvider>
           <NavBar />
           <Main>{children}</Main>
-          {/* <Providers>{children}</Providers> */}
+          {/* <Providers>{children}</Providers> despues de la demo xd */}
           <Footer />
-        </UserOrderProvider>
+        </OrderProvider>
       </body>
     </html>
   );

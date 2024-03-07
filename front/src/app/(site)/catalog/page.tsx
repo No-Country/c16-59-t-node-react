@@ -1,12 +1,11 @@
-import { AccordionCatalog } from "./components";
-import { Title } from "../components";
+import { RouteBtn, Title } from "@/app/components";
 import {
   getFruitCatalog,
-  getVegetablesCatalog,
   getProcessedFoodsCatalog,
+  getVegetablesCatalog,
 } from "@/utils/fetchApi";
-import { ButtonStandard, Footer } from "@/app/components";
-import { Button2 } from "@/app/components/Button2";
+
+import { AccordionCatalog } from "./components";
 
 export default async function CatalogPage() {
   // aqui haz las peticiones para frutas, vegetales y productos envasados
@@ -19,19 +18,18 @@ export default async function CatalogPage() {
 
   return (
     <>
-      <Title>Productos del Mes</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>Productos del Mes</Title>
       <AccordionCatalog
         vegetables={vegetables}
         fruits={fruits}
         processedFoods={processedFoods}
       />
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard primary route="/">
-          Volver al inicio
-        </ButtonStandard>
-      </div>
-
-      <Footer />
+    <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+          <RouteBtn size="lg" bgColor="primary-yellow" route="/">
+            Volver al inicio
+          </RouteBtn>
+          
+        </div>
     </>
   );
 }

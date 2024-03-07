@@ -1,142 +1,87 @@
 "use client";
 
-import Image from "next/image";
-import { Title } from "../../components";
+import { RouteBtn, Title } from "@/app/components";
+import { useOrder } from "@/app/hooks";
+import { Category } from "@/app/interfaces/products";
+import { PRODUCTS_CATEGORIES } from "@/constants/data";
 import { Accordion, AccordionItem } from "@nextui-org/react";
-import { ButtonStandard, IconHuerta } from "@/app/components";
-
-// data para eliminar
-const verduras = [
-  {
-    item: "Zanahoria(1000gr)",
-    image:
-      "https://phantom-marca.unidadeditorial.es/7937fb07c87d989a985bad544c17f7ca/resize/828/f/webp/assets/multimedia/imagenes/2023/09/05/16939288675740.jpg",
-    cantidad: 2,
-    precio: "$5000",
-  },
-  {
-    item: "Remolacha(1000gr)",
-    image:
-      "https://phantom-marca.unidadeditorial.es/7937fb07c87d989a985bad544c17f7ca/resize/828/f/webp/assets/multimedia/imagenes/2023/09/05/16939288675740.jpg",
-    cantidad: 2,
-    precio: "$3000",
-  },
-];
+import { RenderAccordionItem } from "./components/RenderAccordionItem.component";
 
 export default function Quantity() {
+  const {
+    order: { products },
+  } = useOrder();
+
+  const productsByCategory = (category: Category) =>
+    products.filter((product) => product.category === category);
+
   return (
     <div className="space-y-5">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
 
       <p className="text-base sm:text-xl  font-bold sm:px-6">
-        2. Escoge las cantidades a comprar
+        2. Escribe las cantidades a comprar en el cuadro de texto
       </p>
 
       <Accordion
         variant="splitted"
         className="gap-6 sm:px-8"
         selectionMode="multiple"
-        defaultExpandedKeys={["1", "2", "3"]}
+        defaultExpandedKeys={PRODUCTS_CATEGORIES.map((category) => category.id)}
       >
-        <AccordionItem
-          key="1"
-          aria-label="Verduras de temporada"
-          title="Verduras de temporada"
-          // revisar con inspeccion los componentes
-          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
-        >
-          <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
-            <p className="col-start-3">Cantidades</p>
-            <p className="col-start-4">Precio</p>
-            {verduras.map((verdura) => (
-              <>
-                <Image
-                  className="aspect-[4/3]"
-                  src={verdura.image}
-                  alt={verdura.item}
-                  width={50}
-                  height={33}
-                />
-                <p>{verdura.item}</p>
-                <input
-                  type="number"
-                  className="m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green"
-                  placeholder="0"
-                  defaultValue={verdura.cantidad}
-                />
-                <p className="text-center">{verdura.precio}</p>
-              </>
-            ))}
-          </div>
-        </AccordionItem>
-        <AccordionItem
-          key="2"
-          aria-label="Frutas de temporada"
-          title="Frutas de temporada"
-          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
-        >
-          <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
-            <p className="col-start-3">Cantidades</p>
-            <p className="col-start-4">Precio</p>
-            {verduras.map((verdura) => (
-              <>
-                <Image
-                  className="aspect-[4/3]"
-                  src={verdura.image}
-                  alt={verdura.item}
-                  width={50}
-                  height={33}
-                />
-                <p>{verdura.item}</p>
-                <input
-                  type="number"
-                  className="m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green"
-                  placeholder="0"
-                  defaultValue={verdura.cantidad}
-                />
-                <p className="text-center">{verdura.precio}</p>
-              </>
-            ))}
-          </div>
-        </AccordionItem>
-        <AccordionItem
-          key="3"
-          aria-label="Procesados naturales"
-          title="Procesados naturales"
-          className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
-        >
-          <div className="w-full grid grid-cols-[auto_1fr_auto_auto] justify-center items-center gap-x-4">
-            <p className="col-start-3">Cantidades</p>
-            <p className="col-start-4">Precio</p>
-            {verduras.map((verdura) => (
-              <>
-                <Image
-                  className="aspect-[4/3]"
-                  src={verdura.image}
-                  alt={verdura.item}
-                  width={50}
-                  height={33}
-                />
-                <p>{verdura.item}</p>
-                <input
-                  type="number"
-                  className="m-auto w-16 text-center border-2 border-gray-300 bg-gray-100 focus:outline-tertiary-green"
-                  placeholder="0"
-                  defaultValue={verdura.cantidad}
-                />
-                <p className="text-center">{verdura.precio}</p>
-              </>
-            ))}
-          </div>
-        </AccordionItem>
+        {PRODUCTS_CATEGORIES.map(({ id, ariaLabel, title, category }) => (
+          <AccordionItem
+            key={id}
+            aria-label={ariaLabel}
+            title={title}
+            className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
+          >
+            <div className="w-full grid grid-cols-[auto_1fr_auto_auto_auto_auto] justify-center items-center gap-x-4 gap-y-2">
+              {productsByCategory(category).length ? (
+                <>
+                  <p className="col-start-3 font-semibold">Cantidades</p>
+                  <p className="col-start-4 font-semibold">Precio unitario</p>
+                  <p className="col-start-5 font-semibold">Subtotal</p>
+                  <p className="col-start-6"></p>
+                  {productsByCategory(category).map(
+                    ({
+                      productId,
+                      name,
+                      image,
+                      salesPresentation,
+                      priceByUnit,
+                      quantity,
+                      subTotal,
+                    }) => (
+                      <RenderAccordionItem
+                        key={productId}
+                        productId={productId}
+                        name={name}
+                        image={image}
+                        priceByUnit={priceByUnit}
+                        salesPresentation={salesPresentation}
+                        quantity={quantity}
+                        subTotal={subTotal}
+                        viewPriceUnit
+                        viewCloseButton
+                      />
+                    )
+                  )}
+                </>
+              ) : (
+                <p className="col-start-1">No hay productos</p>
+              )}
+            </div>
+          </AccordionItem>
+        ))}
       </Accordion>
-      <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonStandard secondary route="/products">
+      <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+        <RouteBtn size="lg" bgColor="secondary-orange" route="/products">
           Anterior
-        </ButtonStandard>
-        <ButtonStandard primary route="/products/delivery-options">
+        </RouteBtn>
+        <RouteBtn size="lg" bgColor="primary-yellow" route="/products/delivery-options">
           Siguiente
-        </ButtonStandard>
+        </RouteBtn>
       </div>
     </div>
   );
