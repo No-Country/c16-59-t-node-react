@@ -6,7 +6,6 @@ import { TypeToastify } from "@/app/interfaces/toastify";
 import { toastifyTyped } from "@/utils/toastity.utils";
 import { ButtonGeneral } from "@/app/components";
 import { useRouter } from "next/navigation";
-// import { useEffect } from "react";
 
 interface CardDeliveryProps {
   id: string;
@@ -25,36 +24,24 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
   image,
   statusResume,
 }) => {
-  const {
-    setDelivery,
-    order: { deliveryId },
-  } = useOrder();
+  const { setDelivery } = useOrder();
 
   const router = useRouter();
   const {
     user: { token },
   } = useUser();
 
-  // useEffect(() => {
-  //   deliveryId && router.push("/products/delivery-options/resume");
-  // }, [deliveryId]);
-
-  // const handleGetResume = () => {
-  //   if (token) {
-  //     console.log("PROBANDO PORQUE NO LLEGA AL RESUMEN", token, id);
-
-  //     setDelivery(id);
-
-  //     console.log("ir a resumen");
-
-  //     // router.push("/products/delivery-options/resume");
-  //   } else {
-  //     toastifyTyped({
-  //       type: TypeToastify.WARNING,
-  //       message: "Debes iniciar sesión para continuar",
-  //     });
-  //   }
-  // };
+  const handleGetResume = () => {
+    if (token) {
+      setDelivery(id);
+      router.push("/products/delivery-options/resume");
+    } else {
+      toastifyTyped({
+        type: TypeToastify.WARNING,
+        message: "Debes iniciar sesión para continuar",
+      });
+    }
+  };
 
   return (
     <>
@@ -69,20 +56,8 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
             </p>
 
             {!statusResume ? (
-              <ButtonGeneral
-                bgColor="primary-yellow"
-                addFunc={() => setDelivery(id)}
-                route="/products/delivery-options/resume"
-              >
-                {/* <Link
-                  href={
-                    token
-                      ? "/products/delivery-options/resume"
-                      : "/products/delivery-options"
-                  }
-                > */}
+              <ButtonGeneral bgColor="primary-yellow" addFunc={handleGetResume}>
                 {titleButton}
-                {/* </Link> */}
               </ButtonGeneral>
             ) : null}
           </div>
