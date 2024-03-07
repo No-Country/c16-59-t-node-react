@@ -1,6 +1,6 @@
 "use client";
 
-import { RouteBtn, Title } from "@/app/components";
+import { ButtonGeneral, RouteBtn, Title } from "@/app/components";
 import { useOrder } from "@/app/hooks";
 import {
   ButtonsGroupPayment,
@@ -13,9 +13,10 @@ import {
 export default function Resume() {
   const {
     order: { products, deliveryId },
+    setGoRouteResumeStatus,
   } = useOrder();
 
-  console.log("fasdfasdf", deliveryId);
+  console.log("fasdfasdsssf", deliveryId);
 
   return (
     <div className="space-y-6 m-auto">
@@ -37,13 +38,20 @@ export default function Resume() {
             <p className="text-xs md:text-base">No hay datos de envío</p>
           )}
           <div className="w-full m-auto flex justify-center items-center">
-            <RouteBtn
+            <ButtonGeneral
+              bgColor="primary-yellow"
+              // addFunc={() => setGoRouteResumeStatus(false)}
+              route="/products/delivery-options"
+            >
+              Cambiar
+            </ButtonGeneral>
+            {/* <RouteBtn
               size="lg"
               bgColor="primary-yellow"
               route="/products/delivery-options"
             >
               Cambiar
-            </RouteBtn>
+            </RouteBtn> */}
           </div>
         </ElementResume>
 

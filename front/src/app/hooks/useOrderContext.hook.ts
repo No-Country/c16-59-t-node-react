@@ -8,6 +8,7 @@ const INITIAL_VALUES: OrderStateData = {
   total: 0,
   payment: 10000,
   notes: "Notas o requerimientos especiales para el pedido o su entrega",
+  goRouteResumeStatus: true,
 };
 
 export const useOrder = () => {
@@ -75,6 +76,13 @@ export const useOrderContext = () => {
     }));
   }, []);
 
+  const setGoRouteResumeStatus = useCallback((goRouteResumeStatus: boolean) => {
+    setOrder((currentProducts: OrderStateData) => ({
+      ...currentProducts,
+      goRouteResumeStatus,
+    }));
+  }, []);
+
   return useMemo(
     () => ({
       order,
@@ -82,7 +90,15 @@ export const useOrderContext = () => {
       removeProduct,
       updateProduct,
       setDelivery,
+      setGoRouteResumeStatus,
     }),
-    [order, addProduct, removeProduct, updateProduct, setDelivery]
+    [
+      order,
+      addProduct,
+      removeProduct,
+      updateProduct,
+      setDelivery,
+      setGoRouteResumeStatus,
+    ]
   );
 };

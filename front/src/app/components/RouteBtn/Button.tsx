@@ -3,7 +3,7 @@ import { Button } from "@nextui-org/react";
 import clsx from "clsx";
 import { useRouter } from "next/navigation";
 import React from "react";
-import { BoxItalic } from "../BoxItalic/BoxItalic";
+import { BoxItalic } from "..";
 
 interface ButtonStandardProps {
   children: React.ReactNode;

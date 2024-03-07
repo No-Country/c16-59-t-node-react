@@ -8,6 +8,7 @@ export interface OrderStateData {
   total: number;
   payment: number;
   notes: string;
+  goRouteResumeStatus?: boolean;
 }
 
 export interface ProductData {
@@ -27,6 +28,7 @@ export interface OrderContextData {
   removeProduct: (productId: string) => void;
   updateProduct: (modifiedProduct: Partial<ProductData>) => void;
   setDelivery: (deliveryId: string) => void;
+  setGoRouteResumeStatus: (goRouteResumeStatus: boolean) => void;
 }
 
 // -------------------------- User Context --------------------------

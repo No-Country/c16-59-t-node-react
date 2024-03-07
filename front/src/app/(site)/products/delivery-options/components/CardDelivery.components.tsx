@@ -3,14 +3,9 @@
 import Image from "next/image";
 import { useOrder, useUser } from "@/app/hooks";
 import { TypeToastify } from "@/app/interfaces/toastify";
-import { getToken } from "@/utils/localStorage.utils";
 import { toastifyTyped } from "@/utils/toastity.utils";
-import { Button } from "@nextui-org/react";
-import { ToastContainer } from "react-toastify";
-import { DeliveryType } from "@/app/interfaces/delivery";
-import { ButtonGeneral, RouteBtn } from "@/app/components";
+import { ButtonGeneral } from "@/app/components";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 
 interface CardDeliveryProps {
   id: string;
@@ -29,23 +24,16 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
   image,
   statusResume,
 }) => {
-  const {
-    setDelivery,
-    order: { deliveryId },
-  } = useOrder();
+  const { setDelivery } = useOrder();
   const router = useRouter();
   const {
     user: { token },
   } = useUser();
 
-  useEffect(() => {
-    console.log("deliveryId", deliveryId);
-    deliveryId && router.push("/resume");
-  }, [deliveryId, router]);
-
   const handleGetResume = () => {
     if (token) {
       setDelivery(id);
+      router.push("/resume");
     } else {
       toastifyTyped({
         type: TypeToastify.WARNING,
@@ -64,18 +52,6 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
           <div className="m-auto flex flex-col justify-center items-center space-y-2 md:space-y-6 md:px-6 md:[&_button]:w-[60%]">
             <p className="text-start text-pretty text-xs md:text-base [&_button_span_span]:normal-case">
               {description}
-              {/* {description.map(({ bold, text }: any) =>
-                !bold ? (
-                  text
-                ) : (
-                  <span
-                    className="font-semibold md:font-bold text-xs md:text-base"
-                    key={text}
-                  >
-                    {text}
-                  </span>
-                )
-              )} */}
             </p>
 
             {!statusResume ? (
@@ -94,7 +70,6 @@ export const CardDelivery: React.FC<CardDeliveryProps> = ({
           height={427}
         />
       </div>
-      {/* <ToastContainer /> */}
     </>
   );
 };
