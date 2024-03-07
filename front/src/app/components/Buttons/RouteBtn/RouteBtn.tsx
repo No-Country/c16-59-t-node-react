@@ -18,7 +18,7 @@ export const RouteBtn: React.FC<RouteBtnI> = ({
   const assignedBgColor = `bg-${bgColor}`
   console.log(assignedBgColor)
   return (
-    <Button variant={"light"} color="success" isIconOnly
+    <Button isIconOnly
       className={clsx(
         defaultBtn,
         assignedBgColor,
