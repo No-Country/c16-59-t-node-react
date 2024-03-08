@@ -31,6 +31,7 @@ const verduras = [
 
 export default function Success() {
   return (
+    <>
     <div className="space-y-4">
       <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
       <div />
@@ -139,12 +140,14 @@ export default function Success() {
         </div>
 
         <div className="w-full m-auto flex justify-center items-center gap-4 mt-4 pt-8">
-          <ButtonC bgColor="primary-yellow" route="/">
-            Volver al inicio
-          </ButtonC>
+        <RouteBtn size="lg" bgColor="tertiary-green" route="/">
+          Volver al inicio
+        </RouteBtn>
         </div>
       </div>
       <Fireworks autorun={{ speed: 3, duration: 5000 }} />
+    
+      
     </>
   );
 }
