@@ -1,15 +1,15 @@
 "use client";
 
-import { Accordion, AccordionItem } from "@nextui-org/react";
-import { RenderAccordionItem } from "./components/RenderAccordionItem.component";
-import { PRODUCTS_CATEGORIES } from "@/constants/data";
+import { RouteBtn, Title } from "@/app/components";
 import { useOrder } from "@/app/hooks";
 import { Category } from "@/app/interfaces/products";
-import { ButtonC, Title } from "@/app/components";
+import { PRODUCTS_CATEGORIES } from "@/constants/data";
+import { Accordion, AccordionItem } from "@nextui-org/react";
+import { RenderAccordionItem } from "./components/RenderAccordionItem.component";
 
 export default function Quantity() {
   const {
-    order: { products },
+    order: { products, total },
   } = useOrder();
 
   const productsByCategory = (category: Category) =>
@@ -17,15 +17,15 @@ export default function Quantity() {
 
   return (
     <div className="space-y-5">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
 
-      <p className="text-base sm:text-xl  font-bold sm:px-6">
+      <p className="text-base sm:text-xl font-bold sm:px-6">
         2. Escribe las cantidades a comprar en el cuadro de texto
       </p>
 
       <Accordion
         variant="splitted"
-        className="gap-6 sm:px-8"
+        className="gap-6 md:px-8"
         selectionMode="multiple"
         defaultExpandedKeys={PRODUCTS_CATEGORIES.map((category) => category.id)}
       >
@@ -34,14 +34,26 @@ export default function Quantity() {
             key={id}
             aria-label={ariaLabel}
             title={title}
-            className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-sm [&_span]:sm:text-lg"
+            className="group-[.is-splitted]:p-0 group-[.is-splitted]:rounded-none accordion-item [&_span]:text-xs [&_span]:sm:text-base"
           >
-            <div className="w-full grid grid-cols-[auto_1fr_auto_auto_auto_auto] justify-center items-center gap-x-4 gap-y-2">
+            <div className="w-full grid grid-cols-[auto_1fr_auto_auto_auto_auto] justify-center items-center gap-x-2 md:gap-x-4 gap-y-2">
               {productsByCategory(category).length ? (
                 <>
-                  <p className="col-start-3 font-semibold">Cantidades</p>
-                  <p className="col-start-4 font-semibold">Precio unitario</p>
-                  <p className="col-start-5 font-semibold">Subtotal</p>
+                  <p className="hidden md:inline col-start-3 font-semibold text-xs md:text-base">
+                    Cantidades
+                  </p>
+                  <p className="md:hidden col-start-3 font-semibold text-xs md:text-base">
+                    Cant.
+                  </p>
+                  <p className="hidden md:inline col-start-4 font-semibold text-xs md:text-base">
+                    Precio unitario
+                  </p>
+                  <p className="md:hidden col-start-4 font-semibold text-xs md:text-base">
+                    P. unit.
+                  </p>
+                  <p className="col-start-5 font-semibold text-xs md:text-base">
+                    Subtotal
+                  </p>
                   <p className="col-start-6"></p>
                   {productsByCategory(category).map(
                     ({
@@ -69,19 +81,27 @@ export default function Quantity() {
                   )}
                 </>
               ) : (
-                <p className="col-start-1">No hay productos</p>
+                <p className="col-start-1 text-xs md:text-base">
+                  No hay productos
+                </p>
               )}
             </div>
           </AccordionItem>
         ))}
       </Accordion>
+      <div className="max-w-72 md:max-w-xl lg:max-w-4xl p-2 sm:p-3 w-full m-auto flex justify-end items-center border border-gray-200 px-0 md:px-8">
+        <div className="flex gap-6 justify-between items-center md:px-6 *:font-bold *:text-sm *:md:text-base">
+          <p>Total</p>
+          <p>$ {total}</p>
+        </div>
+      </div>
       <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-        <ButtonC bgColor="secondary-orange" route="/products">
+        <RouteBtn size="lg" bgColor="secondary-orange" route="/products">
           Anterior
-        </ButtonC>
-        <ButtonC bgColor="primary-yellow" route="/products/delivery-options">
+        </RouteBtn>
+        <RouteBtn size="lg" bgColor="primary-yellow" route="/products/delivery-options">
           Siguiente
-        </ButtonC>
+        </RouteBtn>
       </div>
     </div>
   );

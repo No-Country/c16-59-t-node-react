@@ -1,11 +1,14 @@
 import { Category } from "./products";
 
+// -------------------------- Order Context --------------------------
+
 export interface OrderStateData {
   products: ProductData[];
-  deliveryId: number;
+  deliveryId: string;
   total: number;
   payment: number;
   notes: string;
+  goRouteResumeStatus?: boolean;
 }
 
 export interface ProductData {
@@ -24,5 +27,18 @@ export interface OrderContextData {
   addProduct: (product: ProductData) => void;
   removeProduct: (productId: string) => void;
   updateProduct: (modifiedProduct: Partial<ProductData>) => void;
-  setDelivery: (deliveryId: number) => void;
+  setDelivery: (deliveryId: string) => void;
+  setGoRouteResumeStatus: (goRouteResumeStatus: boolean) => void;
+}
+
+// -------------------------- User Context --------------------------
+export interface UserStateData {
+  token: string;
+  email: string;
+}
+
+export interface UserContextData {
+  user: UserStateData;
+  getTokenUser: () => void;
+  removeTokenUser: () => void;
 }

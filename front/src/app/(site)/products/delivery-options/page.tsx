@@ -1,31 +1,41 @@
-import { ButtonC, Statement, Title } from "@/app/components";
-import { DELIVERY_OPTIONS } from "@/constants/data";
+import { RouteBtn, Statement, Title } from "@/app/components";
 import { CardDelivery } from "./components/CardDelivery.components";
+import { URL_DELIVERY } from "@/constants/api";
+import { DeliveryOptions } from "@/app/interfaces/delivery";
+import { parseWords, unScripted } from "@/utils/parseWords";
 
-export default function DeliveryOptions() {
+export default async function DeliveryOptions() {
+  const deliveryOptions = (await fetch(URL_DELIVERY).then((res) =>
+    res.json()
+  )) as DeliveryOptions[];
+
   return (
     <div className="space-y-4">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>
+        La Huerta Box - EXPRESS
+      </Title>
       <Statement>3. Escoge una forma de entrega:</Statement>
       <div className="space-y-6">
-        {DELIVERY_OPTIONS.map(
-          ({ description, id, title, image, titleButton }) => (
-            <CardDelivery
-              key={id}
-              id={id}
-              image={image}
-              title={title}
-              titleButton={titleButton}
-              description={description}
-            />
-          )
-        )}
+        {deliveryOptions.map(({ id, type, description, image }) => (
+          <CardDelivery
+            key={id}
+            id={id}
+            image={image}
+            title={unScripted(type)}
+            titleButton={parseWords(type)}
+            description={description}
+          />
+        ))}
       </div>
 
       <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonC bgColor="secondary-orange" route="/products/quantity">
+        <RouteBtn
+          bgColor="secondary-orange"
+          route="/products/quantity"
+          size="lg"
+        >
           Anterior
-        </ButtonC>
+        </RouteBtn>
       </div>
     </div>
   );
