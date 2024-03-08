@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <FreshProduceMessage/>
-      <Menu/>
+      <FreshProduceMessage />
+      <Menu />
       <Products />
     </div>
   );

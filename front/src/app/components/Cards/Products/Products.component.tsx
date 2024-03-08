@@ -1,34 +1,23 @@
-import { ProductsTotalApi } from "@/app/interfaces/products";
+import { CarProductI } from "@/app/interfaces/products";
 import { getProducts } from "@/utils/fetchApi";
+import { ModalBtn } from "../..";
 import { Product } from "./Product.component";
+import { ProductDetail } from "./ProductDetail";
 
 export const Products = async () => {
-  const products: ProductsTotalApi[] = await getProducts();
-
-  const renderProducts = ({
-    products,
-    ariaHidden = false,
-  }: {
-    products: ProductsTotalApi[];
-    ariaHidden?: boolean;
-  }) => {
-    return (
-      <ul
-        className="products-item group-hover:paused py-4"
-        aria-hidden={ariaHidden}
-      >
-        {products.map(({ id, image, name }: ProductsTotalApi) => (
-          <Product key={id} image={image} name={name} />
-        ))}
-      </ul>
-    );
-  };
-
+  const products: CarProductI[] = await getProducts();
   return (
     <div className="m-auto">
       <div className="products-totals group">
-        {renderProducts({ products })}
-        {renderProducts({ products, ariaHidden: true })}
+      <div
+        className="products-item group-hover:paused py-4"
+      >
+        {products.map(({ id, image, name, price, description }: CarProductI) => (
+          <ModalBtn key={id} btnContent={<ProductDetail id={id} name={name} description={description} image={image} price={price}/>}>
+            <Product image={image} name={name} />
+          </ModalBtn>
+        ))}
+      </div>
       </div>
     </div>
   );

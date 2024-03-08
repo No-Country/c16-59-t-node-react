@@ -32,7 +32,7 @@ const config = {
         "mbMain":"85vh"
       },
       minWidth:{
-        "dskSeparator":"70vw"
+        "dskSeparator":"55vw"
       },
       colors: {
         bullet:"#D9D9D9",
@@ -80,6 +80,12 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      animation: {
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+        // editar el tiempo segun la cantidad de productos
+        "infinite-scroll": "infinite-scroll 50s linear infinite",
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -94,12 +100,7 @@ const config = {
           to: { transform: "translateX(-100%)" },
         },
       },
-      animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-        // editar el tiempo segun la cantidad de productos
-        "infinite-scroll": "infinite-scroll 50s linear infinite",
-      },
+
     },
   },
   plugins: [require("tailwindcss-animate"), nextui()],

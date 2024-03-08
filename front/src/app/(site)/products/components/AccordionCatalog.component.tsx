@@ -1,12 +1,12 @@
 "use client";
 
+import { useOrder } from "@/app/hooks";
+import { ProductApi } from "@/app/interfaces/products";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import clsx from "clsx";
 import Image from "next/image";
 import "./AccordionCatalog.css";
 import { SelectionProduct } from "./SelectionProduct.component";
-import { ProductApi } from "@/app/interfaces/products";
-import { useOrder } from "@/app/hooks";
-import clsx from "clsx";
 
 interface AccordionCatalogProps {
   fruits: Array<ProductApi>;

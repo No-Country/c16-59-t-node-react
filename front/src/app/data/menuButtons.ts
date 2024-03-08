@@ -1,12 +1,6 @@
 import { RouteBtnI } from "../interfaces/Buttons";
 
-export const menuButtons:RouteBtnI[] = [
-  {
-    children: "¿Cómo comprar con nosotros?",
-    route:"/",
-    bgColor:"primary-yellow",
-    size:"lg"
-  },
+export const menuRouteButtons:RouteBtnI[] = [
   {
     children: "La Huerta Box",
     route:"/subscriptions",

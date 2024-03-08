@@ -1,30 +1,21 @@
 "use client";
-import { Route } from "@/app/interfaces/types";
+import { SubscriptionI } from "@/app/interfaces/Subscription";
 import { Card, CardBody, CardFooter, CardHeader } from "@nextui-org/react";
 import clsx from "clsx";
 import Image from "next/image";
-import { Title } from "../..";
+import { PriceC, Title } from "../..";
 import { RouteBtn } from "../../Buttons/RouteBtn/RouteBtn";
 import { Presentation } from "../../Txts/Presentation/Presentation";
 import { UnorderedList } from "../../Txts/UnorderedList/UnorderedList";
-import { Price } from "../Price/Price";
 
 
-interface SubscriptionProps {
-  children?: React.ReactNode;
-  route: Route;
-  title: string;
-  price: string;
-  content: string[];
-  img: string;
-  color: "primary-yellow" | "secondary-orange" | "tertiary-green";
-}
 
-export const Subscription: React.FC<SubscriptionProps> = ({
+export const Subscription: React.FC<SubscriptionI> = ({
+  id,
   title,
   price,
   content,
-  img,
+  image,
   route,
   color,
 }) => {
@@ -32,8 +23,8 @@ export const Subscription: React.FC<SubscriptionProps> = ({
   const btn = `Quiero ${title}`
   return (
     <Card className="relative grid grid-cols-4 m-[1.25rem] pt-0 rounded-none overflow-visible">
-      <div className="col-start-3 col-end-4  p-0 m-0">
-            <Price price={price} color={color} />
+      <div className="col-start-4 col-end-4  p-0 -ml-[6rem]">
+      <PriceC price={price} color={color} />
             </div>
       <div
         className={clsx(
@@ -43,10 +34,8 @@ export const Subscription: React.FC<SubscriptionProps> = ({
           "border-dotted",
           "border-2",
           "sm:p-0.5",
-          "border-tertiary-green" && borderColor,
-          "border-secondary-orange" && borderColor,
-          "border-primary-yellow" && borderColor
-        )}
+          borderColor
+          )}
       >
         <CardHeader className="pb-0">
           <Title size={"md"} color={"secondary-orange"}>{title}</Title>
@@ -62,7 +51,7 @@ export const Subscription: React.FC<SubscriptionProps> = ({
       {/* <div className="col-span-1"> */}
       <Image
         className="object-cover col-start-4 col-span-1 h-full"
-        src={img}
+        src={image[0]}
         alt={title}
         width={379.69}
         height={238.48}

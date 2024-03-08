@@ -1,1 +1,2 @@
-export * from "./AccordionCatalog.component";
+export * from "./AccordionCatalog";
+

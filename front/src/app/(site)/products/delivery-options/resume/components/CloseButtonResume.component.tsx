@@ -10,7 +10,7 @@ export const CloseButtonResume = ({ productId }: { productId: string }) => {
       className="flex cursor-pointer items-center justify-center text-3xl text-white caret-transparent"
       onClick={() => removeProduct(productId)}
     >
-      <div className="bg-primary-yellow group/item relative inline-flex h-24 w-24 items-center justify-center overflow-hidden rounded-full border-2 font-medium shadow-md md:h-10 md:w-10 active:scale-90 transition duration-200 ease-in-out">
+      <div className="bg-primary-yellow group/item relative inline-flex h-6 w-6 items-center justify-center overflow-hidden rounded-full border-2 font-medium shadow-md md:h-10 md:w-10 active:scale-90 transition duration-200 ease-in-out">
         <span className="ease absolute z-10 flex h-full w-full translate-y-full items-center justify-center rounded-full bg-secondary-orange text-white duration-300 group-hover/item:translate-y-0"></span>
         <div className="absolute z-50 flex h-full w-full items-center justify-center text-[#f6f2f2] group-hover/item:text-white">
           <svg
