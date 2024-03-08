@@ -28,7 +28,7 @@ export const AccordionCatalog: React.FC<AccordionCatalogProps> = ({
               key={upperCaseProduct.id}
               className="flex flex-col gap-2 justify-center items-center relative"
             >
-              <div className="absolute bottom-6 backdrop-blur w-full text-center">
+              <div className="absolute bottom-6 backdrop-blur w-full text-center  bg-white bg-opacity-50">
                 <strong className="text-xs">$ {upperCaseProduct.price}</strong>
               </div>
               <Image

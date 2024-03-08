@@ -19,6 +19,11 @@ export default async function CatalogPage() {
   return (
     <>
       <Title>Productos del Mes</Title>
+
+        <p className="text-base sm:text-xl  font-bold sm:px-6">
+        Encuentra nuestros productos disponibles a esta temporada, aquí.
+      </p>
+
       <AccordionCatalog
         vegetables={vegetables}
         fruits={fruits}
