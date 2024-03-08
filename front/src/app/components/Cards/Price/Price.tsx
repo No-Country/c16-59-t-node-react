@@ -11,7 +11,7 @@ interface PriceProps {
 export const PriceC: React.FC<PriceProps> = ({ price, color, className }) => {
   const bgColor = `bg-${color}`
   // Verifica si price tiene un valor; si no, muestra "N/A" o cualquier otro valor predeterminado
-  const displayPrice = `${price}`
+  const displayPrice = `$${price}.00`
 
   return (
     <div className={clsx(classPriceContainer, className)}>

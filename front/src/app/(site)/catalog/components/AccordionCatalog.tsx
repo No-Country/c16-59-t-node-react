@@ -1,3 +1,4 @@
+"use client"
 import { Category } from '@/app/interfaces/AccordionProducts';
 import { Accordion, AccordionItem } from '@nextui-org/react';
 import React from 'react';
@@ -10,7 +11,7 @@ interface AccordionCatalogProps {
 
 const AccordionCatalog: React.FC<AccordionCatalogProps> = ({ categories }) => {
   return (
-      <Accordion className="accordion gap-6 sm:px-8" variant="splitted" selectionMode="multiple">
+      <Accordion className="accordion gap-6 sm:px-8" variant="splitted" selectionMode="multiple"  defaultExpandedKeys={["0","1", "2", "3"]}>
         {categories.map((category, index) => (
           <AccordionItem
             key={index}
@@ -21,7 +22,7 @@ const AccordionCatalog: React.FC<AccordionCatalogProps> = ({ categories }) => {
               {category.products.map(product => (
                 <ProductItem key={product.id} product={product} />
               ))}
-            </ul>
+              </ul>
           </AccordionItem>
         ))}
       </Accordion>

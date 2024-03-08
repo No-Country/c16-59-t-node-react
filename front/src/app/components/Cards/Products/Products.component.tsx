@@ -1,11 +1,11 @@
-import { CarProductI, ProductApi } from "@/app/interfaces/products";
+import { CarProductI } from "@/app/interfaces/products";
 import { getProducts } from "@/utils/fetchApi";
 import { ModalBtn } from "../..";
 import { Product } from "./Product.component";
 import { ProductDetail } from "./ProductDetail";
 
 export const Products = async () => {
-  const products: ProductApi[] = await getProducts();
+  const products: CarProductI[] = await getProducts();
   console.log(Products)
   return (
     <div className="m-auto">
@@ -15,7 +15,7 @@ export const Products = async () => {
       >
         {products.map(({ id, image, name, price, description }: CarProductI) => (
           <ModalBtn key={id} btnContent={<ProductDetail id={id} name={name} description={description} image={image} price={price}/>}>
-            <Product key={id} image={image} name={name} />
+            <Product image={image} name={name} />
           </ModalBtn>
         ))}
       </div>

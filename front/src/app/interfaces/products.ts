@@ -11,9 +11,12 @@ export interface ProductApi {
 }
 
 export interface CarProductI extends Pick
-<ProductApi, "id" | "name" | "price" | "image" | "description">{
-
+<ProductApi, "id" | "name" | "price" | "description">{
+  image: string[]
 }
+
+export interface CarPrdImg extends Pick
+<CarProductI,"name"|"image">{}
 
 export interface ProductsTotalApi extends Omit<ProductApi, "image"> {
   stock: number;

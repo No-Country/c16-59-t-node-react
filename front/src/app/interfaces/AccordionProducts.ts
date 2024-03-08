@@ -1,8 +1,11 @@
+import { Image } from "./products";
+import { Price } from "./types";
+
 export interface Product {
   id: string;
   name: string;
-  price: number;
-  image: { id: number; url: string }[];
+  price: Price;
+  image: Image[];
 }
 
 export interface Category {

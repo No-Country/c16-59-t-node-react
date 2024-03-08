@@ -7,6 +7,7 @@ interface ProductItemProps {
 }
 
 const ProductItem: React.FC<ProductItemProps> = ({ product }) => {
+  console.log("Producto:",product)
   const { name, price, image } = product;
   return (
     <li className="flex flex-col gap-2 justify-center items-center relative">
