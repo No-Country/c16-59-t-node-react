@@ -11,7 +11,7 @@ const INITIAL_VALUES: FormProduct = {
   email: "comprador123@gmail.com",
   direction: "Calle 2 # 3 - 4",
   district: "Las Azuleras",
-  phone: 3112578941,
+  phone: 3112578918,
 };
 
 export const FormResume = () => {
@@ -23,7 +23,7 @@ export const FormResume = () => {
   };
 
   return (
-    <div className="w-full grid grid-cols-2 gap-y-3 gap-x-3 md:gap-x-24 lg:gap-x-36 [&_span]:text-secondary-orange [&_span]:font-semibold [&_span]:text-sm [&_input]:text-sm [&_input]:px-2 [&_input]:py-1 [&_input]: max-w-4xl m-auto [&_input]:outline-none focus:[&_input]:border-gray-400 [&_input]:font-medium">
+    <div className="w-full grid grid-cols-2 gap-y-3 gap-x-3 md:gap-x-32 [&_span]:text-secondary-orange [&_span]:font-semibold [&_span]:text-xs [&_input]:text-xs [&_span]:md:text-base [&_input]:md:text-base [&_input]:px-2 [&_input]:py-1 [&_input]:max-w-4xl m-auto [&_input]:outline-none focus:[&_input]:border-gray-400 [&_input]:font-medium">
       <div className="space-y-3">
         <label htmlFor="name" className="flex flex-col gap-2">
           <span>Nombre Completo</span>
@@ -106,8 +106,10 @@ export const FormResume = () => {
           />
         </label>
       </div>
-      <div className="col-span-2 w-full flex justify-center items-center">
-        <RouteBtn size="lg" bgColor="primary-yellow" route="/">Editar Datos</RouteBtn>
+      <div className="col-span-2 text- w-full flex justify-center items-center [&_span_span]:text-sm [&_span_span]:text-black">
+        <RouteBtn size="lg" bgColor="primary-yellow" route="/resume">
+          Editar Datos
+        </RouteBtn>
       </div>
     </div>
   );

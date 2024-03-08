@@ -3,24 +3,24 @@
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { IconHuerta, ModalBtn, Phone, QuestionMark, User } from "../..";
+import {
+  IconHuerta,
+  ImageLoginTemp,
+  ModalBtn,
+  Phone,
+  QuestionMark,
+  User,
+  WelcomeUserLogin,
+} from "../..";
 import LoginForm from "../../Forms/LogInForm/LogInForm";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
+import { useUser } from "@/app/hooks";
 
 export const NavBar = () => {
   const router = useRouter();
-
-  const [show, setShow] = useState(() => {
-    if (globalThis.localStorage) {
-      return !globalThis.localStorage.getItem("token");
-    }
-    return true;
-  });
-
-  // const handleClick = () => {
-  //   !show ? removeToken() : setToken();
-  //   setShow(!show);
-  // };
+  const {
+    user: { token },
+  } = useUser();
 
   return (
     // revisar con inspeccion los componentes
@@ -40,12 +40,10 @@ export const NavBar = () => {
         </div>
       </NavbarBrand>
       <div className={separator} />
+      {token && <WelcomeUserLogin />}
       <NavbarContent justify="end" className={NavContent}>
-        {/* <button onClick={handleClick}>
-          <User />
-        </button> */}
         <ModalBtn btnContent={<LoginForm />}>
-          <User />
+          {token ? <ImageLoginTemp /> : <User />}
         </ModalBtn>
         <ModalBtn btnContent={"QuestionMark"}>
           <QuestionMark />

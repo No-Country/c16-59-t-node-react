@@ -32,3 +32,6 @@ export * from "./svg/Phone.component";
 export * from "./svg/QuestionMark.component";
 export * from "./svg/User.component";
 
+export * from "./Buttons/ButtonGeneral.component";
+export * from "./ImageLoginTemp.component";
+export * from "./WelcomeUserLogin.component";

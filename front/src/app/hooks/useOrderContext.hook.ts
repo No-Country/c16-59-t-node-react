@@ -4,10 +4,11 @@ import { OrderContext } from "../context";
 
 const INITIAL_VALUES: OrderStateData = {
   products: [],
-  deliveryId: 0,
+  deliveryId: "",
   total: 0,
   payment: 10000,
   notes: "Notas o requerimientos especiales para el pedido o su entrega",
+  goRouteResumeStatus: true,
 };
 
 export const useOrder = () => {
@@ -68,10 +69,17 @@ export const useOrderContext = () => {
     []
   );
 
-  const setDelivery = useCallback((deliveryId: number) => {
+  const setDelivery = useCallback((deliveryId: string) => {
     setOrder((currentProducts: OrderStateData) => ({
       ...currentProducts,
       deliveryId,
+    }));
+  }, []);
+
+  const setGoRouteResumeStatus = useCallback((goRouteResumeStatus: boolean) => {
+    setOrder((currentProducts: OrderStateData) => ({
+      ...currentProducts,
+      goRouteResumeStatus,
     }));
   }, []);
 
@@ -82,7 +90,15 @@ export const useOrderContext = () => {
       removeProduct,
       updateProduct,
       setDelivery,
+      setGoRouteResumeStatus,
     }),
-    [order, addProduct, removeProduct, updateProduct, setDelivery]
+    [
+      order,
+      addProduct,
+      removeProduct,
+      updateProduct,
+      setDelivery,
+      setGoRouteResumeStatus,
+    ]
   );
 };

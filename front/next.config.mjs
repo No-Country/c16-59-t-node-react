@@ -92,12 +92,20 @@ const nextConfig = {
         hostname: "la-huerta.onrender.com",
         port: "",
         pathname: "/**",
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "media.discordapp.net",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
   env: {
     STRIPE_PUBLIC_KEY_PARSER: process.env.STRIPE_PUBLIC_KEY,
+    DEPLOY_URL_PARSER: process.env.DEPLOY_URL,
   },
+  // productionSourceMaps: true,
 };
 
 export default nextConfig;
