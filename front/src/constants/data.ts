@@ -40,3 +40,8 @@ export const DATA_USER = {
   token: "tokendelusuario",
   email: "luis@gmail.com",
 };
+
+export const IMAGE_LOGIN =
+  "https://media.discordapp.net/attachments/1204880565073871013/1215457404842418196/Laura_M_Guauque_C_Large.jpeg?ex=65fcd1eb&is=65ea5ceb&hm=e6bd67c7bf449a0993acfb1b6eb96275c9da519c0eea82122472a3cc83b50df0&=&format=webp&width=537&height=537";
+
+export const NOMBRE_USUARIO_LOGIN = "Bienvenida_Laura";

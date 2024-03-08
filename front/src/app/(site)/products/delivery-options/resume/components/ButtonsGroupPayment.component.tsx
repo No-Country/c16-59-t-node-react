@@ -23,7 +23,7 @@ export const ButtonsGroupPayment = () => {
     order: { products, deliveryId },
   } = useOrder();
   const {
-    user: { email },
+    user: { token, email },
   } = useUser();
 
   const createCheckoutSession = async () => {
@@ -82,14 +82,12 @@ export const ButtonsGroupPayment = () => {
 
   // esta para añadir estado global para el token email usuario
   const handleOpenPayment = () => {
-    // if (!token) {
-    //   toastifyTyped({
-    //     type: TypeToastify.WARNING,
-    //     message: "Debes iniciar sesión para continuar",
-    //   });
-    // } else
-
-    if (!products.length) {
+    if (!token) {
+      toastifyTyped({
+        type: TypeToastify.WARNING,
+        message: "Debes iniciar sesión para continuar",
+      });
+    } else if (!products.length) {
       toastifyTyped({
         type: TypeToastify.WARNING,
         message: "Debes agregar productos para continuar",
