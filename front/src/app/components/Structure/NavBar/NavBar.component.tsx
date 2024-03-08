@@ -1,8 +1,8 @@
 "use client";
 
+import { useUser } from "@/app/hooks";
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
 import {
   IconHuerta,
   ImageLoginTemp,
@@ -14,7 +14,6 @@ import {
 } from "../..";
 import LoginForm from "../../Forms/LogInForm/LogInForm";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
-import { useUser } from "@/app/hooks";
 
 export const NavBar = () => {
   const router = useRouter();
@@ -40,7 +39,7 @@ export const NavBar = () => {
         </div>
       </NavbarBrand>
       <div className={separator} />
-      {token && <WelcomeUserLogin />}
+      {token && <WelcomeUserLogin className=""/>}
       <NavbarContent justify="end" className={NavContent}>
         <ModalBtn btnContent={<LoginForm />}>
           {token ? <ImageLoginTemp /> : <User />}

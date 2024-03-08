@@ -6,7 +6,6 @@ import { ProductDetail } from "./ProductDetail";
 
 export const Products = async () => {
   const products: CarProductI[] = await getProducts();
-  console.log(Products)
   return (
     <div className="m-auto">
       <div className="products-totals group">

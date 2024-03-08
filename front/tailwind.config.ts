@@ -32,7 +32,7 @@ const config = {
         "mbMain":"85vh"
       },
       minWidth:{
-        "dskSeparator":"70vw"
+        "dskSeparator":"55vw"
       },
       colors: {
         bullet:"#D9D9D9",
