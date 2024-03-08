@@ -3,19 +3,9 @@
 export const classPriceContainer = `
   grid
   fixed 
-  justify-end 
+  place-self-end
   absolute
   overflow-visible
-  
-  sm:ml-[0.5rem]
-  sm:text-[0.8rem]
-  sm:text-[0.9rem]
-   
-  md:ml-[3rem]
-  
-  lg:ml-[9.3rem]
-  lg:w-[8rem]
-  lg:h-[1.3rem]
 
 
 `

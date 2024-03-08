@@ -2,12 +2,11 @@ import { Route } from "next";
 import { ReactNode } from "react";
 import { Color, Size } from "./types";
 
-
  
 interface ButtonI {
-  children: ReactNode;
-  bgColor: Color
-  size: Size
+  children: string | ReactNode;
+  bgColor?: Color
+  size?: Size
 }
 
 export interface RouteBtnI extends ButtonI{
@@ -16,4 +15,8 @@ export interface RouteBtnI extends ButtonI{
 
 export interface FncBtnI extends ButtonI{
   onClick:()=>void
+}
+
+export interface ModalBtnI extends ButtonI{
+  btnContent: string | ReactNode
 }

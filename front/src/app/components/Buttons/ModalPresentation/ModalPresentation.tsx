@@ -1,4 +1,6 @@
 import { Modal, ModalContent } from "@nextui-org/react";
+import clsx from "clsx";
+import { defaultModalContent } from "./classModalPresentation";
 
 interface ModalPresentationProps{
   isOpen:boolean
@@ -9,7 +11,7 @@ interface ModalPresentationProps{
 
 export const ModalPresentation:React.FC<ModalPresentationProps> = ({isOpen, modalContent, onOpenChange}) =>{
   return(
-    <Modal isOpen={isOpen} onOpenChange={onOpenChange} radius={"none"} size={"sm"}> 
+    <Modal backdrop={"blur"} isOpen={isOpen} onOpenChange={onOpenChange} radius={"none"} shouldBlockScroll size="4xl" className={clsx(defaultModalContent)}> 
         <ModalContent>
           {modalContent}
           </ModalContent>

@@ -5,36 +5,36 @@ import {
   getVegetablesCatalog,
 } from "@/utils/fetchApi";
 
-import { AccordionCatalog } from "./components";
+import { Category, Product } from "@/app/interfaces/AccordionProducts";
+import AccordionCatalog from "./components/AccordionCatalog";
 
 export default async function CatalogPage() {
   // aqui haz las peticiones para frutas, vegetales y productos envasados
-  const fruits: any = await getFruitCatalog();
-  const vegetables: any = await getVegetablesCatalog();
-  const processedFoods: any = await getProcessedFoodsCatalog();
+  const fruits: Product[] = await getFruitCatalog();
+  const vegetables: Product[] = await getVegetablesCatalog();
+  const processedFoods: Product[] = await getProcessedFoodsCatalog();
   // const productsEnvasados = await getProdComesCatalog();
-  console.log("frutas donde estas?", fruits);
-  console.log("vegetales donde estas?", vegetables);
-
+  const categories: Category[] = [
+    { name: "Vegetales de temporada", products: vegetables },
+    { name: "Frutas de temporada", products: fruits },
+    { name: "Procesados naturales", products: processedFoods },
+  ];
   return (
     <>
-      <Title size="lg" border color="secondary-orange" weight="semibold" icon>Productos del Mes</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>
+        Productos del Mes
+      </Title>
 
         <p className="text-base sm:text-xl  font-bold sm:px-6">
         Encuentra nuestros productos disponibles a esta temporada, aquí.
       </p>
 
-      <AccordionCatalog
-        vegetables={vegetables}
-        fruits={fruits}
-        processedFoods={processedFoods}
-      />
-    <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <RouteBtn size="lg" bgColor="primary-yellow" route="/">
-            Volver al inicio
-          </RouteBtn>
-          
-        </div>
+      <AccordionCatalog categories={categories} />
+      <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
+        <RouteBtn size="lg" bgColor="primary-yellow" route="/">
+          Volver al inicio
+        </RouteBtn>
+      </div>
     </>
   );
 }

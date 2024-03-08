@@ -3,8 +3,7 @@
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-import { IconHuerta, Phone, QuestionMark, User } from "../..";
-import { ModalBtn } from "../../Buttons/ModalBtn/ModalBtn";
+import { IconHuerta, ModalBtn, Phone, QuestionMark, User } from "../..";
 import LoginForm from "../../Forms/LogInForm/LogInForm";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
 
@@ -45,14 +44,14 @@ export const NavBar = () => {
         {/* <button onClick={handleClick}>
           <User />
         </button> */}
-        <ModalBtn btnContent={<User />}>
-          <LoginForm />
+        <ModalBtn btnContent={<LoginForm />}>
+          <User />
         </ModalBtn>
-        <ModalBtn btnContent={<QuestionMark />}>
-          {"QuestionMark"}
+        <ModalBtn btnContent={"QuestionMark"}>
+          <QuestionMark />
         </ModalBtn>
-        <ModalBtn btnContent={<Phone />}>
-          {"Phone"}
+        <ModalBtn btnContent={"Phone"}>
+          <Phone />
         </ModalBtn>
         {/* <ThemeSwitcher /> */}
       </NavbarContent>

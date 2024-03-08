@@ -1,32 +1,21 @@
-import { Route } from "@/app/interfaces/types";
-import React from "react";
+import { SubscriptionsI } from "@/app/interfaces/Subscription";
+import { FC } from "react";
 import { Subscription } from "./Subscription";
 
-interface SubscriptionData {
-  title: string;
-  price: string;
-  content: string[];
-  img: string;
-  route:Route;
-  color:"primary-yellow" | "secondary-orange" | "tertiary-green"
-}
 
-interface Props {
-  options: SubscriptionData[];
-}
-
-const SubscriptionsContainer: React.FC<Props> = ({ options }) => {
+const SubscriptionsContainer: FC<SubscriptionsI> = ({ options }) => {
   return (
     <>
       {options.map((option, index) => {
-        const { title, price, content, img, route, color } = option;
+        const { id,title, price, content, image, route, color } = option;
         return (
           <Subscription
+          id={id}
             key={index}
             title={title}
             price={price} 
             content={content}
-            img={img}
+            image={image}
             color={color}
             route={route}
           />
