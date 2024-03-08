@@ -42,11 +42,15 @@ export const NavBar = () => {
       <div className={separator} />
       {token && <WelcomeUserLogin />}
       <NavbarContent justify="end" className={NavContent}>
-        <ModalBtn btnContent={token ? <ImageLoginTemp /> : <User />}>
-          <LoginForm />
+        <ModalBtn btnContent={<LoginForm />}>
+          {token ? <ImageLoginTemp /> : <User />}
         </ModalBtn>
-        <ModalBtn btnContent={<QuestionMark />}>{"QuestionMark"}</ModalBtn>
-        <ModalBtn btnContent={<Phone />}>{"Phone"}</ModalBtn>
+        <ModalBtn btnContent={"QuestionMark"}>
+          <QuestionMark />
+        </ModalBtn>
+        <ModalBtn btnContent={"Phone"}>
+          <Phone />
+        </ModalBtn>
         {/* <ThemeSwitcher /> */}
       </NavbarContent>
     </Navbar>

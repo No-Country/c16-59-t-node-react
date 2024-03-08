@@ -74,7 +74,6 @@ const LoginForm = () => {
             : "Credenciales incorrectas",
       });
     }
-    return alert(formData);
   };
 
   const handleSelectRole = (selectedRole: RoleI) => {
