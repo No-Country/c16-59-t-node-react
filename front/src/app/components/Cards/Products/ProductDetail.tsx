@@ -48,7 +48,7 @@ export const ProductDetail: React.FC<CarProductI> = ({
       </div>
       <Image
         className="object-cover col-start-4 col-span-2 h-full"
-        src={image[0]}
+        src={image[0].url}
         alt={name}
         width={379.69}
         height={238.48}
