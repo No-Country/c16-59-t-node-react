@@ -1,7 +1,7 @@
-import { PrdDetailI } from "@/app/interfaces/products";
+import { ProductApi } from "@/app/interfaces/products";
 import { FC } from "react";
 
-interface DescriptionProps extends Pick<PrdDetailI, "description">{}
+interface DescriptionProps extends Pick<ProductApi, "description">{}
 
 export const DescriptionC:FC<DescriptionProps> = ({description}) =>{
   return(
