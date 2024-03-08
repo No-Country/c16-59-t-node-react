@@ -24,6 +24,11 @@ export default async function CatalogPage() {
       <Title size="lg" border color="secondary-orange" weight="semibold" icon>
         Productos del Mes
       </Title>
+
+        <p className="text-base sm:text-xl  font-bold sm:px-6">
+        Encuentra nuestros productos disponibles a esta temporada, aquí.
+      </p>
+
       <AccordionCatalog categories={categories} />
       <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
         <RouteBtn size="lg" bgColor="primary-yellow" route="/">

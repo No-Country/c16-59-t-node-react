@@ -8,6 +8,9 @@ import {
 import { AccordionCatalog } from "./components";
 
 export default async function Subscriptions() {
+
+ const greenColor = " bg-green-500";
+
   const [fruits, vegetables, processedFoods] = await Promise.all<
     Array<ProductApi>
   >([getFruitCatalog(), getVegetablesCatalog(), getProcessedFoodsCatalog()]);
@@ -16,9 +19,12 @@ export default async function Subscriptions() {
     <div className="space-y-4">
       <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
       <div className="flex flex-col  ">
-        <p className="font-semibold sm:px-6 text-xs lg:text-base mb-4">
-          1. Escoge los productos que deseas clickeando sobre cada ítem:
-        </p>
+       
+    <div className="mb-5">
+        <p className="text-base sm:text-xl  font-bold sm:px-6">
+       1. Escoge los productos que deseas clickeando sobre cada ítem:
+      </p></div>
+        
 
         <AccordionCatalog
           vegetables={vegetables}
