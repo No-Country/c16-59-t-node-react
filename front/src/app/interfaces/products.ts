@@ -7,7 +7,7 @@ export interface ProductApi {
   description: PrdDescription;
   category: Category;
   salesPresentation: PrdSalesPresentation;
-  image: Img;
+  image: Image[];
 }
 
 export interface CarProductI extends Pick
