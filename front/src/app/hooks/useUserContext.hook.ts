@@ -18,6 +18,7 @@ export const useUser = () => {
 
 export const useUserContext = () => {
   const [user, setUser] = useState<UserStateData>(INITIAL_VALUES);
+  const [showLogin, setShowLogin] = useState(true);
 
   const getTokenUser = useCallback(() => {
     const { email, token } = getToken();
@@ -37,7 +38,9 @@ export const useUserContext = () => {
       user,
       getTokenUser,
       removeTokenUser,
+      showLogin,
+      setShowLogin,
     }),
-    [user, getTokenUser, removeTokenUser]
+    [user, getTokenUser, removeTokenUser, showLogin, setShowLogin]
   );
 };

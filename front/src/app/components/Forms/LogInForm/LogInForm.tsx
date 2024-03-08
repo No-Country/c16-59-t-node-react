@@ -25,7 +25,7 @@ const LoginForm = () => {
     rememberMe: false,
   });
 
-  const { getTokenUser } = useUser();
+  const { getTokenUser, setShowLogin } = useUser();
 
   const handleChange = (
     key: keyof typeof formData,
@@ -57,6 +57,7 @@ const LoginForm = () => {
 
       setToken(token, emailFromApi);
       getTokenUser();
+      setShowLogin(false);
 
       // if (role) {
       //   console.log("Correo electrónico:", email);

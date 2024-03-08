@@ -41,4 +41,6 @@ export interface UserContextData {
   user: UserStateData;
   getTokenUser: () => void;
   removeTokenUser: () => void;
+  showLogin: boolean;
+  setShowLogin: (showLogin: boolean) => void;
 }
