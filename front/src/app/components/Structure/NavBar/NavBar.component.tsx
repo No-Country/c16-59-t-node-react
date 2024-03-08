@@ -2,15 +2,16 @@
 
 import { Navbar, NavbarBrand, NavbarContent } from "@nextui-org/react";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import {
   IconHuerta,
   ImageLoginTemp,
+  ModalBtn,
   Phone,
   QuestionMark,
   User,
   WelcomeUserLogin,
 } from "../..";
-import { ModalBtn } from "../../Buttons/ModalBtn/ModalBtn";
 import LoginForm from "../../Forms/LogInForm/LogInForm";
 import { NavContent, classNavBar, classNavBrand, separator } from "./className";
 import { useUser } from "@/app/hooks";

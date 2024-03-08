@@ -74,6 +74,7 @@ const LoginForm = () => {
             : "Credenciales incorrectas",
       });
     }
+    return alert(formData);
   };
 
   const handleSelectRole = (selectedRole: RoleI) => {
@@ -121,13 +122,13 @@ const LoginForm = () => {
             Inciar sesión
           </RouteBtn> */}
         </div>
-        <div className="text-center">
-          <p className="text-gray-600 mb-2">¿No tienes cuenta?</p>
-          <RouteBtn bgColor="tertiary-green" size="lg" route="/">
-            Crear cuenta
-          </RouteBtn>
-        </div>
       </form>
+      <div className="text-center">
+        <p className="text-gray-600 mb-2">¿No tienes cuenta?</p>
+        <RouteBtn bgColor="tertiary-green" size="lg" route="/">
+          Crear cuenta
+        </RouteBtn>
+      </div>
     </div>
   );
 };
