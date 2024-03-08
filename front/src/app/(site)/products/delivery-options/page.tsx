@@ -1,11 +1,11 @@
-import { ButtonC, Statement, Title } from "@/app/components";
+import { RouteBtn, Statement, Title } from "@/app/components";
 import { DELIVERY_OPTIONS } from "@/constants/data";
 import { CardDelivery } from "./components/CardDelivery.components";
 
 export default function DeliveryOptions() {
   return (
     <div className="space-y-4">
-      <Title>La Huerta Box - EXPRESS</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
       <Statement>3. Escoge una forma de entrega:</Statement>
       <div className="space-y-6">
         {DELIVERY_OPTIONS.map(
@@ -23,9 +23,9 @@ export default function DeliveryOptions() {
       </div>
 
       <div className="w-full m-auto flex justify-center items-center gap-4">
-        <ButtonC bgColor="secondary-orange" route="/products/quantity">
+        <RouteBtn bgColor="secondary-orange" route="/products/quantity" size="lg">
           Anterior
-        </ButtonC>
+        </RouteBtn>
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { RouteBtn } from "@/app/components";
 import { FormProduct } from "@/app/interfaces/form";
-import { ButtonC } from "@/app/components";
+import { useState } from "react";
 
 const INITIAL_VALUES: FormProduct = {
   name: "Luis Suarez",
@@ -107,7 +107,7 @@ export const FormResume = () => {
         </label>
       </div>
       <div className="col-span-2 w-full flex justify-center items-center">
-        <ButtonC bgColor="primary-yellow">Editar Datos</ButtonC>
+        <RouteBtn size="lg" bgColor="primary-yellow" route="/">Editar Datos</RouteBtn>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import { ButtonC, Title } from "@/app/components";
+import { RouteBtn, Title } from "@/app/components";
 import {
   getFruitCatalog,
   getProcessedFoodsCatalog,
@@ -18,7 +18,7 @@ export default async function CatalogPage() {
 
   return (
     <>
-      <Title>Productos del Mes</Title>
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>Productos del Mes</Title>
 
         <p className="text-base sm:text-xl  font-bold sm:px-6">
         Encuentra nuestros productos disponibles a esta temporada, aquí.
@@ -30,9 +30,9 @@ export default async function CatalogPage() {
         processedFoods={processedFoods}
       />
     <div className="w-full m-auto flex justify-center items-center gap-4 mt-4">
-          <ButtonC bgColor="primary-yellow" route="/">
+          <RouteBtn size="lg" bgColor="primary-yellow" route="/">
             Volver al inicio
-          </ButtonC>
+          </RouteBtn>
           
         </div>
     </>

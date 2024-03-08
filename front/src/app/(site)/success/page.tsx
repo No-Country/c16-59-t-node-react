@@ -1,6 +1,5 @@
-"use client";
-
-import { ButtonC, Title } from "@/app/components";
+"use client"
+import { RouteBtn, Title } from "@/app/components";
 import Image from "next/image";
 import "./page.css";
 import React from "react";
@@ -32,10 +31,9 @@ const verduras = [
 
 export default function Success() {
   return (
-    <>
-      <div className="space-y-4">
-        <Title>La Huerta Box - EXPRESS</Title>
-        <div />
+    <div className="space-y-4">
+      <Title size="lg" border color="secondary-orange" weight="semibold" icon>La Huerta Box - EXPRESS</Title>
+      <div />
 
         <div className="border border-dashed border-green-500 hover:border-dotted pb-5 pt-10 px-40 ">
           <div className="nada">

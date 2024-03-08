@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import { Footer, NavBar } from "./components";
-import "./globals.css";
-import { OrderProvider } from "./context";
 import "react-toastify/dist/ReactToastify.css";
-import { Main } from "./components/Main/Main";
+import { Footer, NavBar } from "./components";
+import { Main } from "./components/Structure/Main/Main";
+import { OrderProvider } from "./context";
 import "./globals.css";
 
 export const montserrat = Montserrat({
