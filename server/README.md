@@ -26,6 +26,9 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
+## OpenApi Specification
+[OpenApi-Spec](https://la-huerta.onrender.com/api-docs)
+
 ## Installation
 
 ```bash
