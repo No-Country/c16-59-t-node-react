@@ -31,7 +31,7 @@ export class AuthService {
 
       const user = this.userRepository.create({
         ...restUser,
-        password: bcrypt.hashSync(password, 20),
+        password: await bcrypt.hash(password, 20),
       });
 
       await this.userRepository.save(user);
@@ -65,7 +65,12 @@ export class AuthService {
       throw new UnauthorizedException('Not valid credentials');
     }
 
-    delete user.password;
+    // if (password !== user.password) {
+    //   throw new UnauthorizedException('Not valid credentials');
+    // } else {
+    //   bcrypt.compare(password, user.password);
+    // }
+    //delete user.password;
 
     return {
       ...user,
@@ -79,6 +84,10 @@ export class AuthService {
       ...user,
       token: this.getJwtToken({ id: user.id, email: user.email }),
     };
+  }
+
+  findOne(id: string) {
+    return this.userRepository.findOneBy({ id });
   }
 
   //Genera el JWT
