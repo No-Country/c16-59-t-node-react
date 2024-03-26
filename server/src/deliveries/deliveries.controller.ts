@@ -13,7 +13,9 @@ import { CreateDeliveryDto } from './dto/create-delivery.dto';
 import { UpdateDeliveryDto } from './dto/update-delivery.dto';
 import { Auth } from 'src/auth/decorators/auth.decorator';
 import { ValidRoles } from 'src/auth/interfaces/valid-roles';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Deliveries')
 @Controller('deliveries')
 export class DeliveriesController {
   constructor(private readonly deliveriesService: DeliveriesService) {}
